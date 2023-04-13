@@ -22,7 +22,6 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-slick": "^0.29.0",
     "react-sparklines": "^1.7.0",
-    "request": "^2.88.2",
     "slick-carousel": "^1.8.1",
     "yahoo-finance": "^0.3.8"
   },

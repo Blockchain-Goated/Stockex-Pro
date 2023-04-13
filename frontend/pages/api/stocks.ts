@@ -1,7 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
-import request from "request";
+
+const accessToken = process.env.accessToken;
+const apiKey = process.env.apiKey;
 
 // Only Relevant in POST request
 
@@ -152,16 +154,14 @@ export default async function handler(
   const endpoint =
     "https://apiconnect.angelbroking.com/rest/secure/angelbroking/order/v1/placeOrder";
 
-  fastify.post("/buy", async (req, reply) => {
-    const orderDetails = req.body;
+  if (request.method === "GET" && request.query.type === "sell") {
+    const orderDetails = request.body;
     let accessToken;
     let debug;
 
-    accessToken =
-      "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6Ik01MDY5NDE2MyIsInJvbGVzIjowLCJ1c2VydHlwZSI6IlVTRVIiLCJpYXQiOjE2NzkxMzU1ODEsImV4cCI6MTc2NTUzNTU4MX0.FeHDLd6flQiydHwyu9w4JlZ9kXp0nq8pcI-n3BrrV5Qv0vLjY9jsdlowNWcPoEfd6tt3JxhGdyvcWGhsD-tUTg";
-
     // Define the request options
     const requestOptions = {
+      method: "POST",
       url: endpoint,
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -174,8 +174,52 @@ export default async function handler(
         "X-MACAddress": "2C-F0-5D-D0-62-AA",
         "X-PrivateKey": `${apiKey}`,
       },
-      json: true,
-      body: {
+      data: {
+       variety: "NORMAL",
+        tradingsymbol: orderDetails.tradingsymbol,
+        quantity: orderDetails.quantity,
+        exchange: orderDetails.exchange,
+        transaction_type: "SELL",
+        order_type: "MARKET",
+        producttype: "DELIVERY",
+        validity: "DAY",
+        disclosed_quantity: 0,
+        tag: "MY_ORDER",
+      },
+    };
+
+    try {
+      // Make the request to place the buy order
+      const response = await axios(requestOptions);
+      console.log(response.data);
+      reply.send(response.data);
+    } catch (error) {
+      console.error(error);
+      reply.status(500).send(error as string);
+    }
+  }
+
+  if (request.method === "GET" && request.query.type === "buy") {
+    const orderDetails = request.body;
+    let accessToken;
+    let debug;
+
+    // Define the request options
+    const requestOptions = {
+      method: "POST",
+      url: endpoint,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "X-UserType": "USER",
+        "X-SourceID": "WEB",
+        "X-ClientLocalIP": "192.168.1.13",
+        "X-ClientPublicIP": "182.70.79.125",
+        "X-MACAddress": "2C-F0-5D-D0-62-AA",
+        "X-PrivateKey": `${apiKey}`,
+      },
+      data: {
         variety: "NORMAL",
         tradingsymbol: orderDetails.tradingsymbol,
         quantity: orderDetails.quantity,
@@ -189,59 +233,13 @@ export default async function handler(
       },
     };
 
-    // Make the request to place the buy order
-    request.post(requestOptions, (error, response, body) => {
-      if (error) {
-        console.error(error);
-        reply.code(500).send(error);
-      } else {
-        console.log(body);
-        reply.send(debug);
-      }
-    });
-  });
-
-  fastify.post("/sell", async (req, reply) => {
-    // Get the order details from the request body
-    const orderDetails = req.body;
-
-    // Define the request options
-    const requestOptions = {
-      url: endpoint,
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "X-UserType": "USER",
-        "X-SourceID": "WEB",
-        // 'X-ClientLocalIP': 'CLIENT_LOCAL_IP',
-        // 'X-ClientPublicIP': 'CLIENT_PUBLIC_IP',
-        // 'X-MACAddress': 'MAC_ADDRESS',
-        "X-PrivateKey": `${apiKey}`,
-      },
-      json: true,
-      body: {
-        variety: "NORMAL",
-        tradingsymbol: orderDetails.tradingsymbol,
-        quantity: orderDetails.quantity,
-        exchange: orderDetails.exchange,
-        transaction_type: "SELL",
-        order_type: "MARKET",
-        producttype: "DELIVERY",
-        validity: "DAY",
-        disclosed_quantity: 0,
-        tag: "MY_ORDER",
-      },
-    };
-    // Make the request to place the buy order
-    request.post(requestOptions, (error, response, body) => {
-      if (error) {
-        console.error(error);
-        reply.code(500).send(error);
-      } else {
-        console.log(body);
-        reply.send(body);
-      }
-    });
-  });
-}
+    try {
+      // Make the request to place the buy order
+      const response = await axios(requestOptions);
+      console.log(response.data);
+      reply.send(response.data);
+    } catch (error) {
+      console.error(error);
+      reply.status(500).send(error as string);
+    }
+  }

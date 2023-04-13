@@ -40,9 +40,6 @@ dependencies:
   react-sparklines:
     specifier: ^1.7.0
     version: 1.7.0(react-dom@18.2.0)(react@18.2.0)
-  request:
-    specifier: ^2.88.2
-    version: 2.88.2
   slick-carousel:
     specifier: ^1.8.1
     version: 1.8.1(jquery@3.6.4)

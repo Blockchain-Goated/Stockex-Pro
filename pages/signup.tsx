@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import axios from "axios";
+
 const Signup: NextPage = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -13,11 +15,22 @@ const Signup: NextPage = () => {
   const { name, email, password } = formData;
   const onChange = (e: any) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
     setError(true);
     if (name && email && password) {
-      router.push("/verify-email");
+      await axios({
+        method: "POST",
+        url: "/api/auth/register",
+        headers: { "Content-Type": "application/json" },
+        data: { email, password, name },
+      })
+        .then((response) => {
+          return router.push("/index");
+        })
+        .catch((error) => {
+          console.log(`Error in registration: ${error}`);
+        });
     }
   };
   return (

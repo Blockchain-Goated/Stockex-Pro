@@ -175,7 +175,7 @@ export default async function handler(
         "X-PrivateKey": `${apiKey}`,
       },
       data: {
-       variety: "NORMAL",
+        variety: "NORMAL",
         tradingsymbol: orderDetails.tradingsymbol,
         quantity: orderDetails.quantity,
         exchange: orderDetails.exchange,
@@ -243,3 +243,4 @@ export default async function handler(
       reply.status(500).send(error as string);
     }
   }
+}

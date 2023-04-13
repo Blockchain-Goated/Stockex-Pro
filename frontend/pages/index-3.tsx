@@ -18,7 +18,7 @@ const Index3: NextPage = () => {
                     Refer a friend to earn 30% of their trading fees.
                   </small>
                   <br />
-                  <Link href="/faq">
+                  <Link legacyBehavior href="/faq">
                     <a>
                       {" "}
                       <small>Learn More</small>
@@ -33,7 +33,7 @@ const Index3: NextPage = () => {
                 </p>
               </div>
               <div className="intro-btn">
-                <Link href="/signup">
+                <Link legacyBehavior href="/signup">
                   <a className="btn btn-primary btn-sm py-2 px-3">
                     Get Started
                   </a>
@@ -289,7 +289,7 @@ const Index3: NextPage = () => {
               >
                 <h3 className="me-5 mb-0">Step into Tendex</h3>
 
-                <Link href="/signup">
+                <Link legacyBehavior href="/signup">
                   <a className="btn btn-primary">Get Started</a>
                 </Link>
               </div>

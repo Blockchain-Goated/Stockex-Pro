@@ -45,7 +45,7 @@ const SuccessModal: FC<{
             </form>
             {!footerOff && (
               <div className="card-footer text-center">
-                <Link href="/dashboard">
+                <Link legacyBehavior href="/dashboard">
                   <a>Go to Transaction</a>
                 </Link>
               </div>

@@ -1,4 +1,5 @@
 import Document, {
+  Html,
   DocumentContext,
   Head,
   Main,
@@ -12,9 +13,8 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en">
+      <Html>
         <Head>
-          <title>Tendex</title>
           <link
             rel="icon"
             type="image/png"
@@ -30,7 +30,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

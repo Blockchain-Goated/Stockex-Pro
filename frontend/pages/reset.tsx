@@ -24,7 +24,7 @@ const Reset: NextPage = () => {
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-xl-4 col-md-5">
             <div className="mini-logo text-center my-3">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>
                   <img src="/images/logo.png" alt="" />
                 </a>
@@ -56,7 +56,7 @@ const Reset: NextPage = () => {
                 <div className="new-account mt-3">
                   <p>
                     {`Don't get code?`}{" "}
-                    <Link href="/otp-1">
+                    <Link legacyBehavior href="/otp-1">
                       <a className="text-primary">Resend</a>
                     </Link>
                   </p>

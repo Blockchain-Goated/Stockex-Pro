@@ -9,7 +9,7 @@ const DashboardSidebar: FC = () => {
   return (
     <div className="sidebar">
       <div className="brand-logo">
-        <Link href="/dashboard">
+        <Link legacyBehavior href="/dashboard">
           <a>
             <img src="/images/logoi.png" alt="" width="30" />
           </a>
@@ -18,7 +18,7 @@ const DashboardSidebar: FC = () => {
       <div className="menu" id="d_menu">
         <ul>
           <li>
-            <Link href="/dashboard">
+            <Link legacyBehavior href="/dashboard">
               <a>
                 <span>
                   <i className="bi bi-house"></i>
@@ -27,7 +27,7 @@ const DashboardSidebar: FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/trade">
+            <Link legacyBehavior href="/trade">
               <a>
                 <span>
                   <i className="bi bi-globe2"></i>
@@ -36,7 +36,7 @@ const DashboardSidebar: FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/wallet">
+            <Link legacyBehavior href="/wallet">
               <a>
                 <span>
                   <i className="bi bi-wallet2"></i>
@@ -45,7 +45,7 @@ const DashboardSidebar: FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/settings-profile">
+            <Link legacyBehavior href="/settings-profile">
               <a id="settings__mainMenu">
                 <span>
                   <i className="bi bi-gear"></i>
@@ -54,7 +54,7 @@ const DashboardSidebar: FC = () => {
             </Link>
           </li>
           <li className="logout">
-            <Link href="/signin">
+            <Link legacyBehavior href="/signin">
               <a>
                 <span>
                   <i className="bi bi-power"></i>

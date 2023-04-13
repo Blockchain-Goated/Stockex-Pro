@@ -31,12 +31,12 @@ const Index: NextPage = () => {
                   cryptocurrencies
                 </p>
                 <div className="intro-btn">
-                  <Link href="/signup">
+                  <Link legacyBehavior href="/signup">
                     <a className="btn btn-primary btn-sm py-2 px-3 me-3 shadow-sm">
                       Get Started
                     </a>
                   </Link>
-                  <Link href="/price">
+                  <Link legacyBehavior href="/price">
                     <a className="btn btn-outline-dark btn-sm py-2 px-3 shadow-sm">
                       Browse Now
                     </a>
@@ -122,7 +122,7 @@ const Index: NextPage = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Architecto, corporis.
                 </p>
-                <Link href="/signup">
+                <Link legacyBehavior href="/signup">
                   <a>
                     Explore <i className="bi bi-arrow-right-short" />
                   </a>
@@ -139,7 +139,7 @@ const Index: NextPage = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Architecto, corporis.
                 </p>
-                <Link href="/signup">
+                <Link legacyBehavior href="/signup">
                   <a>
                     Explore <i className="bi bi-arrow-right-short" />
                   </a>
@@ -156,7 +156,7 @@ const Index: NextPage = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Architecto, corporis.
                 </p>
-                <Link href="/price">
+                <Link legacyBehavior href="/price">
                   <a>
                     Explore <i className="bi bi-arrow-right-short" />
                   </a>
@@ -243,8 +243,8 @@ const Index: NextPage = () => {
                     <h4>Mobile apps</h4>
                     <p className="media-normal-text">
                       Stay on top of the markets with the Tendex app for{" "}
-                      <Link href="/apps">Android</Link> or{" "}
-                      <Link href="/apps">iOS</Link>.
+                      <Link legacyBehavior href="/apps">Android</Link> or{" "}
+                      <Link legacyBehavior href="/apps">iOS</Link>.
                     </p>
                   </div>
                 </div>
@@ -279,7 +279,7 @@ const Index: NextPage = () => {
                     palm of your hand. Download the Tendex mobile crypto trading
                     app today`}
                   </p>
-                  <Link href="/price"> Know More </Link>
+                  <Link legacyBehavior href="/price"> Know More </Link>
                 </div>
               </div>
             </div>
@@ -295,7 +295,7 @@ const Index: NextPage = () => {
                     business. The Tendex crypto trading experience, tailor-made
                     for your Windows or MacOS device.
                   </p>
-                  <Link href="/price"> Know More </Link>
+                  <Link legacyBehavior href="/price"> Know More </Link>
                 </div>
               </div>
             </div>
@@ -310,7 +310,7 @@ const Index: NextPage = () => {
                     The Tendex API is designed to provide an easy and efficient
                     way to integrate your trading application into our platform.
                   </p>
-                  <Link href="/price"> Know More </Link>
+                  <Link legacyBehavior href="/price"> Know More </Link>
                 </div>
               </div>
             </div>
@@ -505,7 +505,7 @@ const Index: NextPage = () => {
                   We store the vast majority of the digital assets in secure
                   offline storage.
                 </p>
-                <Link href="/about">
+                <Link legacyBehavior href="/about">
                   <a>
                     Explore <i className="bi bi-arrow-right-short" />
                   </a>
@@ -522,7 +522,7 @@ const Index: NextPage = () => {
                   Cryptocurrency stored on our servers is covered by our
                   insurance policy.
                 </p>
-                <Link href="/about">
+                <Link legacyBehavior href="/about">
                   <a>
                     Explore <i className="bi bi-arrow-right-short" />
                   </a>
@@ -539,7 +539,7 @@ const Index: NextPage = () => {
                   Tendex supports a variety of the most popular digital
                   currencies.
                 </p>
-                <Link href="/about">
+                <Link legacyBehavior href="/about">
                   <a>
                     Explore <i className="bi bi-arrow-right-short" />
                   </a>
@@ -568,12 +568,12 @@ const Index: NextPage = () => {
                   </li>
                 </ul>
                 <div className="mt-4">
-                  <Link href="/app">
+                  <Link legacyBehavior href="/app">
                     <a className="btn btn-primary">
                       <img src="/images/android.svg" alt="Image" />
                     </a>
                   </Link>
-                  <Link href="/app">
+                  <Link legacyBehavior href="/app">
                     <a className="btn btn-primary">
                       <img src="/images/apple.svg" alt="Image" />
                     </a>
@@ -608,14 +608,14 @@ const Index: NextPage = () => {
                     alt="Image"
                   />
                   <div className="card-body">
-                    <Link href="/blog-details">
+                    <Link legacyBehavior href="/blog-details">
                       <a>
                         <h4 className="card-title">
                           Why does Litecoin need MimbleWimble?
                         </h4>
                       </a>
                     </Link>
-                    <Link href="/blog-details">Read More</Link>
+                    <Link legacyBehavior href="/blog-details">Read More</Link>
                   </div>
                 </div>
               </div>
@@ -629,14 +629,14 @@ const Index: NextPage = () => {
                     alt="Image"
                   />
                   <div className="card-body">
-                    <Link href="/blog-details">
+                    <Link legacyBehavior href="/blog-details">
                       <a>
                         <h4 className="card-title">
                           How to securely store wallet seeds?
                         </h4>
                       </a>
                     </Link>
-                    <Link href="/blog-details">Read More</Link>
+                    <Link legacyBehavior href="/blog-details">Read More</Link>
                   </div>
                 </div>
               </div>
@@ -650,14 +650,14 @@ const Index: NextPage = () => {
                     alt="Image"
                   />
                   <div className="card-body">
-                    <Link href="/blog-details">
+                    <Link legacyBehavior href="/blog-details">
                       <a>
                         <h4 className="card-title">
                           Exclusive Interview With Of Litecoin
                         </h4>
                       </a>
                     </Link>
-                    <Link href="/blog-details">Read More</Link>
+                    <Link legacyBehavior href="/blog-details">Read More</Link>
                   </div>
                 </div>
               </div>

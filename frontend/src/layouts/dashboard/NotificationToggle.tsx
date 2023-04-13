@@ -70,7 +70,7 @@ const NotificationToggle: FC = () => {
             </div>
           </a>
 
-          <Link href="/./settings-activity">
+          <Link legacyBehavior href="/./settings-activity">
             <a>
               More <i className="icofont-simple-right"></i>
             </a>

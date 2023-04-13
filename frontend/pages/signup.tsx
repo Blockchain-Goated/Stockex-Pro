@@ -26,7 +26,7 @@ const Signup: NextPage = () => {
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-xl-5 col-md-6">
             <div className="mini-logo text-center my-4">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>
                   <img src="/images/logo.png" alt="" />
                 </a>
@@ -89,11 +89,11 @@ const Signup: NextPage = () => {
                       >
                         I certify that I am 18 years of age or older, and agree
                         to the
-                        <Link href="/helpdesk">
+                        <Link legacyBehavior href="/helpdesk">
                           <a className="text-primary"> User Agreement</a>
                         </Link>{" "}
                         and{" "}
-                        <Link href="/privacy-policy">
+                        <Link legacyBehavior href="/privacy-policy">
                           <a className="text-primary">Privacy Policy</a>
                         </Link>
                         .
@@ -109,7 +109,7 @@ const Signup: NextPage = () => {
                 </form>
                 <div className="text-center">
                   <p className="mt-3 mb-0">
-                    <Link href="/signin">
+                    <Link legacyBehavior href="/signin">
                       <a className="text-primary"> Sign in</a>
                     </Link>{" "}
                     to your account

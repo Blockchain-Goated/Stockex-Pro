@@ -25,7 +25,7 @@ const Otp1: NextPage = () => {
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-xl-5 col-md-6">
             <div className="mini-logo text-center my-3">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>
                   <img src="/images/logo.png" alt="" />
                 </a>
@@ -413,7 +413,7 @@ const Otp1: NextPage = () => {
                 <div className="new-account mt-3">
                   <p>
                     {`Don't get code?`}{" "}
-                    <Link href="/otp-1">
+                    <Link legacyBehavior href="/otp-1">
                       <a className="text-primary">Resend</a>
                     </Link>
                   </p>

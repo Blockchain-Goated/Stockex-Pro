@@ -51,14 +51,14 @@ const Profile: NextPage = () => {
                       faster, and reliable.
                     </p>
 
-                    <Link href="/app">
+                    <Link legacyBehavior href="/app">
                       <a className="btn btn-primary">
                         <img src="/images/android.svg" alt="Image" />
                       </a>
                     </Link>
                     <br />
                     <div className="mt-3"></div>
-                    <Link href="/app">
+                    <Link legacyBehavior href="/app">
                       <a className="btn btn-primary">
                         <img src="/images/apple.svg" alt="Image" />
                       </a>
@@ -72,7 +72,7 @@ const Profile: NextPage = () => {
               <div className="card">
                 <div className="card-header">
                   <h4 className="card-title">Information</h4>
-                  <Link href="/./settings-profile">
+                  <Link legacyBehavior href="/./settings-profile">
                     <a className="btn btn-primary">Edit</a>
                   </Link>
                 </div>

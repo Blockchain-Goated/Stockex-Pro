@@ -19,7 +19,7 @@ const LandingHeader: NextPage = () => {
             <div className="navigation">
               <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="brand-logo">
-                  <Link href="/">
+                  <Link legacyBehavior href="/">
                     <a>
                       <img
                         src="/images/logo.png"
@@ -57,13 +57,13 @@ const LandingHeader: NextPage = () => {
                       <div
                         className={`dropdown-menu ${classNameChange("home")}`}
                       >
-                        <Link href="/">
+                        <Link legacyBehavior href="/">
                           <a className="dropdown-item">Home 1</a>
                         </Link>
-                        <Link href="/index-2">
+                        <Link legacyBehavior href="/index-2">
                           <a className="dropdown-item">Home 2</a>
                         </Link>
-                        <Link href="/index-3">
+                        <Link legacyBehavior href="/index-3">
                           <a className="dropdown-item">Home 3</a>
                         </Link>
                       </div>
@@ -80,28 +80,28 @@ const LandingHeader: NextPage = () => {
                       <div
                         className={`dropdown-menu ${classNameChange("Pages")}`}
                       >
-                        <Link href="/about">
+                        <Link legacyBehavior href="/about">
                           <a className="dropdown-item">About us</a>
                         </Link>
-                        <Link href="/app">
+                        <Link legacyBehavior href="/app">
                           <a className="dropdown-item">App</a>
                         </Link>
-                        <Link href="/price">
+                        <Link legacyBehavior href="/price">
                           <a className="dropdown-item">Price</a>
                         </Link>
-                        <Link href="/price-details">
+                        <Link legacyBehavior href="/price-details">
                           <a className="dropdown-item">Price Details</a>
                         </Link>
-                        <Link href="/team">
+                        <Link legacyBehavior href="/team">
                           <a className="dropdown-item">Team</a>
                         </Link>
-                        <Link href="/blog">
+                        <Link legacyBehavior href="/blog">
                           <a className="dropdown-item">Blog</a>
                         </Link>
-                        <Link href="/blog-details">
+                        <Link legacyBehavior href="/blog-details">
                           <a className="dropdown-item">Blog Details</a>
                         </Link>
-                        <Link href="/career">
+                        <Link legacyBehavior href="/career">
                           <a className="dropdown-item">Career</a>
                         </Link>
                       </div>
@@ -120,29 +120,29 @@ const LandingHeader: NextPage = () => {
                           "Support"
                         )}`}
                       >
-                        <Link href="/contact">
+                        <Link legacyBehavior href="/contact">
                           <a className="dropdown-item">Contact us</a>
                         </Link>
-                        <Link href="/helpdesk">
+                        <Link legacyBehavior href="/helpdesk">
                           <a className="dropdown-item">Help Desk</a>
                         </Link>
-                        <Link href="/privacy-policy">
+                        <Link legacyBehavior href="/privacy-policy">
                           <a className="dropdown-item">Privacy</a>
                         </Link>
-                        <Link href="/faq">
+                        <Link legacyBehavior href="/faq">
                           <a className="dropdown-item">FAQ</a>
                         </Link>
                       </div>
                     </li>
                     <li className="nav-item">
-                      <Link href="/dashboard">
+                      <Link legacyBehavior href="/dashboard">
                         <a className="nav-link">Dashboard</a>
                       </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="signin-btn d-none d-lg-block">
-                  <Link href="/signin">
+                  <Link legacyBehavior href="/signin">
                     <a className="btn btn-primary">Sign in</a>
                   </Link>
                 </div>

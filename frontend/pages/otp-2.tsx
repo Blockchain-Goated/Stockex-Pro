@@ -45,7 +45,7 @@ const Otp2: NextPage = () => {
               </div>
             )}
             <div className="mini-logo text-center my-3">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>
                   <img src="/images/logo.png" alt="" />
                 </a>
@@ -110,7 +110,7 @@ const Otp2: NextPage = () => {
                 <div className="new-account mt-3">
                   <p>
                     {`Don't get code?`}{" "}
-                    <Link href="/otp-1">
+                    <Link legacyBehavior href="/otp-1">
                       <a className="text-primary">Resend</a>
                     </Link>
                   </p>

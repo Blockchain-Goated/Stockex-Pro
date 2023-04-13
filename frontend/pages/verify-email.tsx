@@ -7,7 +7,7 @@ const VerifyEmail: NextPage = () => {
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-xl-5 col-md-6">
             <div className="mini-logo text-center my-4">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>
                   <img src="/images/logo.png" alt="" />
                 </a>
@@ -26,12 +26,12 @@ const VerifyEmail: NextPage = () => {
                       <strong className="text-dark">example@email.com</strong>.
                       Click the link inside to get started!
                     </p>
-                    <Link href="/dashboard">Go to Dashboard</Link>
+                    <Link legacyBehavior href="/dashboard">Go to Dashboard</Link>
                   </div>
                 </form>
               </div>
               <div className="card-footer text-center">
-                <Link href="/signup">{`Email didn't arrive?`}</Link>
+                <Link legacyBehavior href="/signup">{`Email didn't arrive?`}</Link>
               </div>
             </div>
           </div>

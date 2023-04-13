@@ -25,7 +25,7 @@ const Signin: NextPage = () => {
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-xl-5 col-md-6">
             <div className="mini-logo text-center my-4">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>
                   <img src="/images/logo.png" alt="" />
                 </a>
@@ -79,7 +79,7 @@ const Signin: NextPage = () => {
                     </div>
                   </div>
                   <div className="col-6 text-right">
-                    <Link href="/reset">Forgot Password?</Link>
+                    <Link legacyBehavior href="/reset">Forgot Password?</Link>
                   </div>
                   <div className="d-grid gap-2">
                     <button type="submit" className="btn btn-primary">
@@ -89,18 +89,18 @@ const Signin: NextPage = () => {
                 </form>
                 <p className="mt-3 mb-0">
                   {`Don't have an account?`}
-                  <Link href="/signup">
+                  <Link legacyBehavior href="/signup">
                     <a className="text-primary"> Sign up</a>
                   </Link>
                 </p>
               </div>
             </div>
             <div className="privacy-link">
-              <Link href="/helpdesk">
+              <Link legacyBehavior href="/helpdesk">
                 <a>Have an issue with 2-factor authentication?</a>
               </Link>
               <br />
-              <Link href="/privacy-policy">
+              <Link legacyBehavior href="/privacy-policy">
                 <a>Privacy Policy</a>
               </Link>
             </div>

@@ -25,7 +25,7 @@ const Lock: NextPage = () => {
           <div className="row justify-content-center h-100 align-items-center">
             <div className="col-xl-4 col-md-5">
               <div className="mini-logo text-center my-3">
-                <Link href="/dashboard">
+                <Link legacyBehavior href="/dashboard">
                   <a>
                     <img src="/images/logo.png" alt="" />
                   </a>

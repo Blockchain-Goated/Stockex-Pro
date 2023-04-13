@@ -346,7 +346,7 @@ const Dashboard: NextPage = () => {
                   <div className="row">
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link href="/price-details">
+                        <Link legacyBehavior href="/price-details">
                           <a>
                             <div className="price-content">
                               <div className="icon-title">
@@ -362,7 +362,7 @@ const Dashboard: NextPage = () => {
                     </div>
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link href="/price-details">
+                        <Link legacyBehavior href="/price-details">
                           <a>
                             <div className="price-content">
                               <div className="icon-title">
@@ -378,7 +378,7 @@ const Dashboard: NextPage = () => {
                     </div>
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link href="/price-details">
+                        <Link legacyBehavior href="/price-details">
                           <a>
                             <div className="price-content">
                               <div className="icon-title">

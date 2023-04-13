@@ -23,16 +23,16 @@ const LandingFooter: NextPage = () => {
                 <h4 className="widget-title">Company</h4>
                 <ul>
                   <li>
-                    <Link href="/about">About</Link>
+                    <Link legacyBehavior href="/about">About</Link>
                   </li>
                   <li>
-                    <Link href="/career">Career</Link>
+                    <Link legacyBehavior href="/career">Career</Link>
                   </li>
                   <li>
-                    <Link href="/app">App</Link>
+                    <Link legacyBehavior href="/app">App</Link>
                   </li>
                   <li>
-                    <Link href="/team">Our Team</Link>
+                    <Link legacyBehavior href="/team">Our Team</Link>
                   </li>
                 </ul>
               </div>
@@ -42,16 +42,16 @@ const LandingFooter: NextPage = () => {
                 <h4 className="widget-title">Support</h4>
                 <ul>
                   <li>
-                    <Link href="/contact">Contact us</Link>
+                    <Link legacyBehavior href="/contact">Contact us</Link>
                   </li>
                   <li>
-                    <Link href="/faq">FAQ</Link>
+                    <Link legacyBehavior href="/faq">FAQ</Link>
                   </li>
                   <li>
-                    <Link href="/blog">Blog</Link>
+                    <Link legacyBehavior href="/blog">Blog</Link>
                   </li>
                   <li>
-                    <Link href="/helpdesk">Helpdesk</Link>
+                    <Link legacyBehavior href="/helpdesk">Helpdesk</Link>
                   </li>
                 </ul>
               </div>
@@ -63,32 +63,32 @@ const LandingFooter: NextPage = () => {
                   <div className="col-xl-6">
                     <ul>
                       <li>
-                        <Link href="/trade">ETH to BTC</Link>
+                        <Link legacyBehavior href="/trade">ETH to BTC</Link>
                       </li>
                       <li>
-                        <Link href="/trade">BTC to ETH</Link>
+                        <Link legacyBehavior href="/trade">BTC to ETH</Link>
                       </li>
                       <li>
-                        <Link href="/trade">LTC to ETH</Link>
+                        <Link legacyBehavior href="/trade">LTC to ETH</Link>
                       </li>
                       <li>
-                        <Link href="/trade">USDT to BTC</Link>
+                        <Link legacyBehavior href="/trade">USDT to BTC</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="col-xl-6">
                     <ul>
                       <li>
-                        <Link href="/trade">BTC to USDT</Link>
+                        <Link legacyBehavior href="/trade">BTC to USDT</Link>
                       </li>
                       <li>
-                        <Link href="/trade">LTC to BTC</Link>
+                        <Link legacyBehavior href="/trade">LTC to BTC</Link>
                       </li>
                       <li>
-                        <Link href="/trade">XMR to BTC</Link>
+                        <Link legacyBehavior href="/trade">XMR to BTC</Link>
                       </li>
                       <li>
-                        <Link href="/trade">ETC to DASH</Link>
+                        <Link legacyBehavior href="/trade">ETC to DASH</Link>
                       </li>
                     </ul>
                   </div>
@@ -105,7 +105,7 @@ const LandingFooter: NextPage = () => {
               <div className="copyright">
                 <p>
                   © Copyright {new Date().getFullYear()}{" "}
-                  <Link href="/">
+                  <Link legacyBehavior href="/">
                     <a target="_blank"> Tendex </a>
                   </Link>
                   I All Rights Reserved

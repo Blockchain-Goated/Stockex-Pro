@@ -1,6 +1,12 @@
-import create from "zustand";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-export const useAuthStore = create((set) => ({
-  isAuthenticated: false,
-  setAuth: (value) => set(() => ({ isAuthenticated: value })),
-}));
+export const useAuthStore = create(
+  persist(
+    (set) => ({
+      isAuthenticated: false,
+      setAuth: (value) => set(() => ({ isAuthenticated: value })),
+    }),
+    { name: "auth" } // Name of localstorage key
+  )
+);

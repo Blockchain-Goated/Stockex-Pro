@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { copyText } from "../src/utils/utils";
+import { withSessionSsr } from "../libs/session";
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -11,7 +12,7 @@ const PriceDetailsChart = dynamic(
   }
 );
 
-const PriceDetails: NextPage = () => {
+const PriceDetails: NextPage = ({user}) => {
   const router = useRouter();
   return (
     <LandingLayout>
@@ -369,5 +370,19 @@ const PriceDetails: NextPage = () => {
     </LandingLayout>
   );
 };
+
+export const getServerSideProps = withSessionSsr(async ({ req, res }) => {
+  const user = req.session.user;
+
+  if (!user) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { user },
+  };
+});
 
 export default PriceDetails;

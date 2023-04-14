@@ -1,6 +1,6 @@
-import mongoose, { Connection } from "mongoose";
+import mongoose from "mongoose";
 
-const MONGODB_URI: string | undefined = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
   throw new Error(
@@ -13,24 +13,10 @@ if (!MONGODB_URI) {
  * in development. This prevents connections growing exponentially
  * during API Route usage.
  */
-interface Global {
-  mongoose: {
-    conn: Connection | null;
-    promise: Promise<typeof mongoose> | null;
-  };
-}
-
-let globalThis: Global;
-if (typeof window === "undefined") {
-  globalThis = global as any as Global;
-} else {
-  globalThis = window as any as Global;
-}
-
-let cached = globalThis.mongoose;
+let cached = global.mongoose;
 
 if (!cached) {
-  cached = globalThis.mongoose = { conn: null, promise: null };
+  cached = global.mongoose = { conn: null, promise: null };
 }
 
 async function dbConnect() {
@@ -42,18 +28,15 @@ async function dbConnect() {
     const opts = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      bufferCommands: false,
-      bufferMaxEntries: 0,
-      useFindAndModify: false,
-      useCreateIndex: true,
+      serverSelectionTimeoutMS: 30000,
     };
 
-    //@ts-ignore
+    mongoose.set("debug", true);
+
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       return mongoose;
     });
   }
-  //@ts-ignore
   cached.conn = await cached.promise;
   return cached.conn;
 }

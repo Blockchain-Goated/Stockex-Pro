@@ -150,6 +150,8 @@ export default async function handler(
     }
   }
 
+  prmRCTwhc5CCI5JuZEYa0imlZRMG6VFM;
+
   // Define the endpoint to place a buy order
   const endpoint =
     "https://apiconnect.angelbroking.com/rest/secure/angelbroking/order/v1/placeOrder";

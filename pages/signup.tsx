@@ -3,6 +3,8 @@ import Link from "next/dist/client/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { useAuthStore } from "../libs/auth";
 
 const Signup: NextPage = () => {
   const router = useRouter();
@@ -11,6 +13,7 @@ const Signup: NextPage = () => {
     email: "",
     password: "",
   });
+  const setAuth = useAuthStore((state: { setAuth: any }) => state.setAuth);
   const [error, setError] = useState(false);
   const { name, email, password } = formData;
   const onChange = (e: any) =>
@@ -19,18 +22,37 @@ const Signup: NextPage = () => {
     e.preventDefault();
     setError(true);
     if (name && email && password) {
-      await axios({
-        method: "POST",
-        url: "/api/auth/register",
-        headers: { "Content-Type": "application/json" },
-        data: { email, password, name },
-      })
-        .then((response) => {
-          return router.push("/index");
-        })
-        .catch((error) => {
-          console.log(`Error in registration: ${error}`);
-        });
+      try {
+        await axios
+          .post(
+            "/api/register",
+            { email, password, name },
+            {
+              headers: { "Content-Type": "application/json" },
+            }
+          )
+          .then((res) => {
+            toast("Signup Successful", {
+              hideProgressBar: true,
+              autoClose: 2000,
+              type: "success",
+            });
+            setAuth(true);
+            return router.push("/index");
+          })
+          .catch((err) => {
+            toast(`${err.response.data.message}`, {
+              hideProgressBar: true,
+              autoClose: 2000,
+              type: "error",
+            });
+            console.log(`Error from server: ${err.response.data.message}`);
+          });
+      } catch (error: any) {
+        console.log(
+          `Error in registration: ${JSON.stringify(error.response.data)}`
+        );
+      }
     }
   };
   return (

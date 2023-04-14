@@ -13,8 +13,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "libs/session.js", "pages/api/session.js", "libs/useUser.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "libs/session.js", "pages/api/session.js", "libs/useUser.js", "libs/dbConnect.js", "models/user.model.js"],
   "exclude": ["node_modules"]
 }

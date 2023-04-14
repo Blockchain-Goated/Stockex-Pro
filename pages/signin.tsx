@@ -2,21 +2,53 @@ import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useAuthStore } from "../libs/auth";
+
 const Signin: NextPage = () => {
+  const setAuth = useAuthStore((state) => state.setAuth);
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
   const [error, setError] = useState(false);
+
   const { email, password } = formData;
   const onChange = (e: any) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
     setError(true);
     if (email && password) {
-      router.push("/otp-2");
+      await axios
+        .post(
+          "/api/login",
+          { email, password },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        )
+        .then((response) => {
+          console.log(`Login response: ${response}`);
+
+          toast("Login Successful", {
+            hideProgressBar: true,
+            autoClose: 2000,
+            type: "success",
+          });
+          setAuth(true);
+          return router.push("/");
+        })
+        .catch((error) => {
+          toast(`${error.response.data.message}`, {
+            hideProgressBar: true,
+            autoClose: 2000,
+            type: "error",
+          });
+          console.log(`Error in login: ${error.response.data.message}`);
+        });
     }
   };
   return (
@@ -79,7 +111,9 @@ const Signin: NextPage = () => {
                     </div>
                   </div>
                   <div className="col-6 text-right">
-                    <Link legacyBehavior href="/reset">Forgot Password?</Link>
+                    <Link legacyBehavior href="/reset">
+                      Forgot Password?
+                    </Link>
                   </div>
                   <div className="d-grid gap-2">
                     <button type="submit" className="btn btn-primary">

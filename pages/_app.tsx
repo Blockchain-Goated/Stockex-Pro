@@ -2,12 +2,11 @@ import type { AppProps } from "next/app";
 import { Fragment, useEffect, useState } from "react";
 import PreLoader from "../src/components/PreLoader";
 import "../styles/globals.css";
-import { useAuthStore } from "../libs/auth";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const authStore = useAuthStore();
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [load, setLoad] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -17,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       {load && <PreLoader />}
-      <Component {...pageProps} />
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
       <ToastContainer />
     </Fragment>
   );

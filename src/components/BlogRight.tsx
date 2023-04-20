@@ -25,16 +25,16 @@ const BlogRight: FC = () => {
               <div className="media-body ms-1">
                 <h5 className="mt-0 mb-1">List-based media object</h5>
                 <div className="meta-info">
-                  <Link legacyBehavior href="/blog">
-                    <a>
+                  <Link  href="/blog">
+                    
                       <i className="la la-user"></i> Admin
-                    </a>
+                    
                   </Link>
-                  <Link legacyBehavior href="/blog">
-                    <a>
+                  <Link  href="/blog">
+                    
                       <i className="la la-calendar"></i> 31 July,
                       <span id="year"></span>
-                    </a>
+                    
                   </Link>
                 </div>
               </div>
@@ -44,16 +44,16 @@ const BlogRight: FC = () => {
               <div className="media-body ms-1">
                 <h5 className="mt-0 mb-1">List-based media object</h5>
                 <div className="meta-info">
-                  <Link legacyBehavior href="/blog">
-                    <a>
+                  <Link  href="/blog">
+                    
                       <i className="la la-user"></i> Admin
-                    </a>
+                    
                   </Link>
-                  <Link legacyBehavior href="/blog">
-                    <a>
+                  <Link  href="/blog">
+                    
                       <i className="la la-calendar"></i> 31 July,
                       <span id="year"></span>
-                    </a>
+                    
                   </Link>
                 </div>
               </div>
@@ -63,16 +63,16 @@ const BlogRight: FC = () => {
               <div className="media-body ms-1">
                 <h5 className="mt-0 mb-1">List-based media object</h5>
                 <div className="meta-info">
-                  <Link legacyBehavior href="/blog">
-                    <a>
+                  <Link  href="/blog">
+                    
                       <i className="la la-user"></i> Admin
-                    </a>
+                    
                   </Link>
-                  <Link legacyBehavior href="/blog">
-                    <a>
+                  <Link  href="/blog">
+                    
                       <i className="la la-calendar"></i> 31 July,
                       <span id="year"></span>
-                    </a>
+                    
                   </Link>
                 </div>
               </div>
@@ -120,20 +120,20 @@ const BlogRight: FC = () => {
         <div className="widget-tag">
           <h3 className="widget-title">Tags</h3>
           <div className="tag-group">
-            <Link legacyBehavior href="/blog">
-              <a>Tendex</a>
+            <Link  href="/blog">
+              Tendex
             </Link>
-            <Link legacyBehavior href="/blog">
-              <a>Tendex</a>
+            <Link  href="/blog">
+              Tendex
             </Link>
-            <Link legacyBehavior href="/blog">
-              <a>Tendex</a>
+            <Link  href="/blog">
+              Tendex
             </Link>
-            <Link legacyBehavior href="/blog">
-              <a>Tendex</a>
+            <Link  href="/blog">
+              Tendex
             </Link>
-            <Link legacyBehavior href="/blog">
-              <a>Tendex</a>
+            <Link  href="/blog">
+              Tendex
             </Link>
           </div>
         </div>

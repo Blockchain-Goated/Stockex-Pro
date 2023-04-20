@@ -349,8 +349,8 @@ const Dashboard: NextPage = () => {
                   <div className="row">
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link legacyBehavior href="/price-details">
-                          <a>
+                        <Link  href="/price-details">
+                          
                             <div className="price-content">
                               <div className="icon-title">
                                 <i className="cc BTC"></i>
@@ -359,14 +359,14 @@ const Dashboard: NextPage = () => {
                               <h5>$ 11,785.10</h5>
                             </div>
                             <PriceChart />
-                          </a>
+                          
                         </Link>
                       </div>
                     </div>
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link legacyBehavior href="/price-details">
-                          <a>
+                        <Link  href="/price-details">
+                          
                             <div className="price-content">
                               <div className="icon-title">
                                 <i className="cc ETH"></i>
@@ -375,14 +375,14 @@ const Dashboard: NextPage = () => {
                               <h5>$ 11,785.10</h5>
                             </div>
                             <PriceChart />
-                          </a>
+                          
                         </Link>
                       </div>
                     </div>
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link legacyBehavior href="/price-details">
-                          <a>
+                        <Link  href="/price-details">
+                          
                             <div className="price-content">
                               <div className="icon-title">
                                 <i className="cc USDT"></i>
@@ -391,7 +391,7 @@ const Dashboard: NextPage = () => {
                               <h5>$ 11,785.10</h5>
                             </div>
                             <PriceChart />
-                          </a>
+                          
                         </Link>
                       </div>
                     </div>

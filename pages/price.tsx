@@ -25,8 +25,8 @@ const Price: NextPage = () => {
           <div className="row">
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-btc">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc BTC" />
@@ -35,14 +35,14 @@ const Price: NextPage = () => {
                       <h5>$11,785.10</h5>
                     </div>
                     <PriceChart />
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-eth">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc ETH" />
@@ -52,14 +52,14 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id='chart2' /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-usdt">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc USDT" />
@@ -69,14 +69,14 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id='chart3' /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-xrp">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc XRP" />
@@ -86,14 +86,14 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id="chart4" /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-ltc">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc LTC" />
@@ -103,14 +103,14 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id="chart5" /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-ada">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc ADA" />
@@ -120,14 +120,14 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id="chart6" /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-eos">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc EOS" />
@@ -137,14 +137,14 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id="chart7" /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-xmr">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc XMR" />
@@ -154,14 +154,14 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id="chart8" /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-xtz">
-                <Link legacyBehavior href="/price-details">
-                  <a>
+                <Link  href="/price-details">
+                  <>
                     <div className="price-content">
                       <div className="icon-title">
                         <i className="cc XTZ" />
@@ -171,13 +171,13 @@ const Price: NextPage = () => {
                     </div>
                     <PriceChart />
                     {/* <div id="chart9" /> */}
-                  </a>
+                  </>
                 </Link>
               </div>
             </div>
             {/* <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div class="price-widget">
-                  <Link legacyBehavior href="/price-details"><a >
+                  <Link  href="/price-details"><a >
                       <div class="price-content">
                           <div class="icon-title">
                               <i class="cc XEM"></i>
@@ -192,7 +192,7 @@ const Price: NextPage = () => {
           </div>
           <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div class="price-widget">
-                  <Link legacyBehavior href="/price-details"><a >
+                  <Link  href="/price-details"><a >
                       <div class="price-content">
                           <div class="icon-title">
                               <i class="cc NEO"></i>
@@ -207,7 +207,7 @@ const Price: NextPage = () => {
           </div>
           <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div class="price-widget">
-                  <Link legacyBehavior href="/price-details"><a >
+                  <Link  href="/price-details"><a >
                       <div class="price-content">
                           <div class="icon-title">
                               <i class="cc DASH"></i>
@@ -222,7 +222,7 @@ const Price: NextPage = () => {
           </div>
           <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div class="price-widget">
-                  <Link legacyBehavior href="/price-details"><a >
+                  <Link  href="/price-details"><a >
                       <div class="price-content">
                           <div class="icon-title">
                               <i class="cc ETC"></i>
@@ -237,7 +237,7 @@ const Price: NextPage = () => {
           </div>
           <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div class="price-widget">
-                  <Link legacyBehavior href="/price-details"><a >
+                  <Link  href="/price-details"><a >
                       <div class="price-content">
                           <div class="icon-title">
                               <i class="cc DGB"></i>
@@ -252,7 +252,7 @@ const Price: NextPage = () => {
           </div>
           <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div class="price-widget">
-                  <Link legacyBehavior href="/price-details"><a >
+                  <Link  href="/price-details"><a >
                       <div class="price-content">
                           <div class="icon-title">
                               <i class="cc DCR"></i>

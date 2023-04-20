@@ -19,14 +19,14 @@ const SettingsLayouts: FC<{ name?: string }> = ({ children, name }) => {
               <div className="card h-unset">
                 <div className="card-header">
                   <div className="settings-menu" id="settings_menus______">
-                    <Link legacyBehavior href="/settings-profile">Profile</Link>
-                    <Link legacyBehavior href="/settings-application">Application</Link>
-                    <Link legacyBehavior href="/settings-security">Security</Link>
-                    <Link legacyBehavior href="/settings-activity">Activity</Link>
-                    <Link legacyBehavior href="/settings-privacy">Privacy</Link>
-                    <Link legacyBehavior href="/settings-payment-method">Payment Method</Link>
-                    <Link legacyBehavior href="/settings-api">API</Link>
-                    <Link legacyBehavior href="/settings-fees">Fees</Link>
+                    <Link  href="/settings-profile">Profile</Link>
+                    <Link  href="/settings-application">Application</Link>
+                    <Link  href="/settings-security">Security</Link>
+                    <Link  href="/settings-activity">Activity</Link>
+                    <Link  href="/settings-privacy">Privacy</Link>
+                    <Link  href="/settings-payment-method">Payment Method</Link>
+                    <Link  href="/settings-api">API</Link>
+                    <Link  href="/settings-fees">Fees</Link>
                   </div>
                 </div>
                 {children}

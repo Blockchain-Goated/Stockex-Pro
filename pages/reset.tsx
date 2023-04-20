@@ -27,10 +27,10 @@ const Reset: NextPage = () => {
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-xl-4 col-md-5">
             <div className="mini-logo text-center my-3">
-              <Link legacyBehavior href="/">
-                <a>
+              <Link  href="/">
+                
                   <img src="/images/logo.png" alt="" />
-                </a>
+           
               </Link>
               <h4 className="card-title mt-5">Reset Password</h4>
             </div>
@@ -59,8 +59,8 @@ const Reset: NextPage = () => {
                 <div className="new-account mt-3">
                   <p>
                     {`Don't get code?`}{" "}
-                    <Link legacyBehavior href="/otp-1">
-                      <a className="text-primary">Resend</a>
+                    <Link className="text-primary" href="/otp-1">
+                      Resend
                     </Link>
                   </p>
                 </div>

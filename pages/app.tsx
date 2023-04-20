@@ -41,15 +41,15 @@ const Apps: NextPage = () => {
                   </li>
                 </ul>
                 <div className="mt-4">
-                  <Link legacyBehavior href="/app">
-                    <a className="btn btn-success my-1 waves-effect">
+                  <Link className="btn btn-success my-1 waves-effect" href="/app">
+                   
                       <img src="/images/android.svg" alt="Image" />
-                    </a>
+                    
                   </Link>
-                  <Link legacyBehavior href="/app">
-                    <a className="btn btn-success my-1 waves-effect">
+                  <Link className="btn btn-success my-1 waves-effect" href="/app">
+                   
                       <img src="/images/apple.svg" alt="Image" />
-                    </a>
+                    
                   </Link>
                 </div>
               </div>

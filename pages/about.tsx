@@ -22,8 +22,8 @@ const About: NextPage = () => {
                   with new digital currencies like bitcoin, ethereum, and
                   litecoin. We're based in San Francisco, California.`}
                 </p>
-                <Link legacyBehavior href="/contact">
-                  <a className="btn btn-primary my-4">Get in Touch</a>
+                <Link className="btn btn-primary my-4" href="/contact">
+                  Get in Touch
                 </Link>
               </div>
             </div>
@@ -89,8 +89,8 @@ const About: NextPage = () => {
                   money. Tendex, the most trusted company in the space, is
                   looking for you to join our rapidly growing team.
                 </p>
-                <Link legacyBehavior href="/career">
-                  <a className="btn btn-primary">Read more</a>
+                <Link className="btn btn-primary" href="/career">
+                  Read more
                 </Link>
               </div>
             </div>

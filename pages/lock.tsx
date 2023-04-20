@@ -28,10 +28,10 @@ const Lock: NextPage = () => {
           <div className="row justify-content-center h-100 align-items-center">
             <div className="col-xl-4 col-md-5">
               <div className="mini-logo text-center my-3">
-                <Link legacyBehavior href="/dashboard">
-                  <a>
+                <Link  href="/dashboard">
+      
                     <img src="/images/logo.png" alt="" />
-                  </a>
+                  
                 </Link>
                 <h4 className="card-title mt-5">Locked</h4>
               </div>

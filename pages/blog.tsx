@@ -22,14 +22,14 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link legacyBehavior href="/blog-details">
-                          <a>
+                        <Link  href="/blog-details">
+                          
                             <h4 className="card-title">
                               Why does Litecoin need MimbleWimble?
                             </h4>
-                          </a>
+                          
                         </Link>
-                        <Link legacyBehavior href="/blog-details">
+                        <Link  href="/blog-details">
                           Read More
                         </Link>
                       </div>
@@ -45,14 +45,14 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link legacyBehavior href="/blog-details">
-                          <a>
+                        <Link  href="/blog-details">
+                          
                             <h4 className="card-title">
                               How to securely store your HD wallet seeds?
                             </h4>
-                          </a>
+                          
                         </Link>
-                        <Link legacyBehavior href="/blog-details">
+                        <Link  href="/blog-details">
                           Read More
                         </Link>
                       </div>
@@ -68,14 +68,14 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link legacyBehavior href="/blog-details">
-                          <a>
+                        <Link  href="/blog-details">
+                          
                             <h4 className="card-title">
                               Exclusive Interview With Xinxi Wang Of Litecoin
                             </h4>
-                          </a>
+                          
                         </Link>
-                        <Link legacyBehavior href="/blog-details">
+                        <Link  href="/blog-details">
                           Read More
                         </Link>
                       </div>
@@ -91,14 +91,14 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link legacyBehavior href="/blog-details">
-                          <a>
+                        <Link  href="/blog-details">
+                          
                             <h4 className="card-title">
                               Exclusive Interview With Xinxi Wang Of Litecoin
                             </h4>
-                          </a>
+                          
                         </Link>
-                        <Link legacyBehavior href="/blog-details">
+                        <Link  href="/blog-details">
                           Read More
                         </Link>
                       </div>

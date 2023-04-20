@@ -163,8 +163,8 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link legacyBehavior href="/price-details">
-                            <a className="btn btn-success">Buy</a>
+                          <Link className="btn btn-success" href="/price-details">
+                            Buy
                           </Link>
                         </td>
                       </tr>
@@ -187,8 +187,8 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link legacyBehavior href="/price-details">
-                            <a className="btn btn-success">Buy</a>
+                          <Link className="btn btn-success" href="/price-details">
+                            Buy
                           </Link>
                         </td>
                       </tr>
@@ -211,8 +211,8 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link legacyBehavior href="/price-details">
-                            <a className="btn btn-success">Buy</a>
+                          <Link className="btn btn-success" href="/price-details">
+                            Buy
                           </Link>
                         </td>
                       </tr>
@@ -235,8 +235,8 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link legacyBehavior href="/price-details">
-                            <a className="btn btn-success">Buy</a>
+                          <Link className="btn btn-success" href="/price-details">
+                            Buy
                           </Link>
                         </td>
                       </tr>
@@ -400,8 +400,8 @@ const Index2: NextPage = () => {
                   accept any of 140+ cryptocurrencies listed on Tendex and get
                   revenue for each transaction made.
                 </p>
-                <Link legacyBehavior href="/faq">
-                  <a className="btn btn-dark px-4">Learn more</a>
+                <Link className="btn btn-dark px-4" href="/faq">
+                 Learn more
                 </Link>
               </div>
             </div>
@@ -418,10 +418,10 @@ const Index2: NextPage = () => {
                   website, blog or social media profile. Get 50% of our revenue
                   from every transaction made via either of the tools used.
                 </p>
-                <Link legacyBehavior href="/helpdesk">
-                  <a className="btn btn-outline-dark px-4">
+                <Link className="btn btn-outline-dark px-4" href="/helpdesk">
+                  
                     Become an affiliate
-                  </a>
+                  
                 </Link>
               </div>
             </div>
@@ -504,15 +504,15 @@ const Index2: NextPage = () => {
                   </li>
                 </ul>
                 <div className="mt-4">
-                  <Link legacyBehavior href="/app">
-                    <a className="btn btn-success my-1 waves-effect">
+                  <Link className="btn btn-success my-1 waves-effect" href="/app">
+                   
                       <img src="/images/android.svg" alt="Image" />
-                    </a>
+                   
                   </Link>
-                  <Link legacyBehavior href="/app">
-                    <a className="btn btn-success my-1 waves-effect">
+                  <Link className="btn btn-success my-1 waves-effect" href="/app">
+                 
                       <img src="/images/apple.svg" alt="Image" />
-                    </a>
+                
                   </Link>
                 </div>
               </div>

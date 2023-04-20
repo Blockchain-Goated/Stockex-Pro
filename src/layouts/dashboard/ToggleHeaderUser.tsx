@@ -44,35 +44,35 @@ const ToggleHeaderUser: FC = () => {
             <span>0.00 USD</span>
           </div>
         </div>
-        <Link legacyBehavior href="/profile">
-          <a className="dropdown-item">
+        <Link className="dropdown-item" href="/profile">
+
             <i className="bi bi-person"></i>Profile
-          </a>
+   
         </Link>
-        <Link legacyBehavior href="/wallet">
-          <a className="dropdown-item">
+        <Link className="dropdown-item" href="/wallet">
+     
             <i className="bi bi-wallet"></i>Wallet
-          </a>
+         
         </Link>
-        <Link legacyBehavior href="/settings-profile">
-          <a className="dropdown-item">
+        <Link className="dropdown-item" href="/settings-profile">
+      
             <i className="bi bi-gear"></i> Setting
-          </a>
+       
         </Link>
-        <Link legacyBehavior href="/settings-activity">
-          <a className="dropdown-item">
+        <Link className="dropdown-item" href="/settings-activity">
+        
             <i className="bi bi-clock-history"></i> Activity
-          </a>
+        
         </Link>
-        <Link legacyBehavior href="/lock">
-          <a className="dropdown-item">
+        <Link className="dropdown-item" href="/lock">
+     
             <i className="bi bi-lock"></i>Lock
-          </a>
+       
         </Link>
-        <Link legacyBehavior href="/signin">
-          <a className="dropdown-item logout">
+        <Link className="dropdown-item logout" href="/signin">
+         
             <i className="bi bi-power"></i> Logout
-          </a>
+         
         </Link>
       </div>
     </div>

@@ -2,14 +2,12 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { MouseEvent, useEffect, useState } from "react";
 import { activeLandingHeaderMenu } from "../../utils/utils";
-import { useAuthStore } from "../../../libs/auth";
-import axios from "axios";
-import { toast } from "react-toastify";
+import { signOut } from "next-auth/react"
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react"
 
 const LandingHeader: NextPage = () => {
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  const setAuth = useAuthStore((state: { setAuth: any }) => state.setAuth);
+  const { data: session, status } = useSession()
   const router = useRouter();
   useEffect(() => {
     activeLandingHeaderMenu();
@@ -19,34 +17,7 @@ const LandingHeader: NextPage = () => {
 
   async function logOut(e: MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
-    setAuth(false);
-    await axios
-      .post(
-        "/api/logout",
-
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      )
-      .then((response) => {
-        console.log(`Logout response: ${response}`);
-
-        toast("Logout Successful", {
-          hideProgressBar: true,
-          autoClose: 2000,
-          type: "success",
-        });
-        setAuth(false);
-        return router.push("/");
-      })
-      .catch((error) => {
-        toast(`${error.response.data.message}`, {
-          hideProgressBar: true,
-          autoClose: 2000,
-          type: "error",
-        });
-        console.log(`Error in logout: ${error.response.data.message}`);
-      });
+    signOut();
   }
 
   const setValue = (value: string) =>
@@ -60,8 +31,8 @@ const LandingHeader: NextPage = () => {
             <div className="navigation">
               <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="brand-logo">
-                  <Link legacyBehavior href="/">
-                    <a>
+                  <Link  href="/">
+             <a>
                       <img
                         src="/images/logo.png"
                         alt="Logo"
@@ -72,7 +43,7 @@ const LandingHeader: NextPage = () => {
                         alt="Logo"
                         className="logo-white"
                       />
-                    </a>
+                  </a>
                   </Link>
                 </div>
                 <button
@@ -98,14 +69,14 @@ const LandingHeader: NextPage = () => {
                       <div
                         className={`dropdown-menu ${classNameChange("home")}`}
                       >
-                        <Link legacyBehavior href="/">
-                          <a className="dropdown-item">Home 1</a>
+                        <Link className="dropdown-item" href="/">
+                         Home 1
                         </Link>
-                        <Link legacyBehavior href="/index-2">
-                          <a className="dropdown-item">Home 2</a>
+                        <Link className="dropdown-item" href="/index-2">
+                         Home 2
                         </Link>
-                        <Link legacyBehavior href="/index-3">
-                          <a className="dropdown-item">Home 3</a>
+                        <Link className="dropdown-item" href="/index-3">
+                          Home 3
                         </Link>
                       </div>
                     </li>
@@ -121,29 +92,29 @@ const LandingHeader: NextPage = () => {
                       <div
                         className={`dropdown-menu ${classNameChange("Pages")}`}
                       >
-                        <Link legacyBehavior href="/about">
-                          <a className="dropdown-item">About us</a>
+                        <Link className="dropdown-item" href="/about">
+                          About us
                         </Link>
-                        <Link legacyBehavior href="/app">
-                          <a className="dropdown-item">App</a>
+                        <Link className="dropdown-item" href="/app">
+                          App
                         </Link>
-                        <Link legacyBehavior href="/price">
-                          <a className="dropdown-item">Price</a>
+                        <Link className="dropdown-item" href="/price">
+                          Price
                         </Link>
-                        <Link legacyBehavior href="/price-details">
-                          <a className="dropdown-item">Price Details</a>
+                        <Link className="dropdown-item" href="/price-details">
+                          Price Details
                         </Link>
-                        <Link legacyBehavior href="/team">
-                          <a className="dropdown-item">Team</a>
+                        <Link className="dropdown-item" href="/team">
+                          Team
                         </Link>
-                        <Link legacyBehavior href="/blog">
-                          <a className="dropdown-item">Blog</a>
+                        <Link className="dropdown-item" href="/blog">
+                          Blog
                         </Link>
-                        <Link legacyBehavior href="/blog-details">
-                          <a className="dropdown-item">Blog Details</a>
+                        <Link className="dropdown-item" href="/blog-details">
+                         Blog Details
                         </Link>
-                        <Link legacyBehavior href="/career">
-                          <a className="dropdown-item">Career</a>
+                        <Link className="dropdown-item" href="/career">
+                          Career
                         </Link>
                       </div>
                     </li>
@@ -161,28 +132,28 @@ const LandingHeader: NextPage = () => {
                           "Support"
                         )}`}
                       >
-                        <Link legacyBehavior href="/contact">
-                          <a className="dropdown-item">Contact us</a>
+                        <Link className="dropdown-item" href="/contact">
+                          Contact us
                         </Link>
-                        <Link legacyBehavior href="/helpdesk">
-                          <a className="dropdown-item">Help Desk</a>
+                        <Link className="dropdown-item" href="/helpdesk">
+                          Help Desk
                         </Link>
-                        <Link legacyBehavior href="/privacy-policy">
-                          <a className="dropdown-item">Privacy</a>
+                        <Link className="dropdown-item" href="/privacy-policy">
+                         Privacy
                         </Link>
-                        <Link legacyBehavior href="/faq">
-                          <a className="dropdown-item">FAQ</a>
+                        <Link className="dropdown-item" href="/faq">
+                          FAQ
                         </Link>
                       </div>
                     </li>
                     <li className="nav-item">
-                      <Link legacyBehavior href="/dashboard">
-                        <a className="nav-link">Dashboard</a>
+                      <Link className="nav-link" href="/dashboard">
+                        Dashboard
                       </Link>
                     </li>
                   </ul>
                 </div>
-                {isAuthenticated === true && (
+                {status === "authenticated" && (
                   <div className="signin-btn d-none d-lg-block">
                     <button
                       className="btn btn-primary"
@@ -192,10 +163,10 @@ const LandingHeader: NextPage = () => {
                     </button>
                   </div>
                 )}
-                {isAuthenticated === false && (
+                {!(status === "authenticated") && (
                   <div className="signin-btn d-none d-lg-block">
-                    <Link legacyBehavior href="/signin">
-                      <a className="btn btn-primary">Sign in</a>
+                    <Link className="btn btn-primary" href="/signin">
+                      Sign in
                     </Link>
                   </div>
                 )}

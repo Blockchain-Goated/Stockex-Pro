@@ -9,57 +9,57 @@ const DashboardSidebar: FC = () => {
   return (
     <div className="sidebar">
       <div className="brand-logo">
-        <Link legacyBehavior href="/dashboard">
-          <a>
+        <Link  href="/dashboard">
+          
             <img src="/images/logoi.png" alt="" width="30" />
-          </a>
+          
         </Link>
       </div>
       <div className="menu" id="d_menu">
         <ul>
           <li>
-            <Link legacyBehavior href="/dashboard">
-              <a>
+            <Link  href="/dashboard">
+              
                 <span>
                   <i className="bi bi-house"></i>
                 </span>
-              </a>
+              
             </Link>
           </li>
           <li>
-            <Link legacyBehavior href="/trade">
-              <a>
+            <Link  href="/trade">
+              
                 <span>
                   <i className="bi bi-globe2"></i>
                 </span>
-              </a>
+              
             </Link>
           </li>
           <li>
-            <Link legacyBehavior href="/wallet">
-              <a>
+            <Link  href="/wallet">
+              
                 <span>
                   <i className="bi bi-wallet2"></i>
                 </span>
-              </a>
+              
             </Link>
           </li>
           <li>
-            <Link legacyBehavior href="/settings-profile">
-              <a id="settings__mainMenu">
+            <Link id="settings__mainMenu" href="/settings-profile">
+  
                 <span>
                   <i className="bi bi-gear"></i>
                 </span>
-              </a>
+          
             </Link>
           </li>
           <li className="logout">
-            <Link legacyBehavior href="/signin">
-              <a>
+            <Link  href="/signin">
+            
                 <span>
                   <i className="bi bi-power"></i>
                 </span>
-              </a>
+              
             </Link>
           </li>
         </ul>

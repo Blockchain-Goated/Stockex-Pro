@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { copyText } from "../src/utils/utils";
-import { withSessionSsr } from "../libs/session";
 import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const PriceDetailsChart = dynamic(

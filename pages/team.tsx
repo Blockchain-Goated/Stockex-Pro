@@ -17,10 +17,10 @@ const Team: NextPage = () => {
                   {`We're always looking to hire talented folks to join our
                   ever-growing team of designers, engineers, and support staff.`}
                 </p>
-                <Link legacyBehavior href="/career">
-                  <a className="btn btn-primary px-4 py-2">
+                <Link className="btn btn-primary px-4 py-2" href="/career">
+             
                     View Open Position
-                  </a>
+                 
                 </Link>
               </div>
             </div>
@@ -206,8 +206,8 @@ const Team: NextPage = () => {
               <div className="cta1-content text-center">
                 <h2>Interested in joining our team?</h2>
                 <p>{`Hit us up and we'll get in touch with you.`}</p>
-                <Link legacyBehavior href="/career">
-                  <a className="btn btn-primary">Apply Now</a>
+                <Link className="btn btn-primary" href="/career">
+                 Apply Now
                 </Link>
               </div>
             </div>

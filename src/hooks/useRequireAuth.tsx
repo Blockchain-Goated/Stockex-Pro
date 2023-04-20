@@ -9,7 +9,7 @@ const useRequireAuth = () => {
   useEffect(() => {
     // Redirect to login page if user is not authenticated
     if (status === "loading" || !session) {
-      router.push("/login");
+      router.push("/signin");
     }
   }, [status, router, session]);
 

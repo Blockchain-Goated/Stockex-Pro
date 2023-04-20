@@ -1,0 +1,50 @@
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: url("../public/images/bg/signbg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+
+.inner_cont {
+  z-index: 200;
+  padding: 2vw;
+  background: rgba( 34, 199, 255, 0.55 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: auto;
+}
+
+.inner_cont > p {
+  color: white;
+  font-size: 1.3vw;
+}
+
+.inner_cont > button {
+  font-size: 1.4vw;
+  padding: 0.7vw;
+  border-radius: 0.6vw;
+  background-color: aqua;
+  transition: 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  will-change: background-color color;
+  border: none;
+}
+
+.inner_cont > button:hover {
+  background-color: #00bfff;
+  color: white;
+}

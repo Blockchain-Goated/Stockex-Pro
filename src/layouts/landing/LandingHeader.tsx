@@ -32,7 +32,7 @@ const LandingHeader: NextPage = () => {
               <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="brand-logo">
                   <Link  href="/">
-             <a>
+             <>
                       <img
                         src="/images/logo.png"
                         alt="Logo"
@@ -43,7 +43,7 @@ const LandingHeader: NextPage = () => {
                         alt="Logo"
                         className="logo-white"
                       />
-                  </a>
+                  </>
                   </Link>
                 </div>
                 <button

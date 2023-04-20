@@ -6,7 +6,7 @@ import useRequireAuth from "../src/hooks/useRequireAuth";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 
 const Index: NextPage = () => {
-
+const session = useRequireAuth();
     const router = useRouter();
 
     const sliderProps = {

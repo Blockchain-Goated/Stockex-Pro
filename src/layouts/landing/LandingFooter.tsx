@@ -105,7 +105,7 @@ const LandingFooter: NextPage = () => {
               <div className="copyright">
                 <p>
                   © Copyright {new Date().getFullYear()}{" "}
-                  <Link  href="/">
+                  <Link legacyBehavior  href="/">
                     <a target="_blank"> Tendex </a>
                   </Link>
                   I All Rights Reserved

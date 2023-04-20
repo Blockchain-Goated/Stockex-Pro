@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import { useState } from "react";
 import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const SettingsApi: NextPage = () => {
+  const session = useRequireAuth();
   const [formData, setFormData] = useState({
     key1: "",
     key2: "",

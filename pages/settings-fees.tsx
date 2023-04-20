@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const SettingsFees: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <SettingsLayouts name="Fees">
       <div className="card-body">

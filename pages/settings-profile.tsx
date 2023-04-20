@@ -3,7 +3,10 @@ import { useState } from "react";
 import PersonalInformation from "../src/components/form/PersonalInformation";
 import Profile from "../src/components/form/Profile";
 import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const ProfileSetting: NextPage = () => {
+  const session = useRequireAuth();
   const [formData, setFormData] = useState({
     name: "Jannatul Maowa",
   });

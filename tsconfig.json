@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "libs/session.js", "pages/api/session.js", "libs/useUser.js", "libs/dbConnect.js", "models/user.model.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "libs/session.js", "pages/api/session.js", "libs/useUser.js", "libs/dbConnect.js", "models/user.model.js", "prisma/prisma.js", "pages/api/auth/[...nextauth].js", "pages/signin.js"],
   "exclude": ["node_modules"]
 }

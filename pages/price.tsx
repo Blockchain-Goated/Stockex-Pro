@@ -3,11 +3,14 @@ import Link from "next/dist/client/link";
 import dynamic from "next/dynamic";
 // import PriceChart from "../src/components/PriceChart";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
 });
 
 const Price: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <LandingLayout>
       <div className="price-grid section-padding bg-light">

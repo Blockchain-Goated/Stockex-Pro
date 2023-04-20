@@ -1,7 +1,10 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const Profile: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <DashboardLayout>
       <div className="content-body">

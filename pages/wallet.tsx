@@ -1,7 +1,10 @@
 import { NextPage } from "next";
 import Balance from "../src/components/Balance";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const Wallet: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <DashboardLayout>
       <div className="content-body">

@@ -5,6 +5,8 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import Balance from "../src/components/Balance";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
 import { copyText } from "../src/utils/utils";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
 });
@@ -16,6 +18,7 @@ const AnalyticChart = dynamic(
 );
 
 const Dashboard: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <DashboardLayout>
       <div className="content-body">

@@ -2,7 +2,10 @@ import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const Reset: NextPage = () => {
+  const session = useRequireAuth();
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",

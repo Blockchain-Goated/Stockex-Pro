@@ -2,8 +2,10 @@ import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import BlogRight from "../src/components/BlogRight";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const Blog: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <LandingLayout>
       <div className="blog section-padding border-0">
@@ -27,7 +29,9 @@ const Blog: NextPage = () => {
                             </h4>
                           </a>
                         </Link>
-                        <Link legacyBehavior href="/blog-details">Read More</Link>
+                        <Link legacyBehavior href="/blog-details">
+                          Read More
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -48,7 +52,9 @@ const Blog: NextPage = () => {
                             </h4>
                           </a>
                         </Link>
-                        <Link legacyBehavior href="/blog-details">Read More</Link>
+                        <Link legacyBehavior href="/blog-details">
+                          Read More
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -69,7 +75,9 @@ const Blog: NextPage = () => {
                             </h4>
                           </a>
                         </Link>
-                        <Link legacyBehavior href="/blog-details">Read More</Link>
+                        <Link legacyBehavior href="/blog-details">
+                          Read More
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -90,7 +98,9 @@ const Blog: NextPage = () => {
                             </h4>
                           </a>
                         </Link>
-                        <Link legacyBehavior href="/blog-details">Read More</Link>
+                        <Link legacyBehavior href="/blog-details">
+                          Read More
+                        </Link>
                       </div>
                     </div>
                   </div>

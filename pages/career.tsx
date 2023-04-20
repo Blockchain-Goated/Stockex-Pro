@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import { Accordion } from "react-bootstrap";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const Career: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <LandingLayout>
       <div className="choose-team section-padding">

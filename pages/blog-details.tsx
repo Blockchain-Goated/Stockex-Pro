@@ -2,7 +2,10 @@ import { NextPage } from "next";
 import { useState } from "react";
 import BlogRight from "../src/components/BlogRight";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const BlogDetails: NextPage = () => {
+  const session = useRequireAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -1,7 +1,10 @@
 import { NextPage } from "next";
 import BuySellForm from "../src/components/BuySellForm";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
+
 const Trade: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <DashboardLayout>
       <div className="content-body">

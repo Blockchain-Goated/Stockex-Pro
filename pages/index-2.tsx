@@ -3,6 +3,7 @@ import Link from "next/dist/client/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 const sampleData = [
   64, 24, 40, 76, 19, 0, 2, 46, 65, 12, 10, 6, 15, 57, 35, 81, 86, 12, 12, 21,
@@ -10,6 +11,7 @@ const sampleData = [
 ];
 
 const Index2: NextPage = () => {
+  const session = useRequireAuth();
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",

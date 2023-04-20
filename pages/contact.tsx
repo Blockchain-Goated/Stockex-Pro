@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import { useState } from "react";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const Contact: NextPage = () => {
+  const session = useRequireAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",

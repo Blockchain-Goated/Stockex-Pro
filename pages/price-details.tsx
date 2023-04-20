@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { copyText } from "../src/utils/utils";
 import { withSessionSsr } from "../libs/session";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -12,7 +13,8 @@ const PriceDetailsChart = dynamic(
   }
 );
 
-const PriceDetails: NextPage = ({user}) => {
+const PriceDetails: NextPage = () => {
+  const session = useRequireAuth();
   const router = useRouter();
   return (
     <LandingLayout>
@@ -370,19 +372,5 @@ const PriceDetails: NextPage = ({user}) => {
     </LandingLayout>
   );
 };
-
-export const getServerSideProps = withSessionSsr(async ({ req, res }) => {
-  const user = req.session.user;
-
-  if (!user) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: { user },
-  };
-});
 
 export default PriceDetails;

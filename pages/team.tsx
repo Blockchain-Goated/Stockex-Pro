@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const Team: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <LandingLayout>
       <div className="join-team section-padding bg-light">

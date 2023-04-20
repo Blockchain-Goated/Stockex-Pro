@@ -1,6 +1,8 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import { signIn } from "next-auth/react";
+import { Button } from "react-bootstrap";
 
 const Apps: NextPage = () => {
   return (

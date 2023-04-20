@@ -3,8 +3,10 @@ import { useState } from "react";
 import AddBankAccountModal from "../src/components/AddBankAccountModal";
 import AddBankCardModal from "../src/components/AddBankCardModal";
 import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const SettingsPaymentMethod: NextPage = () => {
+  const session = useRequireAuth();
   const [bankModal, setBankModal] = useState(false);
   const [card, setCard] = useState(false);
   return (

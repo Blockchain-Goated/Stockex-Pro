@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const About: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <LandingLayout>
       <div className="about-one section-padding">
@@ -87,9 +89,9 @@ const About: NextPage = () => {
                   money. Tendex, the most trusted company in the space, is
                   looking for you to join our rapidly growing team.
                 </p>
-                <Link legacyBehavior href='/career'><a  className='btn btn-primary'>
-                  Read more
-                </a></Link>
+                <Link legacyBehavior href="/career">
+                  <a className="btn btn-primary">Read more</a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-6">

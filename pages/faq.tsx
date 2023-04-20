@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import useRequireAuth from "../src/hooks/useRequireAuth";
 
 const Faq: NextPage = () => {
+  const session = useRequireAuth();
   return (
     <LandingLayout>
       <div className="terms_condition">

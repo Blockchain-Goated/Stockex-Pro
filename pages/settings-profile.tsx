@@ -3,10 +3,20 @@ import { useState } from "react";
 import PersonalInformation from "../src/components/form/PersonalInformation";
 import Profile from "../src/components/form/Profile";
 import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const ProfileSetting: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   const [formData, setFormData] = useState({
     name: "Jannatul Maowa",
   });

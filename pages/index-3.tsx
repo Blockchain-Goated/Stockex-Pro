@@ -1,10 +1,20 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Index3: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <LandingLayout>
       <div className="intro3 section-padding">
@@ -21,11 +31,9 @@ const Index3: NextPage = () => {
                     Refer a friend to earn 30% of their trading fees.
                   </small>
                   <br />
-                  <Link  href="/faq">
-                 
-                      {" "}
-                      <small>Learn More</small>
-                    
+                  <Link href="/faq">
+                    {" "}
+                    <small>Learn More</small>
                   </Link>
                 </div>
                 <h1>Buy, Sell &amp; Trade Crypto</h1>
@@ -36,10 +44,11 @@ const Index3: NextPage = () => {
                 </p>
               </div>
               <div className="intro-btn">
-                <Link className="btn btn-primary btn-sm py-2 px-3" href="/signup">
-       
-                    Get Started
-                  
+                <Link
+                  className="btn btn-primary btn-sm py-2 px-3"
+                  href="/signup"
+                >
+                  Get Started
                 </Link>
                 {/* <div class="app-link">
                   <a href="#"><span><i class="mdi mdi-google-play"></i></span></a>
@@ -292,7 +301,9 @@ const Index3: NextPage = () => {
               >
                 <h3 className="me-5 mb-0">Step into Tendex</h3>
 
-                <Link className="btn btn-primary" href="/signup">Get Started</Link>
+                <Link className="btn btn-primary" href="/signup">
+                  Get Started
+                </Link>
               </div>
             </div>
           </div>

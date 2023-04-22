@@ -2,10 +2,20 @@ import { NextPage } from "next";
 import { useState } from "react";
 import BlogRight from "../src/components/BlogRight";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const BlogDetails: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -1,10 +1,20 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Team: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <LandingLayout>
       <div className="join-team section-padding bg-light">
@@ -18,9 +28,7 @@ const Team: NextPage = () => {
                   ever-growing team of designers, engineers, and support staff.`}
                 </p>
                 <Link className="btn btn-primary px-4 py-2" href="/career">
-             
-                    View Open Position
-                 
+                  View Open Position
                 </Link>
               </div>
             </div>
@@ -207,7 +215,7 @@ const Team: NextPage = () => {
                 <h2>Interested in joining our team?</h2>
                 <p>{`Hit us up and we'll get in touch with you.`}</p>
                 <Link className="btn btn-primary" href="/career">
-                 Apply Now
+                  Apply Now
                 </Link>
               </div>
             </div>

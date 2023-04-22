@@ -2,11 +2,20 @@ import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
 
 const Reset: NextPage = () => {
-  const session = useRequireAuth();
   const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
+
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -27,10 +36,8 @@ const Reset: NextPage = () => {
         <div className="row justify-content-center h-100 align-items-center">
           <div className="col-xl-4 col-md-5">
             <div className="mini-logo text-center my-3">
-              <Link  href="/">
-                
-                  <img src="/images/logo.png" alt="" />
-           
+              <Link href="/">
+                <img src="/images/logo.png" alt="" />
               </Link>
               <h4 className="card-title mt-5">Reset Password</h4>
             </div>

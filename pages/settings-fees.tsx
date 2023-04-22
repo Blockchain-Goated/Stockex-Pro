@@ -1,9 +1,19 @@
 import { NextPage } from "next";
 import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const SettingsFees: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <SettingsLayouts name="Fees">
       <div className="card-body">

@@ -2,10 +2,20 @@ import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import BlogRight from "../src/components/BlogRight";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Blog: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <LandingLayout>
       <div className="blog section-padding border-0">
@@ -22,16 +32,12 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link  href="/blog-details">
-                          
-                            <h4 className="card-title">
-                              Why does Litecoin need MimbleWimble?
-                            </h4>
-                          
+                        <Link href="/blog-details">
+                          <h4 className="card-title">
+                            Why does Litecoin need MimbleWimble?
+                          </h4>
                         </Link>
-                        <Link  href="/blog-details">
-                          Read More
-                        </Link>
+                        <Link href="/blog-details">Read More</Link>
                       </div>
                     </div>
                   </div>
@@ -45,16 +51,12 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link  href="/blog-details">
-                          
-                            <h4 className="card-title">
-                              How to securely store your HD wallet seeds?
-                            </h4>
-                          
+                        <Link href="/blog-details">
+                          <h4 className="card-title">
+                            How to securely store your HD wallet seeds?
+                          </h4>
                         </Link>
-                        <Link  href="/blog-details">
-                          Read More
-                        </Link>
+                        <Link href="/blog-details">Read More</Link>
                       </div>
                     </div>
                   </div>
@@ -68,16 +70,12 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link  href="/blog-details">
-                          
-                            <h4 className="card-title">
-                              Exclusive Interview With Xinxi Wang Of Litecoin
-                            </h4>
-                          
+                        <Link href="/blog-details">
+                          <h4 className="card-title">
+                            Exclusive Interview With Xinxi Wang Of Litecoin
+                          </h4>
                         </Link>
-                        <Link  href="/blog-details">
-                          Read More
-                        </Link>
+                        <Link href="/blog-details">Read More</Link>
                       </div>
                     </div>
                   </div>
@@ -91,16 +89,12 @@ const Blog: NextPage = () => {
                         alt=""
                       />
                       <div className="card-body">
-                        <Link  href="/blog-details">
-                          
-                            <h4 className="card-title">
-                              Exclusive Interview With Xinxi Wang Of Litecoin
-                            </h4>
-                          
+                        <Link href="/blog-details">
+                          <h4 className="card-title">
+                            Exclusive Interview With Xinxi Wang Of Litecoin
+                          </h4>
                         </Link>
-                        <Link  href="/blog-details">
-                          Read More
-                        </Link>
+                        <Link href="/blog-details">Read More</Link>
                       </div>
                     </div>
                   </div>

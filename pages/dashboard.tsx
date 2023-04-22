@@ -5,7 +5,8 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import Balance from "../src/components/Balance";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
 import { copyText } from "../src/utils/utils";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -18,7 +19,16 @@ const AnalyticChart = dynamic(
 );
 
 const Dashboard: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <DashboardLayout>
       <div className="content-body">
@@ -349,49 +359,43 @@ const Dashboard: NextPage = () => {
                   <div className="row">
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link  href="/price-details">
-                          
-                            <div className="price-content">
-                              <div className="icon-title">
-                                <i className="cc BTC"></i>
-                                <span>Bitcoin</span>
-                              </div>
-                              <h5>$ 11,785.10</h5>
+                        <Link href="/price-details">
+                          <div className="price-content">
+                            <div className="icon-title">
+                              <i className="cc BTC"></i>
+                              <span>Bitcoin</span>
                             </div>
-                            <PriceChart />
-                          
+                            <h5>$ 11,785.10</h5>
+                          </div>
+                          <PriceChart />
                         </Link>
                       </div>
                     </div>
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link  href="/price-details">
-                          
-                            <div className="price-content">
-                              <div className="icon-title">
-                                <i className="cc ETH"></i>
-                                <span>Ethereum</span>
-                              </div>
-                              <h5>$ 11,785.10</h5>
+                        <Link href="/price-details">
+                          <div className="price-content">
+                            <div className="icon-title">
+                              <i className="cc ETH"></i>
+                              <span>Ethereum</span>
                             </div>
-                            <PriceChart />
-                          
+                            <h5>$ 11,785.10</h5>
+                          </div>
+                          <PriceChart />
                         </Link>
                       </div>
                     </div>
                     <div className="col-xxl-12 col-xl-4 col-lg-6">
                       <div className="price-widget">
-                        <Link  href="/price-details">
-                          
-                            <div className="price-content">
-                              <div className="icon-title">
-                                <i className="cc USDT"></i>
-                                <span>Tether</span>
-                              </div>
-                              <h5>$ 11,785.10</h5>
+                        <Link href="/price-details">
+                          <div className="price-content">
+                            <div className="icon-title">
+                              <i className="cc USDT"></i>
+                              <span>Tether</span>
                             </div>
-                            <PriceChart />
-                          
+                            <h5>$ 11,785.10</h5>
+                          </div>
+                          <PriceChart />
                         </Link>
                       </div>
                     </div>

@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { copyText } from "../src/utils/utils";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -13,8 +13,17 @@ const PriceDetailsChart = dynamic(
 );
 
 const PriceDetails: NextPage = () => {
-  const session = useRequireAuth();
+  const { data: session, status } = useSession();
   const router = useRouter();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
+
   return (
     <LandingLayout>
       <div className="price-details section-padding ">

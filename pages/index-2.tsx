@@ -3,7 +3,9 @@ import Link from "next/dist/client/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 const sampleData = [
   64, 24, 40, 76, 19, 0, 2, 46, 65, 12, 10, 6, 15, 57, 35, 81, 86, 12, 12, 21,
@@ -11,8 +13,16 @@ const sampleData = [
 ];
 
 const Index2: NextPage = () => {
-  const session = useRequireAuth();
   const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -163,7 +173,10 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link className="btn btn-success" href="/price-details">
+                          <Link
+                            className="btn btn-success"
+                            href="/price-details"
+                          >
                             Buy
                           </Link>
                         </td>
@@ -187,7 +200,10 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link className="btn btn-success" href="/price-details">
+                          <Link
+                            className="btn btn-success"
+                            href="/price-details"
+                          >
                             Buy
                           </Link>
                         </td>
@@ -211,7 +227,10 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link className="btn btn-success" href="/price-details">
+                          <Link
+                            className="btn btn-success"
+                            href="/price-details"
+                          >
                             Buy
                           </Link>
                         </td>
@@ -235,7 +254,10 @@ const Index2: NextPage = () => {
                           </Sparklines>
                         </td>
                         <td>
-                          <Link className="btn btn-success" href="/price-details">
+                          <Link
+                            className="btn btn-success"
+                            href="/price-details"
+                          >
                             Buy
                           </Link>
                         </td>
@@ -401,7 +423,7 @@ const Index2: NextPage = () => {
                   revenue for each transaction made.
                 </p>
                 <Link className="btn btn-dark px-4" href="/faq">
-                 Learn more
+                  Learn more
                 </Link>
               </div>
             </div>
@@ -419,9 +441,7 @@ const Index2: NextPage = () => {
                   from every transaction made via either of the tools used.
                 </p>
                 <Link className="btn btn-outline-dark px-4" href="/helpdesk">
-                  
-                    Become an affiliate
-                  
+                  Become an affiliate
                 </Link>
               </div>
             </div>
@@ -504,15 +524,17 @@ const Index2: NextPage = () => {
                   </li>
                 </ul>
                 <div className="mt-4">
-                  <Link className="btn btn-success my-1 waves-effect" href="/app">
-                   
-                      <img src="/images/android.svg" alt="Image" />
-                   
+                  <Link
+                    className="btn btn-success my-1 waves-effect"
+                    href="/app"
+                  >
+                    <img src="/images/android.svg" alt="Image" />
                   </Link>
-                  <Link className="btn btn-success my-1 waves-effect" href="/app">
-                 
-                      <img src="/images/apple.svg" alt="Image" />
-                
+                  <Link
+                    className="btn btn-success my-1 waves-effect"
+                    href="/app"
+                  >
+                    <img src="/images/apple.svg" alt="Image" />
                   </Link>
                 </div>
               </div>

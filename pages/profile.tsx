@@ -1,10 +1,20 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Profile: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <DashboardLayout>
       <div className="content-body">
@@ -55,16 +65,12 @@ const Profile: NextPage = () => {
                     </p>
 
                     <Link className="btn btn-primary" href="/app">
-            
-                        <img src="/images/android.svg" alt="Image" />
-              
+                      <img src="/images/android.svg" alt="Image" />
                     </Link>
                     <br />
                     <div className="mt-3"></div>
                     <Link className="btn btn-primary" href="/app">
-               
-                        <img src="/images/apple.svg" alt="Image" />
-                      
+                      <img src="/images/apple.svg" alt="Image" />
                     </Link>
                   </div>
                 </div>

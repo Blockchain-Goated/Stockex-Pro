@@ -1,10 +1,20 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
-import { signIn } from "next-auth/react";
-import { Button } from "react-bootstrap";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Apps: NextPage = () => {
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <LandingLayout>
       <div className="appss section-padding">
@@ -41,15 +51,17 @@ const Apps: NextPage = () => {
                   </li>
                 </ul>
                 <div className="mt-4">
-                  <Link className="btn btn-success my-1 waves-effect" href="/app">
-                   
-                      <img src="/images/android.svg" alt="Image" />
-                    
+                  <Link
+                    className="btn btn-success my-1 waves-effect"
+                    href="/app"
+                  >
+                    <img src="/images/android.svg" alt="Image" />
                   </Link>
-                  <Link className="btn btn-success my-1 waves-effect" href="/app">
-                   
-                      <img src="/images/apple.svg" alt="Image" />
-                    
+                  <Link
+                    className="btn btn-success my-1 waves-effect"
+                    href="/app"
+                  >
+                    <img src="/images/apple.svg" alt="Image" />
                   </Link>
                 </div>
               </div>

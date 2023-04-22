@@ -3,14 +3,24 @@ import Link from "next/dist/client/link";
 import dynamic from "next/dynamic";
 // import PriceChart from "../src/components/PriceChart";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
 });
 
 const Price: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <LandingLayout>
       <div className="price-grid section-padding bg-light">
@@ -25,7 +35,7 @@ const Price: NextPage = () => {
           <div className="row">
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-btc">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -41,7 +51,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-eth">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -58,7 +68,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-usdt">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -75,7 +85,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-xrp">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -92,7 +102,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-ltc">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -109,7 +119,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-ada">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -126,7 +136,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-eos">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -143,7 +153,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-xmr">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">
@@ -160,7 +170,7 @@ const Price: NextPage = () => {
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
               <div className="price-widget bg-xtz">
-                <Link  href="/price-details">
+                <Link href="/price-details">
                   <>
                     <div className="price-content">
                       <div className="icon-title">

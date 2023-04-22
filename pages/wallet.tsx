@@ -1,10 +1,20 @@
 import { NextPage } from "next";
 import Balance from "../src/components/Balance";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
-import useRequireAuth from "../src/hooks/useRequireAuth";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Wallet: NextPage = () => {
-  const session = useRequireAuth();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "unauthenticated") {
+    router.replace("/signin");
+  }
   return (
     <DashboardLayout>
       <div className="content-body">

@@ -4,6 +4,7 @@ import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
+import Image from 'next/legacy/image'
 
 const SettingsApi: NextPage = () => {
   const router = useRouter();
@@ -135,7 +136,7 @@ const SettingsApi: NextPage = () => {
                     <div className="profile_log dropdown">
                       <div className="user" data-toggle="dropdown">
                         <span className="thumb">
-                          <img src="./images/profile/2.png" alt="" />
+                          <Image layout="fill" src="../public/images/profile/2.png" alt="" />
                         </span>
                         <span className="arrow">
                           <i className="icofont-angle-down"></i>
@@ -145,7 +146,7 @@ const SettingsApi: NextPage = () => {
                         <div className="user-email">
                           <div className="user">
                             <span className="thumb">
-                              <img src="./images/profile/2.png" alt="" />
+                              <Image layout="fill" src="../public/images/profile/2.png" alt="" />
                             </span>
                             <div className="user-info">
                               <h5>Jannatul Maowa</h5>
@@ -197,7 +198,7 @@ const SettingsApi: NextPage = () => {
         <div className="sidebar">
           <div className="brand-logo">
             <Link href="index">
-              <img src="./images/logoi.png" alt="" width="30" />
+              <Image src="../public/images/logoi.png" alt="" width={30} />
             </Link>
           </div>
           <div className="menu">

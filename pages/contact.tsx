@@ -16,19 +16,19 @@ const Contact: NextPage = () => {
   if (status === "unauthenticated") {
     router.replace("/signin");
   }
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    msg: "",
-  });
-  const [error, setError] = useState(false);
-  const { name, email, msg } = formData;
-  const onChange = (e: any) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  const onSubmit = (e: any) => {
-    e.preventDefault();
-    setError(true);
-  };
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   msg: "",
+  // });
+  // const [error, setError] = useState(false);
+  // const { name, email, msg } = formData;
+  // const onChange = (e: any) =>
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // const onSubmit = (e: any) => {
+  //   e.preventDefault();
+  //   setError(true);
+  // };
   return (
     <>
       <div className="header landing bg-dark light">

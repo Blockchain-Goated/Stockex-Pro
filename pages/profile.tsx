@@ -3,6 +3,7 @@ import Link from "next/dist/client/link";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Image from 'next/legacy/image'
 
 const Profile: NextPage = () => {
   const router = useRouter();
@@ -118,7 +119,7 @@ const Profile: NextPage = () => {
                     <div className="profile_log dropdown">
                       <div className="user" data-toggle="dropdown">
                         <span className="thumb">
-                          <img src="./images/profile/2.png" alt="" />
+                          <Image layout="fill" src="../public/images/profile/2.png" alt="" />
                         </span>
                         <span className="arrow">
                           <i className="icofont-angle-down"></i>
@@ -128,7 +129,7 @@ const Profile: NextPage = () => {
                         <div className="user-email">
                           <div className="user">
                             <span className="thumb">
-                              <img src="./images/profile/2.png" alt="" />
+                              <Image layout="fill" src="../public/images/profile/2.png" alt="" />
                             </span>
                             <div className="user-info">
                               <h5>Jannatul Maowa</h5>
@@ -180,7 +181,7 @@ const Profile: NextPage = () => {
         <div className="sidebar">
           <div className="brand-logo">
             <Link href="index">
-              <img src="./images/logoi.png" alt="" width="30" />
+              <Image src="../public/images/logoi.png" alt="" width={30} />
             </Link>
           </div>
           <div className="menu">
@@ -260,7 +261,7 @@ const Profile: NextPage = () => {
               <div className="col-xxl-6 col-xl-6 col-lg-6">
                 <div className="card welcome-profile">
                   <div className="card-body">
-                    <img src="./images/profile/2.png" alt="" />
+                    <Image layout="fill" src="../public/images/profile/2.png" alt="" />
                     <h4>Welcome, Jannatul Maowa!</h4>
                     <p>
                       Looks like you are not verified yet. Verify yourself to
@@ -301,12 +302,12 @@ const Profile: NextPage = () => {
                         faster, and reliable.
                       </p>
                       <Link href="#" className="btn btn-primary">
-                        <img src="./images/android.svg" alt="" />
+                        <Image layout="fill" src="../public/images/android.svg" alt="" />
                       </Link>
                       <br />
                       <div className="mt-3"></div>
                       <Link href="#" className="btn btn-primary">
-                        <img src="./images/apple.svg" alt="" />
+                        <Image layout="fill" src="../public/images/apple.svg" alt="" />
                       </Link>
                     </div>
                   </div>

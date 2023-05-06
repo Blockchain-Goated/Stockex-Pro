@@ -7,6 +7,7 @@ import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
 import { copyText } from "../src/utils/utils";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Image from 'next/legacy/image'
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -30,7 +31,7 @@ const Dashboard: NextPage = () => {
     router.replace("/signin");
   }
   return (
-    <DashboardLayout>
+    <>
      <div className="header landing bg-dark light">
         <div className="container">
           <div className="row">
@@ -104,7 +105,7 @@ const Dashboard: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+       </div>
 
       <div className="sidebar">
         <div className="brand-logo">
@@ -707,7 +708,7 @@ const Dashboard: NextPage = () => {
           </div>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 };
 

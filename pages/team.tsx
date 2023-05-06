@@ -3,6 +3,7 @@ import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Image from 'next/legacy/image'
 
 const Team: NextPage = () => {
   const router = useRouter();
@@ -17,7 +18,7 @@ const Team: NextPage = () => {
   }
   return (
     <LandingLayout>
-      <div id="main-wrapper">
+
         <div className="header landing @@headerClass">
           <div className="container">
             <div className="row">
@@ -27,12 +28,12 @@ const Team: NextPage = () => {
                     <div className="brand-logo">
                       <Link href="index">
                         <img
-                          src="./images/logo.png"
+                          src="/images/logo.png"
                           alt=""
                           className="logo-primary"
                         />
                         <img
-                          src="./images/logow.png"
+                          src="/images/logow.png"
                           alt=""
                           className="logo-white"
                         />
@@ -183,7 +184,7 @@ const Team: NextPage = () => {
               <div className="col-lg-6">
                 <div className="ceo-content">
                   <img
-                    src="./images/testimonial/2.jpg"
+                    src="/images/testimonial/2.jpg"
                     alt=""
                     className="img-fluid rounded me-4"
                   />
@@ -225,19 +226,19 @@ const Team: NextPage = () => {
             <div className="row pb-5">
               <div className="col-4">
                 <img
-                  src="./images/team/1.jpg"
+                  src="/images/team/1.jpg"
                   className="img-fluid rounded shadow-md"
                   alt="..."
                 />
               </div>
               <div className="col-3">
                 <img
-                  src="./images/team/2.jpg"
+                  src="/images/team/2.jpg"
                   className="img-fluid rounded shadow-md mb-4"
                   alt="..."
                 />
                 <img
-                  src="./images/team/3.jpg"
+                  src="/images/team/3.jpg"
                   className="img-fluid rounded shadow-md"
                   alt="..."
                 />
@@ -246,21 +247,21 @@ const Team: NextPage = () => {
                 <div className="row mb-4">
                   <div className="col-5">
                     <img
-                      src="./images/team/4.jpg"
+                      src="/images/team/4.jpg"
                       className="img-fluid rounded shadow-md mb-4"
                       alt="..."
                     />
                   </div>
                   <div className="col-7">
                     <img
-                      src="./images/team/5.jpg"
+                      src="/images/team/5.jpg"
                       className="img-fluid rounded shadow-md mb-4"
                       alt="..."
                     />
                   </div>
                   <div className="col-12">
                     <img
-                      src="./images/team/6.jpg"
+                      src="/images/team/6.jpg"
                       className="img-fluid rounded shadow-md"
                       alt="..."
                     />
@@ -282,7 +283,7 @@ const Team: NextPage = () => {
                       <Link href="#">
                         <img
                           className="img-fluid"
-                          src="./images/brand/1.webp"
+                          src="/images/brand/1.webp"
                           alt=""
                         />
                       </Link>
@@ -293,7 +294,7 @@ const Team: NextPage = () => {
                       <Link href="#">
                         <img
                           className="img-fluid"
-                          src="./images/brand/2.webp"
+                          src="/images/brand/2.webp"
                           alt=""
                         />
                       </Link>
@@ -304,7 +305,7 @@ const Team: NextPage = () => {
                       <Link href="#">
                         <img
                           className="img-fluid"
-                          src="./images/brand/3.webp"
+                          src="/images/brand/3.webp"
                           alt=""
                         />
                       </Link>
@@ -315,7 +316,7 @@ const Team: NextPage = () => {
                       <Link href="#">
                         <img
                           className="img-fluid"
-                          src="./images/brand/4.webp"
+                          src="/images/brand/4.webp"
                           alt=""
                         />
                       </Link>
@@ -326,7 +327,7 @@ const Team: NextPage = () => {
                       <Link href="#">
                         <img
                           className="img-fluid"
-                          src="./images/brand/5.webp"
+                          src="/images/brand/5.webp"
                           alt=""
                         />
                       </Link>
@@ -337,7 +338,7 @@ const Team: NextPage = () => {
                       <Link href="#">
                         <img
                           className="img-fluid"
-                          src="./images/brand/5.webp"
+                          src="/images/brand/5.webp"
                           alt=""
                         />
                       </Link>
@@ -370,7 +371,7 @@ const Team: NextPage = () => {
             <div className="row">
               <div className="col-xl-4">
                 <div className="bottom-logo">
-                  <img className="pb-3" src="./images/logow.png" alt="" />
+                  <img className="pb-3" src="/images/logow.png" alt="" />
 
                   <p>
                     Tendex is a unique and beautiful collection of UI elements
@@ -501,7 +502,7 @@ const Team: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+
     </LandingLayout>
   );
 };

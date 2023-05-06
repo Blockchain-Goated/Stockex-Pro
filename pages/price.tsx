@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Image from 'next/legacy/image'
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -23,7 +24,7 @@ const Price: NextPage = () => {
   }
   return (
     <LandingLayout>
-      <div id="main-wrapper">
+
         <div className="header landing bg-dark light">
           <div className="container">
             <div className="row">
@@ -32,19 +33,19 @@ const Price: NextPage = () => {
                   <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="brand-logo">
                       <Link href="index">
-                        <img
-                          src="./images/Synthex.png"
+                        <Image
+                          src="../public/images/Synthex.png"
                           alt=""
                           className="logo-primary"
-                          width="113px"
-                          height="21px"
+                          width={113}
+                          height={21}
                         />
-                        <img
-                          src="./images/Synthex.png"
+                        <Image
+                          src="../public/images/Synthex.png"
                           alt=""
                           className="logo-white"
-                          width="339px"
-                          height="63px"
+                          width={339}
+                          height={63}
                         />
                       </Link>
                     </div>
@@ -255,7 +256,7 @@ const Price: NextPage = () => {
             <div className="row">
               <div className="col-xl-4">
                 <div className="bottom-logo">
-                  <img className="pb-3" src="./images/logow.png" alt="" />
+                  <Image layout="fill" className="pb-3" src="../public/images/logow.png" alt="" />
 
                   <p>
                     Tendex is a unique and beautiful collection of UI elements
@@ -386,7 +387,7 @@ const Price: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+
     </LandingLayout>
   );
 };

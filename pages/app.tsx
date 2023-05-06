@@ -3,6 +3,14 @@ import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import logo from "../public/images/logo.png"
+import logow from "../public/images/logow.png"
+import one from "../public/images/about/1.jpg"
+import app2 from "../public/images/app2.png"
+import android from "../public/images/android.svg"
+import apple from "../public/images/apple.svg"
+import map from "../public/images/map.png"
+import Image from 'next/legacy/image'
 
 const Apps: NextPage = () => {
   const router = useRouter();
@@ -25,12 +33,12 @@ const Apps: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="/">
-                      <img
-                        src="./images/logo.png"
+                      <Image layout="responsive"
+                        src={logo}
                         alt=""
                         className="logo-primary"
                       />
-                      <img src="./images/logow.png" alt="" className="logo-white" />
+                      <Image layout="responsive" src={logow} alt="" className="logo-white" />
                     </Link>
                   </div>
                   <button
@@ -126,7 +134,7 @@ const Apps: NextPage = () => {
           <div className="row align-items-center justify-content-between">
             <div className="col-xl-5 col-lg-5 col-md-12">
               <div className="appss-img">
-                <img className="img-fluid" src="./images/app2.png" alt="" />
+                <Image layout="responsive" className="img-fluid" src={app2} alt="" />
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-12">
@@ -152,10 +160,10 @@ const Apps: NextPage = () => {
                 </ul>
                 <div className="mt-4">
                   <Link href="#" className="btn btn-success my-1 waves-effect">
-                    <img src="./images/android.svg" alt="" />
+                    <Image layout="responsive" src={android} alt="" />
                   </Link>
                   <Link href="#" className="btn btn-success my-1 waves-effect">
-                    <img src="./images/apple.svg" alt="" />
+                    <Image layout="responsive" src={apple} alt="" />
                   </Link>
                 </div>
               </div>
@@ -223,7 +231,7 @@ const Apps: NextPage = () => {
           <div className="row">
             <div className="col-xl-12">
               <div className="wallet-map text-center">
-                <img src="./images/map.png" alt="" className="img-fluid" />
+                <Image layout="responsive" src={map} alt="" className="img-fluid" />
               </div>
             </div>
           </div>
@@ -235,7 +243,7 @@ const Apps: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <img className="pb-3" src="./images/logow.png" alt="" />
+                <Image layout="responsive" className="pb-3" src={logow} alt="" />
 
                 <p>
                   Tendex is a unique and beautiful collection of UI elements

@@ -3,6 +3,15 @@ import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import logo from "../public/images/logo.png"
+import logow from "../public/images/logow.png"
+import one from "../public/images/about/1.jpg"
+import app2 from "../public/images/app2.png"
+import android from "../public/images/android.svg"
+import apple from "../public/images/apple.svg"
+import map from "../public/images/map.png"
+import two from "../public/images/about/2.jpg"
+import Image from 'next/legacy/image'
 
 const Blank: NextPage = () => {
   const router = useRouter();
@@ -117,7 +126,7 @@ const Blank: NextPage = () => {
                   <div className="profile_log dropdown">
                     <div className="user" data-toggle="dropdown">
                       <span className="thumb">
-                        <img src="./images/profile/2.png" alt="" />
+                        <Image layout="fill" src={two} alt="" />
                       </span>
                       <span className="arrow">
                         <i className="icofont-angle-down"></i>
@@ -127,7 +136,7 @@ const Blank: NextPage = () => {
                       <div className="user-email">
                         <div className="user">
                           <span className="thumb">
-                            <img src="./images/profile/2.png" alt="" />
+                            <Image layout="fill" src={two} />
                           </span>
                           <div className="user-info">
                             <h5>Jannatul Maowa</h5>
@@ -176,7 +185,7 @@ const Blank: NextPage = () => {
       <div className="sidebar">
         <div className="brand-logo">
           <Link href="/">
-            <img src="./images/logoi.png" alt="" width="30" />
+            <Image src={logoi} alt="" width="30" />
           </Link>
         </div>
         <div className="menu">

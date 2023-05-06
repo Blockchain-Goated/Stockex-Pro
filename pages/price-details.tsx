@@ -5,6 +5,8 @@ import LandingLayout from "../src/layouts/landing/LandingLayout";
 import Link from "next/dist/client/link";
 import { copyText } from "../src/utils/utils";
 import { useSession } from "next-auth/react";
+import Synthex from "../public/images/Synthex.png"
+import Image from 'next/legacy/image'
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -43,13 +45,15 @@ const PriceDetails: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="/">
-                      <img
-                        src="./images/Synthex.png"
+                      <Image
+                        src={Synthex}
                         alt=""
                         className="logo-primary"
-                        width="113px" height="21px"
-                      />
-                      <img src="./images/Synthex.png" alt="" className="logo-white" width="339px" height="63px"/>
+                        width={113}
+                        height={21}
+                        layout="responsive"
+/>
+                      <Image layout="responsive" src={Synthex} alt="" className="logo-white" width={339} height={63}/>
                     </Link>
                   </div>
                   <button
@@ -467,7 +471,7 @@ const PriceDetails: NextPage = () => {
         <div className="row">
           <div className="col-xl-4">
             <div className="bottom-logo">
-              <img className="pb-3" src="./images/Synthex.png" alt="" width="339px" height="63px" style={{verticalAlign: top}}/>
+              <Image layout="responsive" className="pb-3" src={Synthex} alt="" width={339} height={63} style={{verticalAlign: 'top'}}/>
 
               <p>
                 <br/>

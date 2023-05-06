@@ -26,13 +26,13 @@ const Blog: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="/">
-                      <img
-                        src="./images/Synthex.png"
+                      <Image
+                        src="../public/images/Synthex.png"
                         alt=""
                         className="logo-primary"
-                        width="113px" height="21px"
+                        width={113} height={21}
                       />
-                      <img src="./images/Synthex.png" alt="" className="logo-white" width="339px" height="63px"/>
+                      <Image src="../public/images/Synthex.png" alt="" className="logo-white" width={339} height={63}/>
                     </Link>
                   </div>
                   <button
@@ -100,9 +100,9 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <img
+                      <Image layout="fill"
                         className="img-fluid card-img-top"
-                        src="./images/blog/1.jpg"
+                        src="../public/images/blog/1.jpg"
                         alt=""
                       />
                       <div className="card-body">
@@ -119,9 +119,9 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <img
+                      <Image layout="fill"
                         className="img-fluid card-img-top"
-                        src="./images/blog/2.jpg"
+                        src="../public/images/blog/2.jpg"
                         alt=""
                       />
                       <div className="card-body">
@@ -138,9 +138,9 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <img
+                      <Image layout="fill"
                         className="img-fluid card-img-top"
-                        src="./images/blog/3.jpg"
+                        src="../public/images/blog/3.jpg"
                         alt=""
                       />
                       <div className="card-body">
@@ -157,9 +157,9 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <img
+                      <Image layout="fill"
                         className="img-fluid card-img-top"
-                        src="./images/blog/4.jpg"
+                        src="../public/images/blog/4.jpg"
                         alt=""
                       />
                       <div className="card-body">
@@ -191,8 +191,8 @@ const Blog: NextPage = () => {
                   <h3 className="post-title">Recent Post</h3>
                   <ul className="list-unstyled">
                     <li className="media d-flex">
-                      <img
-                        src="./images/blog/post_1.jpg"
+                      <Image layout="fill"
+                        src="../public/images/blog/post_1.jpg"
                         className="me-3"
                         alt="..."
                       />
@@ -208,8 +208,8 @@ const Blog: NextPage = () => {
                       </div>
                     </li>
                     <li className="media d-flex my-4">
-                      <img
-                        src="./images/blog/post_2.jpg"
+                      <Image layout="fill"
+                        src="../public/images/blog/post_2.jpg"
                         className="me-3"
                         alt="..."
                       />
@@ -225,8 +225,8 @@ const Blog: NextPage = () => {
                       </div>
                     </li>
                     <li className="media d-flex">
-                      <img
-                        src="./images/blog/post_3.jpg"
+                      <Image layout="fill"
+                        src="../public/images/blog/post_3.jpg"
                         className="me-3"
                         alt="..."
                       />
@@ -302,7 +302,7 @@ const Blog: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <img className="pb-3" src="./images/logow.png" alt="" />
+                <Image layout="fill" className="pb-3" src="../public/images/logow.png" alt="" />
 
                 <p>
                   Tendex is a unique and beautiful collection of UI elements

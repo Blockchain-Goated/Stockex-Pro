@@ -14,13 +14,13 @@ const Intro: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="index">
-                      <img
-                        src="./images/logo.png"
+                      <Image layout="fill"
+                        src="../public/images/logo.png"
                         alt=""
                         className="logo-primary"
                       />
-                      <img
-                        src="./images/logow.png"
+                      <Image layout="fill"
+                        src="../public/images/logow.png"
                         alt=""
                         className="logo-white"
                       />
@@ -320,7 +320,7 @@ const Intro: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <img className="pb-3" src="./images/logow.png" alt="" />
+                <Image layout="fill" className="pb-3" src="../public/images/logow.png" alt="" />
 
                 <p>
                   Tendex is a unique and beautiful collection of UI elements

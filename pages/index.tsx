@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 // import "../styles/styles.css";
+import Synthex from "../public/images/Synthex.png";
+import api from "../public/images/demo/api.jpg";
+import Image from 'next/legacy/image'
 
 const Index: NextPage = () => {
   const { data: session, status } = useSession();
@@ -31,20 +34,22 @@ const Index: NextPage = () => {
               <div className="navigation">
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
-                    <Link href="index">
-                      <img
-                        src="./images/Synthex.png"
+                    <Link href="">
+                      <Image
+                        src={Synthex}
                         alt=""
                         className="logo-primary"
-                        width="113px"
-                        height="21px"
-                      />
-                      <img
-                        src="./images/Synthex.png"
+                        width={113}
+                        height={21}
+                        layout="responsive"
+/>
+                      <Image
+                        src={Synthex}
                         alt=""
                         className="logo-white"
-                        width="339px"
-                        height="63px"
+                        width={339}
+                        height={63}
+                        layout="responsive"
                       />
                     </Link>
                   </div>
@@ -67,7 +72,7 @@ const Index: NextPage = () => {
                       <li className="nav-item dropdown">
                         <Link
                           className="nav-link text-primary"
-                          href="index"
+                          href=""
                         >
                           Home
                         </Link>
@@ -466,7 +471,7 @@ const Index: NextPage = () => {
           <div className="row">
             <div className="col-xl-6 col-lg-6 col-md-6">
               <div className="new-product-content">
-                <img className="img-fluid" src="./images/svg/api.svg" alt="" />
+                <Image className="Image-fluid" src={api} alt="" layout="responsive" />
                 <h4>Integrate our API</h4>
                 <p>
                   A white-label solution for your project, whether it is a
@@ -481,10 +486,11 @@ const Index: NextPage = () => {
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6">
               <div className="new-product-content">
-                <img
-                  className="img-fluid"
-                  src="./images/svg/affiliate.svg"
+                <Image
+                  className="Image-fluid"
+                  src={Synthex}
                   alt=""
+                  layout="responsive"
                 />
                 <h4>Join our Affiliate Program</h4>
                 <p>
@@ -624,12 +630,13 @@ const Index: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <img
+                <Image
                   className="pb-3"
-                  src="./images/Synthex.png"
+                  src={Synthex}
                   alt=""
-                  width="339px"
-                  height="63px"
+                  width={339}
+                  height={63}
+                  layout="responsive"
                   style={{ verticalAlign: "top" }}
                 />
 

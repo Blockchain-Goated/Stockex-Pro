@@ -4,6 +4,13 @@ import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
+import Image from 'next/legacy/image'
+import two from "../public/images/profile/two.png"
+import logoi from "../public/images/logoi.png"
+import art_photo_2 from "../public/images/profile/art_photo_2.png"
+import blockchain from "../public/images/blockchain.png"
+import qr from "../public/images/qr.svg"
+
 
 const Wallet: NextPage = () => {
   const router = useRouter();
@@ -13,12 +20,16 @@ const Wallet: NextPage = () => {
     return <p>Loading...</p>;
   }
 
+        const themeToggle = () => {
+    e.preventDefault();
+  }
+
   if (status === "unauthenticated") {
     router.replace("/signin");
   }
   return (
     <DashboardLayout>
-     <div id="main-wrapper">
+
       <div className="header bg-light">
         <div className="container-fluid">
           <div className="row">
@@ -115,7 +126,7 @@ const Wallet: NextPage = () => {
                   <div className="profile_log dropdown">
                     <div className="user" data-toggle="dropdown">
                       <span className="thumb"
-                        ><img src="./images/profile/Art Photo 2.jpeg" alt=""
+                        ><Image layout="fill" src={art_photo_2} alt=""
                       /></span>
                       <span className="arrow"
                         ><i className="icofont-angle-down"></i
@@ -125,7 +136,7 @@ const Wallet: NextPage = () => {
                       <div className="user-email">
                         <div className="user">
                           <span className="thumb"
-                            ><img src="./images/profile/Art Photo 2.jpeg" alt=""
+                            ><Image layout="fill" src={art_photo_2} alt=""
                           /></span>
                           <div className="user-info">
                             <h5>Jannatul Maowa</h5>
@@ -174,7 +185,7 @@ const Wallet: NextPage = () => {
       <div className="sidebar">
         <div className="brand-logo">
           <Link href="/"
-            ><img src="./images/logoi.png" alt="" width="30" />
+            ><Image src={logoi} alt="" width={30} />
           </Link>
         </div>
         <div className="menu">
@@ -294,9 +305,9 @@ const Wallet: NextPage = () => {
                           </td>
                           <td>35Hb5B6qJa5ntYaNFN3hGYXdAjh919g2VH</td>
                           <td>
-                            <img
+                            <Image
                               className="qr-img"
-                              src="./images/qr.svg"
+                              src={qr}
                               alt=""
                               width="40"
                             />
@@ -311,9 +322,9 @@ const Wallet: NextPage = () => {
                           </td>
                           <td>35Hb5B6qJa5ntYaNFN3hGYXdAjh919g2VH</td>
                           <td>
-                            <img
+                            <Image
                               className="qr-img"
-                              src="./images/qr.svg"
+                              src={qr}
                               alt=""
                               width="40"
                             />
@@ -328,9 +339,9 @@ const Wallet: NextPage = () => {
                           </td>
                           <td>35Hb5B6qJa5ntYaNFN3hGYXdAjh919g2VH</td>
                           <td>
-                            <img
+                            <Image
                               className="qr-img"
-                              src="./images/qr.svg"
+                              src={qr}
                               alt=""
                               width="40"
                             />
@@ -345,9 +356,9 @@ const Wallet: NextPage = () => {
                           </td>
                           <td>35Hb5B6qJa5ntYaNFN3hGYXdAjh919g2VH</td>
                           <td>
-                            <img
+                            <Image
                               className="qr-img"
-                              src="./images/qr.svg"
+                              src={qr}
                               alt=""
                               width="40"
                             />
@@ -642,7 +653,7 @@ const Wallet: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
+
     </DashboardLayout>
   );
 };

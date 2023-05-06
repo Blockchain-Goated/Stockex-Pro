@@ -2,11 +2,21 @@ import React from "react";
 import Link from "next/dist/client/link";
 import { NextPage } from "next";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
+import Image from 'next/legacy/image'
+import two from "../public/images/profile/two.png"
+import logoi from "../public/images/logoi.png"
+import art_photo_2 from "../public/images/profile/art_photo_2.png"
+import blockchain from "../public/images/blockchain.png"
+
 
 const Test: NextPage = () => {
+      const themeToggle = () => {
+    e.preventDefault();
+  }
+
   return (
     <LandingLayout>
-      <div id="main-wrapper">
+
         <div className="header @@bg">
           <div className="container-fluid">
             <div className="row">
@@ -107,7 +117,7 @@ const Test: NextPage = () => {
                     <div className="profile_log dropdown">
                       <div className="user" data-toggle="dropdown">
                         <span className="thumb">
-                          <img src="./images/profile/2.png" alt="" />
+                          <Image layout="fill" src={two} alt="" />
                         </span>
                         <span className="arrow">
                           <i className="icofont-angle-down"></i>
@@ -117,7 +127,7 @@ const Test: NextPage = () => {
                         <div className="user-email">
                           <div className="user">
                             <span className="thumb">
-                              <img src="./images/profile/2.png" alt="" />
+                              <Image layout="fill" src={two} alt="" />
                             </span>
                             <div className="user-info">
                               <h5>Jannatul Maowa</h5>
@@ -169,7 +179,7 @@ const Test: NextPage = () => {
         <div className="sidebar">
           <div className="brand-logo">
             <Link href="/">
-              <img src="./images/logoi.png" alt="" width="30" />
+              <Image src={logoi} alt="" width={30} />
             </Link>
           </div>
           <div className="menu">
@@ -272,7 +282,7 @@ const Test: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+   
     </LandingLayout>
   );
 };

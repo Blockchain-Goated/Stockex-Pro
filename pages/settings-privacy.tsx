@@ -3,6 +3,12 @@ import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
+import Image from 'next/legacy/image'
+import two from "../public/images/profile/two.png"
+import logoi from "../public/images/logoi.png"
+import art_photo_2 from "../public/images/profile/art_photo_2.png"
+import blockchain from "../public/images/blockchain.png"
+
 
 const SettingsPrivacy: NextPage = () => {
   const router = useRouter();
@@ -15,6 +21,11 @@ const SettingsPrivacy: NextPage = () => {
   if (status === "unauthenticated") {
     router.replace("/signin");
   }
+
+  const themeToggle = () => {
+    e.preventDefault();
+  }
+
   return (
     <SettingsLayouts name="Privacy">
       <div id="main-wrapper">
@@ -118,7 +129,7 @@ const SettingsPrivacy: NextPage = () => {
                     <div className="profile_log dropdown">
                       <div className="user" data-toggle="dropdown">
                         <span className="thumb">
-                          <img src="./images/profile/2.png" alt="" />
+                          <Image layout="fill" src={two} alt="" />
                         </span>
                         <span className="arrow">
                           <i className="icofont-angle-down"></i>
@@ -128,7 +139,7 @@ const SettingsPrivacy: NextPage = () => {
                         <div className="user-email">
                           <div className="user">
                             <span className="thumb">
-                              <img src="./images/profile/2.png" alt="" />
+                              <Image layout="fill" src={two} alt="" />
                             </span>
                             <div className="user-info">
                               <h5>Jannatul Maowa</h5>
@@ -180,7 +191,7 @@ const SettingsPrivacy: NextPage = () => {
         <div className="sidebar">
           <div className="brand-logo">
             <Link href="/">
-              <img src="./images/logoi.png" alt="" width="30" />
+              <Image src={logoi} alt="" width={30} />
             </Link>
           </div>
           <div className="menu">

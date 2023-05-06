@@ -72,10 +72,10 @@ const LandingHeader: NextPage = () => {
                         <Link className="dropdown-item" href="/">
                          Home 1
                         </Link>
-                        <Link className="dropdown-item" href="/index-2">
+                        <Link className="dropdown-item" href="index-2">
                          Home 2
                         </Link>
-                        <Link className="dropdown-item" href="/index-3">
+                        <Link className="dropdown-item" href="index-3">
                           Home 3
                         </Link>
                       </div>

@@ -5,3 +5,4 @@ node_modules/
 .gitignore
 LICENSE
 libs/session.ts
+/.yarn/install-state.gz

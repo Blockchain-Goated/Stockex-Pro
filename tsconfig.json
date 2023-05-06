@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2015"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,8 +17,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "libs/session.js", "pages/api/session.js", "libs/useUser.js", "libs/dbConnect.js", "models/user.model.js", "prisma/prisma.js", "pages/api/auth/[...nextauth].js", "pages/signin.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "libs/session.js",
+    "pages/api/session.js",
+    "libs/useUser.js",
+    "libs/dbConnect.js",
+    "models/user.model.js",
+    "prisma/prisma.js",
+    "pages/api/auth/[...nextauth].js",
+    "pages/signin.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

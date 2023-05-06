@@ -5,6 +5,7 @@ import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { SessionProvider } from "next-auth/react";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [load, setLoad] = useState(true);
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       {load && <PreLoader />}
       <SessionProvider session={session}>
         <Component {...pageProps} />
+        <Analytics />
       </SessionProvider>
       <ToastContainer />
     </Fragment>

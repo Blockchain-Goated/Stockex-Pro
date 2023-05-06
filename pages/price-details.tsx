@@ -16,14 +16,6 @@ const PriceDetails: NextPage = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
-
-  if (status === "unauthenticated") {
-    router.replace("/signin");
-  }
-
   return (
     <LandingLayout>
       <div className="price-details section-padding ">

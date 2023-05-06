@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Link from "next/dist/client/link";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 import { useSession } from "next-auth/react";

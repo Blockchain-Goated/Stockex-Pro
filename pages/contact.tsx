@@ -76,13 +76,13 @@ const Contact: NextPage = () => {
                         <Link href="#" className="nav-link price-details">App</Link>
                       </li>
                       <li className="nav-item dropdown">
-                        <Link
+                        <Link href="#"
                           className="nav-link blog"
                           >Company
                         </Link>
                       </li>
                       <li className="nav-item dropdown">
-                        <Link
+                        <Link href="#"
                           className="nav-link contact"
                           >Support
                         </Link>

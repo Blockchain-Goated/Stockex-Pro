@@ -17,6 +17,21 @@ const PriceDetails: NextPage = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
+  const balanceOf_ = () => {
+    e.preventDefault();
+  }
+
+    const copy = () => {
+    e.preventDefault();
+  }
+
+    const sellToken_ = () => {
+    e.preventDefault();
+  }
+    const buyToken_ = () => {
+    e.preventDefault();
+  }
+
   return (
     <LandingLayout>
       <div id="main-wrapper" className="show">
@@ -27,7 +42,7 @@ const PriceDetails: NextPage = () => {
               <div className="navigation">
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
-                    <Link href="index">
+                    <Link href="/">
                       <img
                         src="./images/Synthex.png"
                         alt=""
@@ -53,7 +68,7 @@ const PriceDetails: NextPage = () => {
                       <li className="nav-item dropdown">
                         <Link
                           className="nav-link text-primary"
-                          href="index"
+                          href="/"
                           >Home
                         </Link>
                       </li>
@@ -321,7 +336,7 @@ const PriceDetails: NextPage = () => {
                             readonly
                           />
                           <span
-                            onClick="balanceOf_();"
+                            onClick={balanceOf_}
                             className="input-group-text c-pointer"
                             >Fetch</span
                           >
@@ -364,7 +379,7 @@ const PriceDetails: NextPage = () => {
                           value="35Hb5B6qJa5ntYaNFN3hGYXdAjh919g2VH"
                         />
                         <span
-                          onClick="copy()"
+                          onClick={copy}
                           className="input-group-text c-pointer"
                           >Copy</span
                         >
@@ -403,7 +418,7 @@ const PriceDetails: NextPage = () => {
                     <button
                       name="buy"
                       className="btn btn-success btn-block mt-4"
-                      onClick="buyToken_();"
+                      onClick={buyToken_}
                     >
                       Buy Now
                     </button>
@@ -435,7 +450,7 @@ const PriceDetails: NextPage = () => {
                     <button
                       name="sell"
                       className="btn btn-success btn-block mt-4"
-                      onClick="sellToken_();"
+                      onClick={sellToken_}
                     >
                       Sell Now
                     </button>
@@ -452,7 +467,7 @@ const PriceDetails: NextPage = () => {
         <div className="row">
           <div className="col-xl-4">
             <div className="bottom-logo">
-              <img className="pb-3" src="./images/Synthex.png" alt="" width="339px" height="63px" style="vertical-align: top;"/>
+              <img className="pb-3" src="./images/Synthex.png" alt="" width="339px" height="63px" style={{verticalAlign: top}}/>
 
               <p>
                 <br/>

@@ -43,7 +43,7 @@ const Trade: NextPage = () => {
                   </div>
 
                   <div className="header-right">
-                    <div className="dark-light-toggle" onClick="themeToggle()">
+                    <div className="dark-light-toggle" onClick={themeToggle}>
                       <span className="dark">
                         <i className="bi bi-moon"></i>
                       </span>
@@ -181,7 +181,7 @@ const Trade: NextPage = () => {
 
         <div className="sidebar">
           <div className="brand-logo">
-            <Link href="index">
+            <Link href="/">
               <img src="./images/blockchain.png" alt="" width="30" />
             </Link>
           </div>
@@ -286,7 +286,7 @@ const Trade: NextPage = () => {
                     <button
                       type="button"
                       className="btn btn-primary btn-block"
-                      onClick="mintToken();"
+                      onClick={mintToken}
                     >
                       Mint
                     </button>
@@ -320,7 +320,7 @@ const Trade: NextPage = () => {
                     <button
                       type="button"
                       className="btn btn-primary btn-block"
-                      onClick="burnToken();"
+                      onClick={burnToken}
                     >
                       Burn
                     </button>
@@ -376,7 +376,7 @@ const Trade: NextPage = () => {
                     <button
                       type="button"
                       className="btn btn-success btn-block"
-                      onClick="transferToken();"
+                      onClick={transferToken}
                     >
                       Transfer Now
                     </button>

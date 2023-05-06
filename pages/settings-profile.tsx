@@ -59,7 +59,7 @@ const ProfileSetting: NextPage = () => {
                   </div>
 
                   <div className="header-right">
-                    <div className="dark-light-toggle" onClick="themeToggle()">
+                    <div className="dark-light-toggle" onClick={themeToggle}>
                       <span className="dark">
                         <i className="bi bi-moon"></i>
                       </span>
@@ -197,7 +197,7 @@ const ProfileSetting: NextPage = () => {
 
         <div className="sidebar">
           <div className="brand-logo">
-            <Link href="index">
+            <Link href="/">
               <img src="./images/logoi.png" alt="" width="30" />
             </Link>
           </div>

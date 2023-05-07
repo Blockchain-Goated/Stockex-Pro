@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
 import Image from 'next/legacy/image'
-import two from "../public/images/profile/two.png"
+import profileTwo from "../public/images/profile/Profiletwo.png"
 import logoi from "../public/images/logoi.png"
 import art_photo_2 from "../public/images/profile/art_photo_2.png"
 import blockchain from "../public/images/blockchain.png"
@@ -20,7 +20,7 @@ const Wallet: NextPage = () => {
     return <p>Loading...</p>;
   }
 
-        const themeToggle = () => {
+  const themeToggle = (e:any) => {
     e.preventDefault();
   }
 
@@ -45,7 +45,7 @@ const Wallet: NextPage = () => {
                           placeholder="Search Here"
                         />
                         <span className="input-group-text"
-                          ><i className="icofont-search"></i
+                        ><i className="icofont-search"></i
                         ></span>
                       </div>
                     </form>
@@ -56,7 +56,7 @@ const Wallet: NextPage = () => {
                   <div className="dark-light-toggle" onClick={themeToggle}>
                     <span className="dark"><i className="bi bi-moon"></i></span>
                     <span className="light"
-                      ><i className="bi bi-brightness-high"></i
+                    ><i className="bi bi-brightness-high"></i
                     ></span>
                   </div>
                   <div className="notification dropdown">
@@ -74,7 +74,7 @@ const Wallet: NextPage = () => {
                         <Link href="#" className="">
                           <div className="d-flex align-items-center">
                             <span className="me-3 icon success"
-                              ><i className="bi bi-check"></i
+                            ><i className="bi bi-check"></i
                             ></span>
                             <div>
                               <p>Account created successfully</p>
@@ -85,7 +85,7 @@ const Wallet: NextPage = () => {
                         <Link href="#" className="">
                           <div className="d-flex align-items-center">
                             <span className="me-3 icon fail"
-                              ><i className="bi bi-x"></i
+                            ><i className="bi bi-x"></i
                             ></span>
                             <div>
                               <p>2FA verification failed</p>
@@ -96,7 +96,7 @@ const Wallet: NextPage = () => {
                         <Link href="#" className="">
                           <div className="d-flex align-items-center">
                             <span className="me-3 icon success"
-                              ><i className="bi bi-check"></i
+                            ><i className="bi bi-check"></i
                             ></span>
                             <div>
                               <p>Device confirmation completed</p>
@@ -107,7 +107,7 @@ const Wallet: NextPage = () => {
                         <Link href="#" className="">
                           <div className="d-flex align-items-center">
                             <span className="me-3 icon pending"
-                              ><i className="bi bi-exclamation-triangle"></i
+                            ><i className="bi bi-exclamation-triangle"></i
                             ></span>
                             <div>
                               <p>Phone verification pending</p>
@@ -117,7 +117,7 @@ const Wallet: NextPage = () => {
                         </Link>
 
                         <Link href="settings-activity"
-                          >More <i className="icofont-simple-right"></i
+                        >More <i className="icofont-simple-right"></i
                         ></Link>
                       </div>
                     </div>
@@ -126,18 +126,18 @@ const Wallet: NextPage = () => {
                   <div className="profile_log dropdown">
                     <div className="user" data-toggle="dropdown">
                       <span className="thumb"
-                        ><Image layout="fill" src={art_photo_2} alt=""
-                      /></span>
+                      ><Image layout="responsive" src={art_photo_2} alt=""
+                        /></span>
                       <span className="arrow"
-                        ><i className="icofont-angle-down"></i
+                      ><i className="icofont-angle-down"></i
                       ></span>
                     </div>
                     <div className="dropdown-menu dropdown-menu-right">
                       <div className="user-email">
                         <div className="user">
                           <span className="thumb"
-                            ><Image layout="fill" src={art_photo_2} alt=""
-                          /></span>
+                          ><Image layout="responsive" src={art_photo_2} alt=""
+                            /></span>
                           <div className="user-info">
                             <h5>Jannatul Maowa</h5>
                             <span>Tendex.inc@gmail.com</span>
@@ -185,7 +185,7 @@ const Wallet: NextPage = () => {
       <div className="sidebar">
         <div className="brand-logo">
           <Link href="/"
-            ><Image src={logoi} alt="" width={30} />
+          ><Image src={logoi} alt="" width={30} />
           </Link>
         </div>
         <div className="menu">
@@ -309,7 +309,7 @@ const Wallet: NextPage = () => {
                               className="qr-img"
                               src={qr}
                               alt=""
-                              width="40"
+                              width={40}
                             />
                           </td>
                         </tr>
@@ -326,7 +326,7 @@ const Wallet: NextPage = () => {
                               className="qr-img"
                               src={qr}
                               alt=""
-                              width="40"
+                              width={40}
                             />
                           </td>
                         </tr>
@@ -343,7 +343,7 @@ const Wallet: NextPage = () => {
                               className="qr-img"
                               src={qr}
                               alt=""
-                              width="40"
+                              width={40}
                             />
                           </td>
                         </tr>
@@ -360,7 +360,7 @@ const Wallet: NextPage = () => {
                               className="qr-img"
                               src={qr}
                               alt=""
-                              width="40"
+                              width={40}
                             />
                           </td>
                         </tr>

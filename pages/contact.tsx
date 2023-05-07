@@ -4,6 +4,9 @@ import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
+import logow from "../public/images/logow.png";
+import Image from "next/legacy/image";
+import Synthex from "../public/images/synthex.png";
 
 const Contact: NextPage = () => {
   const router = useRouter();
@@ -39,13 +42,20 @@ const Contact: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="/">
-                      <img
-                        src="./images/Synthex.png"
+                      <Image
+                        src={Synthex}
                         alt=""
                         className="logo-primary"
-                        width="113px" height="21px"
+                        width={113}
+                        height={21}
                       />
-                      <img src="./images/Synthex.png" alt="" className="logo-white" width="339px" height="63px"/>
+                      <Image
+                        src={Synthex}
+                        alt=""
+                        className="logo-white"
+                        width={339}
+                        height={63}
+                      />
                     </Link>
                   </div>
                   <button
@@ -59,43 +69,49 @@ const Contact: NextPage = () => {
                   >
                     <span className="navbar-toggler-icon"></span>
                   </button>
-                  <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                  <div
+                    className="collapse navbar-collapse"
+                    id="navbarNavDropdown"
+                  >
                     <ul className="navbar-nav ms-auto">
                       <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link text-primary"
-                          href="/"
-                          >Home
+                        <Link className="nav-link text-primary" href="/">
+                          Home
                         </Link>
                       </li>
 
                       <li className="nav-item">
-                        <Link href="#" className="nav-link price">Price</Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link href="#" className="nav-link price-details">App</Link>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link href="#"
-                          className="nav-link blog"
-                          >Company
-                        </Link>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link href="#"
-                          className="nav-link contact"
-                          >Support
+                        <Link href="#" className="nav-link price">
+                          Price
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="#" className="nav-link dashboard"
-                          >Dashboard</Link                        >
+                        <Link href="#" className="nav-link price-details">
+                          App
+                        </Link>
+                      </li>
+                      <li className="nav-item dropdown">
+                        <Link href="#" className="nav-link blog">
+                          Company
+                        </Link>
+                      </li>
+                      <li className="nav-item dropdown">
+                        <Link href="#" className="nav-link contact">
+                          Support
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="#" className="nav-link dashboard">
+                          Dashboard
+                        </Link>
                       </li>
                     </ul>
                   </div>
 
                   <div className="signin-btn">
-                    <Link href="#" className="btn btn-primary signin">Sign in</Link>
+                    <Link href="#" className="btn btn-primary signin">
+                      Sign in
+                    </Link>
                   </div>
                 </nav>
               </div>
@@ -119,9 +135,15 @@ const Contact: NextPage = () => {
               <div className="info-list">
                 <h4 className="mb-3">Address</h4>
                 <ul>
-                  <li><i className="fa fa-map-marker"></i> California, USA</li>
-                  <li><i className="fa fa-phone"></i> (+880) 1243 665566</li>
-                  <li><i className="fa fa-envelope"></i> hello@example.com</li>
+                  <li>
+                    <i className="fa fa-map-marker"></i> California, USA
+                  </li>
+                  <li>
+                    <i className="fa fa-phone"></i> (+880) 1243 665566
+                  </li>
+                  <li>
+                    <i className="fa fa-envelope"></i> hello@example.com
+                  </li>
                 </ul>
               </div>
             </div>
@@ -182,7 +204,7 @@ const Contact: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <img className="pb-3" src="./images/logow.png" alt="" />
+                <Image className="pb-3" src={logow} alt="" />
 
                 <p>
                   Tendex is a unique and beautiful collection of UI elements
@@ -195,10 +217,18 @@ const Contact: NextPage = () => {
               <div className="bottom-widget">
                 <h4 className="widget-title">Company</h4>
                 <ul>
-                  <li><Link href="about">About</Link></li>
-                  <li><Link href="career">Career</Link></li>
-                  <li><Link href="#">Affiliate</Link></li>
-                  <li><Link href="team">Our Team</Link></li>
+                  <li>
+                    <Link href="about">About</Link>
+                  </li>
+                  <li>
+                    <Link href="career">Career</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Affiliate</Link>
+                  </li>
+                  <li>
+                    <Link href="team">Our Team</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -206,10 +236,18 @@ const Contact: NextPage = () => {
               <div className="bottom-widget">
                 <h4 className="widget-title">Support</h4>
                 <ul>
-                  <li><Link href="contact">Contact us</Link></li>
-                  <li><Link href="faq">FAQ</Link></li>
-                  <li><Link href="blog">Blog</Link></li>
-                  <li><Link href="helpdesk">Helpdesk</Link></li>
+                  <li>
+                    <Link href="contact">Contact us</Link>
+                  </li>
+                  <li>
+                    <Link href="faq">FAQ</Link>
+                  </li>
+                  <li>
+                    <Link href="blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link href="helpdesk">Helpdesk</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -219,18 +257,34 @@ const Contact: NextPage = () => {
                 <div className="row">
                   <div className="col-xl-6">
                     <ul>
-                      <li><Link href="#">ETH to BTC</Link></li>
-                      <li><Link href="#">BTC to ETH</Link></li>
-                      <li><Link href="#">LTC to ETH</Link></li>
-                      <li><Link href="#">USDT to BTC</Link></li>
+                      <li>
+                        <Link href="#">ETH to BTC</Link>
+                      </li>
+                      <li>
+                        <Link href="#">BTC to ETH</Link>
+                      </li>
+                      <li>
+                        <Link href="#">LTC to ETH</Link>
+                      </li>
+                      <li>
+                        <Link href="#">USDT to BTC</Link>
+                      </li>
                     </ul>
                   </div>
                   <div className="col-xl-6">
                     <ul>
-                      <li><Link href="#">BTC to USDT</Link></li>
-                      <li><Link href="#">LTC to BTC</Link></li>
-                      <li><Link href="#">XMR to BTC</Link></li>
-                      <li><Link href="#">ETC to DASH</Link></li>
+                      <li>
+                        <Link href="#">BTC to USDT</Link>
+                      </li>
+                      <li>
+                        <Link href="#">LTC to BTC</Link>
+                      </li>
+                      <li>
+                        <Link href="#">XMR to BTC</Link>
+                      </li>
+                      <li>
+                        <Link href="#">ETC to DASH</Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -246,8 +300,8 @@ const Contact: NextPage = () => {
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="copyright">
                 <p>
-                  © Copyright <span id="year"></span> <Link href="#">Tendex</Link> I
-                  All Rights Reserved
+                  © Copyright <span id="year"></span>{" "}
+                  <Link href="#">Tendex</Link> I All Rights Reserved
                 </p>
               </div>
             </div>
@@ -255,16 +309,24 @@ const Contact: NextPage = () => {
               <div className="footer-social">
                 <ul>
                   <li>
-                    <Link href="#"><i className="bi bi-facebook"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-facebook"></i>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="#"><i className="bi bi-twitter"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-twitter"></i>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="#"><i className="bi bi-linkedin"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-linkedin"></i>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="#"><i className="bi bi-youtube"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-youtube"></i>
+                    </Link>
                   </li>
                 </ul>
               </div>

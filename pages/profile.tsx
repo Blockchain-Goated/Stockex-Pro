@@ -3,7 +3,11 @@ import Link from "next/dist/client/link";
 import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Image from 'next/legacy/image'
+import Image from "next/legacy/image";
+import profileTwo from "../public/images/profile/profileTwo.png";
+import logoi from "../public/images/logoi.png";
+import android from "../public/images/android.svg";
+import apple from "../public/images/apple.svg";
 
 const Profile: NextPage = () => {
   const router = useRouter();
@@ -119,7 +123,7 @@ const Profile: NextPage = () => {
                     <div className="profile_log dropdown">
                       <div className="user" data-toggle="dropdown">
                         <span className="thumb">
-                          <Image layout="fill" src="../public/images/profile/2.png" alt="" />
+                          <Image layout="responsive" src={profileTwo} alt="" />
                         </span>
                         <span className="arrow">
                           <i className="icofont-angle-down"></i>
@@ -129,7 +133,11 @@ const Profile: NextPage = () => {
                         <div className="user-email">
                           <div className="user">
                             <span className="thumb">
-                              <Image layout="fill" src="../public/images/profile/2.png" alt="" />
+                              <Image
+                                layout="responsive"
+                                src={profileTwo}
+                                alt=""
+                              />
                             </span>
                             <div className="user-info">
                               <h5>Jannatul Maowa</h5>
@@ -181,7 +189,7 @@ const Profile: NextPage = () => {
         <div className="sidebar">
           <div className="brand-logo">
             <Link href="index">
-              <Image src="../public/images/logoi.png" alt="" width={30} />
+              <Image src={logoi} alt="" width={30} />
             </Link>
           </div>
           <div className="menu">
@@ -261,7 +269,7 @@ const Profile: NextPage = () => {
               <div className="col-xxl-6 col-xl-6 col-lg-6">
                 <div className="card welcome-profile">
                   <div className="card-body">
-                    <Image layout="fill" src="../public/images/profile/2.png" alt="" />
+                    <Image layout="responsive" src={profileTwo} alt="" />
                     <h4>Welcome, Jannatul Maowa!</h4>
                     <p>
                       Looks like you are not verified yet. Verify yourself to
@@ -302,12 +310,12 @@ const Profile: NextPage = () => {
                         faster, and reliable.
                       </p>
                       <Link href="#" className="btn btn-primary">
-                        <Image layout="fill" src="../public/images/android.svg" alt="" />
+                        <Image layout="responsive" src={android} alt="" />
                       </Link>
                       <br />
                       <div className="mt-3"></div>
                       <Link href="#" className="btn btn-primary">
-                        <Image layout="fill" src="../public/images/apple.svg" alt="" />
+                        <Image layout="responsive" src={apple} alt="" />
                       </Link>
                     </div>
                   </div>

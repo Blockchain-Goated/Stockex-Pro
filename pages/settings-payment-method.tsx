@@ -6,12 +6,10 @@ import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
-import Image from 'next/legacy/image'
-import two from "../public/images/profile/two.png"
-import logoi from "../public/images/logoi.png"
-import art_photo_2 from "../public/images/profile/art_photo_2.png"
-import blockchain from "../public/images/blockchain.png"
-
+import Image from "next/legacy/image";
+import profileTwo from "../public/images/profile/profileTwo.png";
+import logoi from "../public/images/logoi.png";
+import routing from "../public/images/routing.png";
 
 const SettingsPaymentMethod: NextPage = () => {
   const router = useRouter();
@@ -129,7 +127,7 @@ const SettingsPaymentMethod: NextPage = () => {
                     <div className="profile_log dropdown">
                       <div className="user" data-toggle="dropdown">
                         <span className="thumb">
-                          <Image layout="fill" src={two} alt="" />
+                          <Image layout="responsive" src={profileTwo} alt="" />
                         </span>
                         <span className="arrow">
                           <i className="icofont-angle-down"></i>
@@ -139,7 +137,11 @@ const SettingsPaymentMethod: NextPage = () => {
                         <div className="user-email">
                           <div className="user">
                             <span className="thumb">
-                              <Image layout="fill" src={two} alt="" />
+                              <Image
+                                layout="responsive"
+                                src={profileTwo}
+                                alt=""
+                              />
                             </span>
                             <div className="user-info">
                               <h5>Jannatul Maowa</h5>
@@ -397,8 +399,9 @@ const SettingsPaymentMethod: NextPage = () => {
                     />
                   </div>
                   <div className="col-xl-12">
-                    <Image layout="fill"
-                      src="/images/routing.png"
+                    <Image
+                      layout="responsive"
+                      src={routing}
                       alt=""
                       className="img-fluid"
                     />

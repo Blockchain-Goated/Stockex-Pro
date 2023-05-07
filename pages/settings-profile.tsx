@@ -6,12 +6,11 @@ import SettingsLayouts from "../src/layouts/dashboard/SettingsLayouts";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
-import Image from 'next/legacy/image'
-import two from "../public/images/profile/two.png"
-import logoi from "../public/images/logoi.png"
-import art_photo_2 from "../public/images/profile/art_photo_2.png"
-import blockchain from "../public/images/blockchain.png"
-
+import Image from "next/legacy/image";
+import profileTwo from "../public/images/profile/profileTwo.png";
+import logoi from "../public/images/logoi.png";
+import art_photo_2 from "../public/images/profile/art_photo_2.png";
+import blockchain from "../public/images/blockchain.png";
 
 const ProfileSetting: NextPage = () => {
   const router = useRouter();
@@ -19,7 +18,7 @@ const ProfileSetting: NextPage = () => {
 
   const themeToggle = () => {
     e.preventDefault();
-  }
+  };
 
   if (status === "loading") {
     return <p>Loading...</p>;
@@ -146,7 +145,7 @@ const ProfileSetting: NextPage = () => {
                     <div className="profile_log dropdown">
                       <div className="user" data-toggle="dropdown">
                         <span className="thumb">
-                          <Image layout="fill" src={two} alt="" />
+                          <Image layout="responsive" src={profileTwo} alt="" />
                         </span>
                         <span className="arrow">
                           <i className="icofont-angle-down"></i>
@@ -156,7 +155,11 @@ const ProfileSetting: NextPage = () => {
                         <div className="user-email">
                           <div className="user">
                             <span className="thumb">
-                              <Image layout="fill" src={two} alt="" />
+                              <Image
+                                layout="responsive"
+                                src={profileTwo}
+                                alt=""
+                              />
                             </span>
                             <div className="user-info">
                               <h5>Jannatul Maowa</h5>
@@ -326,9 +329,9 @@ const ProfileSetting: NextPage = () => {
                                   <div className="d-flex align-items-center">
                                     <Image
                                       className="me-3 rounded-circle me-0 me-sm-3"
-                                      src="images/profile/2.png"
-                                      width="55"
-                                      height="55"
+                                      src={profileTwo}
+                                      width={55}
+                                      height={55}
                                       alt=""
                                     />
                                     <div className="media-body">
@@ -397,7 +400,7 @@ const ProfileSetting: NextPage = () => {
                                     placeholder="**********"
                                   />
                                   <small className="mt-2 mb-0 d-block">
-                                    Enable two factor authencation on the
+                                    Enable profileTwo factor authencation on the
                                     security page
                                   </small>
                                 </div>

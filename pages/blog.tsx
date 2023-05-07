@@ -4,6 +4,15 @@ import BlogRight from "../src/components/BlogRight";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import logow from "../public/images/logow.png";
+import blogOne from "../public/images/blog/blogOne.jpg";
+import blogTwo from "../public/images/blog/blogTwo.jpg";
+import blogThree from "../public/images/blog/blogThree.jpg";
+import blogFour from "../public/images/blog/blogFour.jpg";
+import blogPostOne from "../public/images/blog/blogPostOne.jpg";
+import blogPostThree from "../public/images/blog/blogPostThree.jpg";
+import Synthex from "../public/images/synthex.png";
+import Image from "next/legacy/image";
 
 const Blog: NextPage = () => {
   const router = useRouter();
@@ -27,12 +36,19 @@ const Blog: NextPage = () => {
                   <div className="brand-logo">
                     <Link href="/">
                       <Image
-                        src="../public/images/Synthex.png"
+                        src={Synthex}
                         alt=""
                         className="logo-primary"
-                        width={113} height={21}
+                        width={113}
+                        height={21}
                       />
-                      <Image src="../public/images/Synthex.png" alt="" className="logo-white" width={339} height={63}/>
+                      <Image
+                        src={Synthex}
+                        alt=""
+                        className="logo-white"
+                        width={339}
+                        height={63}
+                      />
                     </Link>
                   </div>
                   <button
@@ -46,44 +62,48 @@ const Blog: NextPage = () => {
                   >
                     <span className="navbar-toggler-icon"></span>
                   </button>
-                  <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                  <div
+                    className="collapse navbar-collapse"
+                    id="navbarNavDropdown"
+                  >
                     <ul className="navbar-nav ms-auto">
                       <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link text-primary"
-                          href="/"
-                          >Home
+                        <Link className="nav-link text-primary" href="/">
+                          Home
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="price">Price</Link>
+                        <Link className="nav-link" href="price">
+                          Price
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="price-details">App</Link>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link"
-                          href="blog"
-                          >Company
+                        <Link className="nav-link" href="price-details">
+                          App
                         </Link>
                       </li>
                       <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link"
-                          href="contact"
-                          >Support
+                        <Link className="nav-link" href="blog">
+                          Company
+                        </Link>
+                      </li>
+                      <li className="nav-item dropdown">
+                        <Link className="nav-link" href="contact">
+                          Support
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="dashboard"
-                          >Dashboard</Link                        >
+                        <Link className="nav-link" href="dashboard">
+                          Dashboard
+                        </Link>
                       </li>
                     </ul>
                   </div>
 
                   <div className="signin-btn">
-                    <Link className="btn btn-primary" href="signin">Sign in</Link>
+                    <Link className="btn btn-primary" href="signin">
+                      Sign in
+                    </Link>
                   </div>
                 </nav>
               </div>
@@ -100,9 +120,10 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <Image layout="fill"
+                      <Image
+                        layout="responsive"
                         className="img-fluid card-img-top"
-                        src="../public/images/blog/1.jpg"
+                        src={blogOne}
                         alt=""
                       />
                       <div className="card-body">
@@ -119,9 +140,10 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <Image layout="fill"
+                      <Image
+                        layout="responsive"
                         className="img-fluid card-img-top"
-                        src="../public/images/blog/2.jpg"
+                        src={blogTwo}
                         alt=""
                       />
                       <div className="card-body">
@@ -138,9 +160,10 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <Image layout="fill"
+                      <Image
+                        layout="responsive"
                         className="img-fluid card-img-top"
-                        src="../public/images/blog/3.jpg"
+                        src={blogThree}
                         alt=""
                       />
                       <div className="card-body">
@@ -157,9 +180,10 @@ const Blog: NextPage = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="blog-grid">
                     <div className="card">
-                      <Image layout="fill"
+                      <Image
+                        layout="responsive"
                         className="img-fluid card-img-top"
-                        src="../public/images/blog/4.jpg"
+                        src={blogFour}
                         alt=""
                       />
                       <div className="card-body">
@@ -184,60 +208,71 @@ const Blog: NextPage = () => {
                       className="form-control"
                       placeholder="Subscribe Now"
                     />
-                    <span><i className="la la-search"></i></span>
+                    <span>
+                      <i className="la la-search"></i>
+                    </span>
                   </form>
                 </div>
                 <div className="widget-recent-post">
                   <h3 className="post-title">Recent Post</h3>
                   <ul className="list-unstyled">
                     <li className="media d-flex">
-                      <Image layout="fill"
-                        src="../public/images/blog/post_1.jpg"
+                      <Image
+                        layout="responsive"
+                        src={blogPostOne}
                         className="me-3"
                         alt="..."
                       />
                       <div className="media-body ms-1">
                         <h5 className="mt-0 mb-1">List-based media object</h5>
                         <div className="meta-info">
-                          <Link href="#"><i className="la la-user"></i> Admin</Link>
-                          <Link href="#"
-                            ><i className="la la-calendar"></i> 31 July,
-                            <span id="year"></span
-                          ></Link>
+                          <Link href="#">
+                            <i className="la la-user"></i> Admin
+                          </Link>
+                          <Link href="#">
+                            <i className="la la-calendar"></i> 31 July,
+                            <span id="year"></span>
+                          </Link>
                         </div>
                       </div>
                     </li>
                     <li className="media d-flex my-4">
-                      <Image layout="fill"
-                        src="../public/images/blog/post_2.jpg"
+                      <Image
+                        layout="responsive"
+                        src={blogPostThree}
                         className="me-3"
                         alt="..."
                       />
                       <div className="media-body ms-1">
                         <h5 className="mt-0 mb-1">List-based media object</h5>
                         <div className="meta-info">
-                          <Link href="#"><i className="la la-user"></i> Admin</Link>
-                          <Link href="#"
-                            ><i className="la la-calendar"></i> 31 July,
-                            <span id="year"></span
-                          ></Link>
+                          <Link href="#">
+                            <i className="la la-user"></i> Admin
+                          </Link>
+                          <Link href="#">
+                            <i className="la la-calendar"></i> 31 July,
+                            <span id="year"></span>
+                          </Link>
                         </div>
                       </div>
                     </li>
                     <li className="media d-flex">
-                      <Image layout="fill"
-                        src="../public/images/blog/post_3.jpg"
+                      <Image
+                        layout="responsive"
+                        src={blogPostThree}
                         className="me-3"
                         alt="..."
                       />
                       <div className="media-body ms-1">
                         <h5 className="mt-0 mb-1">List-based media object</h5>
                         <div className="meta-info">
-                          <Link href="#"><i className="la la-user"></i> Admin</Link>
-                          <Link href="#"
-                            ><i className="la la-calendar"></i> 31 July,
-                            <span id="year"></span
-                          ></Link>
+                          <Link href="#">
+                            <i className="la la-user"></i> Admin
+                          </Link>
+                          <Link href="#">
+                            <i className="la la-calendar"></i> 31 July,
+                            <span id="year"></span>
+                          </Link>
                         </div>
                       </div>
                     </li>
@@ -302,7 +337,12 @@ const Blog: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <Image layout="fill" className="pb-3" src="../public/images/logow.png" alt="" />
+                <Image
+                  layout="responsive"
+                  className="pb-3"
+                  src={logow}
+                  alt=""
+                />
 
                 <p>
                   Tendex is a unique and beautiful collection of UI elements
@@ -315,10 +355,18 @@ const Blog: NextPage = () => {
               <div className="bottom-widget">
                 <h4 className="widget-title">Company</h4>
                 <ul>
-                  <li><Link href="about">About</Link></li>
-                  <li><Link href="career">Career</Link></li>
-                  <li><Link href="#">Affiliate</Link></li>
-                  <li><Link href="team">Our Team</Link></li>
+                  <li>
+                    <Link href="about">About</Link>
+                  </li>
+                  <li>
+                    <Link href="career">Career</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Affiliate</Link>
+                  </li>
+                  <li>
+                    <Link href="team">Our Team</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -326,10 +374,18 @@ const Blog: NextPage = () => {
               <div className="bottom-widget">
                 <h4 className="widget-title">Support</h4>
                 <ul>
-                  <li><Link href="contact">Contact us</Link></li>
-                  <li><Link href="faq">FAQ</Link></li>
-                  <li><Link href="blog">Blog</Link></li>
-                  <li><Link href="helpdesk">Helpdesk</Link></li>
+                  <li>
+                    <Link href="contact">Contact us</Link>
+                  </li>
+                  <li>
+                    <Link href="faq">FAQ</Link>
+                  </li>
+                  <li>
+                    <Link href="blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link href="helpdesk">Helpdesk</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -339,18 +395,34 @@ const Blog: NextPage = () => {
                 <div className="row">
                   <div className="col-xl-6">
                     <ul>
-                      <li><Link href="#">ETH to BTC</Link></li>
-                      <li><Link href="#">BTC to ETH</Link></li>
-                      <li><Link href="#">LTC to ETH</Link></li>
-                      <li><Link href="#">USDT to BTC</Link></li>
+                      <li>
+                        <Link href="#">ETH to BTC</Link>
+                      </li>
+                      <li>
+                        <Link href="#">BTC to ETH</Link>
+                      </li>
+                      <li>
+                        <Link href="#">LTC to ETH</Link>
+                      </li>
+                      <li>
+                        <Link href="#">USDT to BTC</Link>
+                      </li>
                     </ul>
                   </div>
                   <div className="col-xl-6">
                     <ul>
-                      <li><Link href="#">BTC to USDT</Link></li>
-                      <li><Link href="#">LTC to BTC</Link></li>
-                      <li><Link href="#">XMR to BTC</Link></li>
-                      <li><Link href="#">ETC to DASH</Link></li>
+                      <li>
+                        <Link href="#">BTC to USDT</Link>
+                      </li>
+                      <li>
+                        <Link href="#">LTC to BTC</Link>
+                      </li>
+                      <li>
+                        <Link href="#">XMR to BTC</Link>
+                      </li>
+                      <li>
+                        <Link href="#">ETC to DASH</Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -366,8 +438,8 @@ const Blog: NextPage = () => {
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="copyright">
                 <p>
-                  © Copyright <span id="year"></span> <Link href="#">Tendex</Link> I
-                  All Rights Reserved
+                  © Copyright <span id="year"></span>{" "}
+                  <Link href="#">Tendex</Link> I All Rights Reserved
                 </p>
               </div>
             </div>
@@ -375,16 +447,24 @@ const Blog: NextPage = () => {
               <div className="footer-social">
                 <ul>
                   <li>
-                    <Link href="#"><i className="bi bi-facebook"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-facebook"></i>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="#"><i className="bi bi-twitter"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-twitter"></i>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="#"><i className="bi bi-linkedin"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-linkedin"></i>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="#"><i className="bi bi-youtube"></i></Link>
+                    <Link href="#">
+                      <i className="bi bi-youtube"></i>
+                    </Link>
                   </li>
                 </ul>
               </div>

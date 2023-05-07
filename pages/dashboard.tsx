@@ -7,7 +7,12 @@ import DashboardLayout from "../src/layouts/dashboard/DashboardLayout";
 import { copyText } from "../src/utils/utils";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Image from 'next/legacy/image'
+import Image from "next/legacy/image";
+import logow from "../public/images/logow.png";
+import logo from "../public/images/logo.png";
+import Synthex from "../public/images/synthex.png";
+import blockchain from "../public/images/blockchain.png";
+import art_photo_2 from "../public/images/art-photo-2.jpg";
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -32,7 +37,7 @@ const Dashboard: NextPage = () => {
   }
   return (
     <>
-     <div className="header landing bg-dark light">
+      <div className="header landing bg-dark light">
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
@@ -40,13 +45,20 @@ const Dashboard: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="/">
-                      <img
-                        src="./images/Synthex.png"
+                      <Image
+                        src={Synthex}
                         alt=""
                         className="logo-primary"
-                        width="113px" height="21px"
+                        width={113}
+                        height={21}
                       />
-                      <img src="./images/Synthex.png" alt="" className="logo-white" width="339px" height="63px"/>
+                      <Image
+                        src={Synthex}
+                        alt=""
+                        className="logo-white"
+                        width={339}
+                        height={63}
+                      />
                     </Link>
                   </div>
                   <button
@@ -60,57 +72,67 @@ const Dashboard: NextPage = () => {
                   >
                     <span className="navbar-toggler-icon"></span>
                   </button>
-                  <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                  <div
+                    className="collapse navbar-collapse"
+                    id="navbarNavDropdown"
+                  >
                     <ul className="navbar-nav ms-auto">
                       <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link text-primary"
-                          href="/"
-                          >Home
+                        <Link className="nav-link text-primary" href="/">
+                          Home
                         </Link>
                       </li>
-                     
+
                       <li className="nav-item">
-                        <Link className="nav-link price" href="#">Price</Link>
+                        <Link className="nav-link price" href="#">
+                          Price
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link price-details" href="#">App</Link>
+                        <Link className="nav-link price-details" href="#">
+                          App
+                        </Link>
                       </li>
                       <li className="nav-item dropdown">
                         <Link
                           className="nav-link
                           blog"
-                          >Company
+                        >
+                          Company
                         </Link>
                       </li>
                       <li className="nav-item dropdown">
                         <Link
                           className="nav-link
                           contact"
-                          >Support
+                        >
+                          Support
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link dashboard" href="#"
-                          >Dashboard</Link                        >
+                        <Link className="nav-link dashboard" href="#">
+                          Dashboard
+                        </Link>
                       </li>
                     </ul>
                   </div>
 
                   <div className="signin-btn">
-                    <Link className="btn btn-primary signin" href="#">Sign in</Link>
+                    <Link className="btn btn-primary signin" href="#">
+                      Sign in
+                    </Link>
                   </div>
                 </nav>
               </div>
             </div>
           </div>
         </div>
-       </div>
+      </div>
 
       <div className="sidebar">
         <div className="brand-logo">
-          <Link href="/"
-            ><img src="./images/blockchain.png" alt="" width="30" />
+          <Link href="/">
+            <Image src={blockchain} alt="" width={30} />
           </Link>
         </div>
         <div className="menu">
@@ -122,7 +144,9 @@ const Dashboard: NextPage = () => {
                 data-placement="right"
                 title="Home"
               >
-                <span><i className="bi bi-house"></i></span>
+                <span>
+                  <i className="bi bi-house"></i>
+                </span>
               </Link>
             </li>
             <li>
@@ -132,7 +156,9 @@ const Dashboard: NextPage = () => {
                 data-placement="right"
                 title="Trade"
               >
-                <span><i className="bi bi-globe2"></i></span>
+                <span>
+                  <i className="bi bi-globe2"></i>
+                </span>
               </Link>
             </li>
             <li>
@@ -142,7 +168,9 @@ const Dashboard: NextPage = () => {
                 data-placement="right"
                 title="Wallet"
               >
-                <span><i className="bi bi-wallet2"></i></span>
+                <span>
+                  <i className="bi bi-wallet2"></i>
+                </span>
               </Link>
             </li>
             <li>
@@ -153,7 +181,9 @@ const Dashboard: NextPage = () => {
                 title="Settings"
                 id="settings"
               >
-                <span><i className="bi bi-gear"></i></span>
+                <span>
+                  <i className="bi bi-gear"></i>
+                </span>
               </Link>
             </li>
             <li className="logout">
@@ -163,12 +193,16 @@ const Dashboard: NextPage = () => {
                 data-placement="right"
                 title="Signout"
               >
-                <span><i className="bi bi-power"></i></span>
+                <span>
+                  <i className="bi bi-power"></i>
+                </span>
               </Link>
             </li>
           </ul>
 
-          <p className="copyright">&#169; <Link href="#">Qkit</Link></p>
+          <p className="copyright">
+            &#169; <Link href="#">Qkit</Link>
+          </p>
         </div>
       </div>
 
@@ -178,7 +212,6 @@ const Dashboard: NextPage = () => {
             <div className="col-xl-12">
               <div className="page-title-content">
                 <p>
-                  
                   <strong></strong>
                 </p>
               </div>
@@ -190,7 +223,7 @@ const Dashboard: NextPage = () => {
                 <div className="col-xxl-12 col-xl-12 col-lg-6">
                   <div className="card welcome-profile">
                     <div className="card-body">
-                      <img src="./images/profile/Art Photo 2.jpeg" alt="" />
+                      <Image src={art_photo_2} alt="" />
                       <h4>Hi, Mustansir Bohari!</h4>
                       <p>
                         Looks like you are not verified yet. Verify yourself to
@@ -200,25 +233,25 @@ const Dashboard: NextPage = () => {
                       <ul>
                         <li>
                           <Link href="#">
-                            <span className="verified"
-                              ><i className="icofont-check"></i
-                            ></span>
+                            <span className="verified">
+                              <i className="icofont-check"></i>
+                            </span>
                             Verify account
                           </Link>
                         </li>
                         <li>
                           <Link href="#">
-                            <span className="not-verified"
-                              ><i className="icofont-close-line"></i
-                            ></span>
+                            <span className="not-verified">
+                              <i className="icofont-close-line"></i>
+                            </span>
                             Two-factor authentication (2FA)
                           </Link>
                         </li>
                         <li>
                           <Link href="#">
-                            <span className="not-verified"
-                              ><i className="icofont-close-line"></i
-                            ></span>
+                            <span className="not-verified">
+                              <i className="icofont-close-line"></i>
+                            </span>
                             Deposit money
                           </Link>
                         </li>
@@ -271,7 +304,10 @@ const Dashboard: NextPage = () => {
 
                         <p className="mb-0">
                           1 USD ~ 0.000088 BTC
-                          <Link href="#">Expected rate <br />No extra fees</Link>
+                          <Link href="#">
+                            Expected rate <br />
+                            No extra fees
+                          </Link>
                         </p>
 
                         <button
@@ -339,8 +375,8 @@ const Dashboard: NextPage = () => {
                         <h4>Invite a friend and get $30</h4>
                         <p>
                           You will receive up to $30 when they： 1.Buy Crypto 2.
-                          Deposit 3. Finish Trading Tasks <br /><Link href="#"
-                            >Learn more</Link                          >
+                          Deposit 3. Finish Trading Tasks <br />
+                          <Link href="#">Learn more</Link>
                         </p>
 
                         <div className="copy-link">
@@ -355,18 +391,16 @@ const Dashboard: NextPage = () => {
                               <span
                                 onClick="copy()"
                                 className="input-group-text c-pointer"
-                                >Copy</span
                               >
+                                Copy
+                              </span>
                             </div>
                           </form>
                         </div>
-
-                       
                       </div>
                     </div>
                   </div>
                 </div>
-               
               </div>
             </div>
 
@@ -453,38 +487,36 @@ const Dashboard: NextPage = () => {
                           <h5>Equity</h5>
                           <div className="text-end">
                             <h5>$0.0000</h5>
-                            <span
-                              >Trade balance combined with unrealized
-                              profit/loss</span
-                            >
+                            <span>
+                              Trade balance combined with unrealized profit/loss
+                            </span>
                           </div>
                         </li>
                         <li>
                           <h5>Used Margin</h5>
                           <div className="text-end">
                             <h5>$0.0000</h5>
-                            <span
-                              >Total margin amount used in open positions.</span
-                            >
+                            <span>
+                              Total margin amount used in open positions.
+                            </span>
                           </div>
                         </li>
                         <li>
                           <h5>Free Margin</h5>
                           <div className="text-end">
                             <h5>$0.0000</h5>
-                            <span
-                              >Usable margin balance. Equal to equity
-                              minus.</span
-                            >
+                            <span>
+                              Usable margin balance. Equal to equity minus.
+                            </span>
                           </div>
                         </li>
                         <li>
                           <h5>Margin Level</h5>
                           <div className="text-end">
                             <h5>$0.0000</h5>
-                            <span
-                              >Percentage ratio of equity to used margin.</span
-                            >
+                            <span>
+                              Percentage ratio of equity to used margin.
+                            </span>
                           </div>
                         </li>
                       </ul>
@@ -598,7 +630,6 @@ const Dashboard: NextPage = () => {
                         </Link>
                       </div>
                     </div>
-                   
                   </div>
                 </div>
 
@@ -626,76 +657,86 @@ const Dashboard: NextPage = () => {
                               <td>523640</td>
                               <td>January 15</td>
                               <td>
-                                <span className="danger-arrow"
-                                  ><i className="icofont-arrow-down"></i> Sell</span
-                                >
+                                <span className="danger-arrow">
+                                  <i className="icofont-arrow-down"></i> Sell
+                                </span>
                               </td>
                               <td className="coin-name">
                                 <i className="cc BTC"></i> Bitcoin
                               </td>
                               <td className="text-danger">-0.000242 BTC</td>
                               <td>0.02%</td>
-                              <td><strong>0.25484 BTC</strong></td>
+                              <td>
+                                <strong>0.25484 BTC</strong>
+                              </td>
                             </tr>
                             <tr>
                               <td>523640</td>
                               <td>January 15</td>
                               <td>
-                                <span className="success-arrow"
-                                  ><i className="icofont-arrow-up"></i>Buy</span
-                                >
+                                <span className="success-arrow">
+                                  <i className="icofont-arrow-up"></i>Buy
+                                </span>
                               </td>
                               <td className="coin-name">
                                 <i className="cc LTC"></i> Litecoin
                               </td>
                               <td className="text-success">-0.000242 BTC</td>
                               <td>0.02%</td>
-                              <td><strong> 0.25484 LTC</strong></td>
+                              <td>
+                                <strong> 0.25484 LTC</strong>
+                              </td>
                             </tr>
                             <tr>
                               <td>523640</td>
                               <td>January 15</td>
                               <td>
-                                <span className="success-arrow"
-                                  ><i className="icofont-arrow-up"></i>Buy</span
-                                >
+                                <span className="success-arrow">
+                                  <i className="icofont-arrow-up"></i>Buy
+                                </span>
                               </td>
                               <td className="coin-name">
                                 <i className="cc XRP"></i> Ripple
                               </td>
                               <td className="text-success">-0.000242 BTC</td>
                               <td>0.02%</td>
-                              <td><strong> 0.25484 LTC</strong></td>
+                              <td>
+                                <strong> 0.25484 LTC</strong>
+                              </td>
                             </tr>
                             <tr>
                               <td>523640</td>
                               <td>January 15</td>
                               <td>
-                                <span className="success-arrow"
-                                  ><i className="icofont-arrow-up"></i>Buy</span
-                                >
+                                <span className="success-arrow">
+                                  <i className="icofont-arrow-up"></i>Buy
+                                </span>
                               </td>
                               <td className="coin-name">
                                 <i className="cc DASH"></i> Dash
                               </td>
                               <td className="text-success">-0.000242 BTC</td>
                               <td>0.02%</td>
-                              <td><strong> 0.25484 LTC</strong></td>
+                              <td>
+                                <strong> 0.25484 LTC</strong>
+                              </td>
                             </tr>
                             <tr>
                               <td>523640</td>
                               <td>January 15</td>
                               <td>
-                                <span className="success-arrow"
-                                  ><i className="icofont-arrow-up"></i>Buy</span
-                                >
+                                <span className="success-arrow">
+                                  <i className="icofont-arrow-up"></i>Buy
+                                </span>
                               </td>
                               <td className="coin-name">
                                 <i className="cc DASH"></i> Dash
                               </td>
                               <td className="text-success">-0.000242 BTC</td>
                               <td>0.02%</td>
-                              <td><strong> 0.25484 LTC</strong></td>
+                              <td>
+                                <strong> 0.25484 LTC</strong>
+                              </td>
                             </tr>
                           </tbody>
                         </table>

@@ -3,7 +3,9 @@ import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Image from 'next/legacy/image'
+import Image from "next/legacy/image";
+import logow from "../public/images/logow.png";
+import logo from "../public/images/logo.png";
 
 const Faq: NextPage = () => {
   const router = useRouter();
@@ -26,13 +28,15 @@ const Faq: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="index">
-                      <Image layout="fill"
-                        src="../public/images/logo.png"
+                      <Image
+                        layout="responsive"
+                        src={logo}
                         alt=""
                         className="logo-primary"
                       />
-                      <Image layout="fill"
-                        src="../public/images/logow.png"
+                      <Image
+                        layout="responsive"
+                        src={logow}
                         alt=""
                         className="logo-white"
                       />
@@ -337,7 +341,12 @@ const Faq: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <Image layout="fill" className="pb-3" src="../public/images/logow.png" alt="" />
+                <Image
+                  layout="responsive"
+                  className="pb-3"
+                  src={logow}
+                  alt=""
+                />
 
                 <p>
                   Tendex is a unique and beautiful collection of UI elements

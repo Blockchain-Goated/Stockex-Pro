@@ -6,17 +6,21 @@ import { useSession } from "next-auth/react";
 // import "../styles/styles.css";
 import Synthex from "../public/images/Synthex.png";
 import api from "../public/images/demo/api.jpg";
-import Image from 'next/legacy/image'
+import Image from "next/legacy/image";
+import logow from "../public/images/logow.png";
+import logo from "../public/images/logo.png";
+import blockchain from "../public/images/blockchain.png";
+import art_photo_2 from "../public/images/art-photo-2.jpg";
 
 const Index: NextPage = () => {
   const { data: session, status } = useSession();
   console.log(`Session is ${JSON.stringify(session)}`);
   const router = useRouter();
 
-    const priceDetails = (e: any) => {
-      e.preventDefault();
-      router.push("/price-details");
-    };
+  const priceDetails = (e: any) => {
+    e.preventDefault();
+    router.push("/price-details");
+  };
 
   const sliderProps = {
     infinite: true,
@@ -42,7 +46,7 @@ const Index: NextPage = () => {
                         width={113}
                         height={21}
                         layout="responsive"
-/>
+                      />
                       <Image
                         src={Synthex}
                         alt=""
@@ -70,10 +74,7 @@ const Index: NextPage = () => {
                   >
                     <ul className="navbar-nav ms-auto">
                       <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link text-primary"
-                          href=""
-                        >
+                        <Link className="nav-link text-primary" href="">
                           Home
                         </Link>
                       </li>
@@ -83,7 +84,13 @@ const Index: NextPage = () => {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="nav-link" href="#" onClick={(e)=>{priceDetails(e);}}>
+                        <Link
+                          className="nav-link"
+                          href="#"
+                          onClick={(e) => {
+                            priceDetails(e);
+                          }}
+                        >
                           App
                         </Link>
                       </li>
@@ -471,7 +478,12 @@ const Index: NextPage = () => {
           <div className="row">
             <div className="col-xl-6 col-lg-6 col-md-6">
               <div className="new-product-content">
-                <Image className="Image-fluid" src={api} alt="" layout="responsive" />
+                <Image
+                  className="Image-fluid"
+                  src={api}
+                  alt=""
+                  layout="responsive"
+                />
                 <h4>Integrate our API</h4>
                 <p>
                   A white-label solution for your project, whether it is a

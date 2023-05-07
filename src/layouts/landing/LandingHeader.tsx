@@ -2,12 +2,12 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { MouseEvent, useEffect, useState } from "react";
 import { activeLandingHeaderMenu } from "../../utils/utils";
-import { signOut } from "next-auth/react"
+import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import { useSession } from "next-auth/react"
+import { useSession } from "next-auth/react";
 
 const LandingHeader: NextPage = () => {
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession();
   const router = useRouter();
   useEffect(() => {
     activeLandingHeaderMenu();
@@ -31,8 +31,8 @@ const LandingHeader: NextPage = () => {
             <div className="navigation">
               <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="brand-logo">
-                  <Link  href="/">
-             <>
+                  <Link href="/">
+                    <>
                       <img
                         src="/images/logo.png"
                         alt="Logo"
@@ -43,7 +43,7 @@ const LandingHeader: NextPage = () => {
                         alt="Logo"
                         className="logo-white"
                       />
-                  </>
+                    </>
                   </Link>
                 </div>
                 <button
@@ -70,10 +70,10 @@ const LandingHeader: NextPage = () => {
                         className={`dropdown-menu ${classNameChange("home")}`}
                       >
                         <Link className="dropdown-item" href="/">
-                         Home 1
+                          Home 1
                         </Link>
                         <Link className="dropdown-item" href="index-2">
-                         Home 2
+                          Home 2
                         </Link>
                         <Link className="dropdown-item" href="index-3">
                           Home 3
@@ -111,7 +111,7 @@ const LandingHeader: NextPage = () => {
                           Blog
                         </Link>
                         <Link className="dropdown-item" href="/blog-details">
-                         Blog Details
+                          Blog Details
                         </Link>
                         <Link className="dropdown-item" href="/career">
                           Career
@@ -139,7 +139,7 @@ const LandingHeader: NextPage = () => {
                           Help Desk
                         </Link>
                         <Link className="dropdown-item" href="/privacy-policy">
-                         Privacy
+                          Privacy
                         </Link>
                         <Link className="dropdown-item" href="/faq">
                           FAQ

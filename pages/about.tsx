@@ -3,10 +3,10 @@ import Link from "next/dist/client/link";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import logo from "../public/images/logo.png"
-import logow from "../public/images/logow.png"
-import one from "../public/images/about/1.jpg"
-import Image from 'next/legacy/image'
+import logo from "../public/images/logo.png";
+import logow from "../public/images/logow.png";
+import one from "../public/images/about/1.jpg";
+import Image from "next/legacy/image";
 
 const About: NextPage = () => {
   const router = useRouter();
@@ -29,12 +29,14 @@ const About: NextPage = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="brand-logo">
                     <Link href="">
-                      <Image layout="responsive"
+                      <Image
+                        layout="responsive"
                         src={logo}
                         alt=""
                         className="logo-primary"
                       />
-                      <Image layout="responsive"
+                      <Image
+                        layout="responsive"
                         src={logow}
                         alt=""
                         className="logo-white"
@@ -183,7 +185,12 @@ const About: NextPage = () => {
             </div>
             <div className="col-lg-6">
               <div className="service-img">
-                <Image layout="responsive" src={one} alt="" className="img-fluid" />
+                <Image
+                  layout="responsive"
+                  src={one}
+                  alt=""
+                  className="img-fluid"
+                />
               </div>
             </div>
           </div>
@@ -250,7 +257,12 @@ const About: NextPage = () => {
             </div>
             <div className="col-lg-6">
               <div className="service-img">
-                <Image layout="responsive" src={one} alt="" className="img-fluid" />
+                <Image
+                  layout="responsive"
+                  src={one}
+                  alt=""
+                  className="img-fluid"
+                />
               </div>
             </div>
           </div>
@@ -262,7 +274,12 @@ const About: NextPage = () => {
           <div className="row">
             <div className="col-xl-4">
               <div className="bottom-logo">
-                <Image layout="responsive" className="pb-3" src={logow} alt="" />
+                <Image
+                  layout="responsive"
+                  className="pb-3"
+                  src={logow}
+                  alt=""
+                />
 
                 <p>
                   Tendex is a unique and beautiful collection of UI elements

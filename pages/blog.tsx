@@ -13,6 +13,10 @@ import blogPostOne from "../public/images/blog/blogPostOne.jpg";
 import blogPostThree from "../public/images/blog/blogPostThree.jpg";
 import Synthex from "../public/images/synthex.png";
 import Image from "next/legacy/image";
+import BlogComponent from "../src/components/blog/BlogComponent";
+import BlogMediaComponent from "../src/components/blog/BlogMediaComponent";
+import BlogListComponent from "../src/components/blog/BlogListComponent";
+import BlogList from "../src/components/blog/BlogList";
 
 const Blog: NextPage = () => {
   const router = useRouter();
@@ -117,86 +121,34 @@ const Blog: NextPage = () => {
           <div className="row">
             <div className="col-xl-9 col-lg-9">
               <div className="row">
-                <div className="col-xl-6 col-lg-6 col-md-6">
-                  <div className="blog-grid">
-                    <div className="card">
-                      <Image
-                        layout="responsive"
-                        className="img-fluid card-img-top"
-                        src={blogOne}
-                        alt=""
-                      />
-                      <div className="card-body">
-                        <Link href="blog-details">
-                          <h4 className="card-title">
-                            Why does Litecoin need MimbleWimble?
-                          </h4>
-                        </Link>
-                        <Link href="#">Read More</Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6">
-                  <div className="blog-grid">
-                    <div className="card">
-                      <Image
-                        layout="responsive"
-                        className="img-fluid card-img-top"
-                        src={blogTwo}
-                        alt=""
-                      />
-                      <div className="card-body">
-                        <Link href="blog-details">
-                          <h4 className="card-title">
-                            How to securely store your HD wallet seeds?
-                          </h4>
-                        </Link>
-                        <Link href="#">Read More</Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6">
-                  <div className="blog-grid">
-                    <div className="card">
-                      <Image
-                        layout="responsive"
-                        className="img-fluid card-img-top"
-                        src={blogThree}
-                        alt=""
-                      />
-                      <div className="card-body">
-                        <Link href="blog-details">
-                          <h4 className="card-title">
-                            Exclusive Interview With Xinxi Wang Of Litecoin
-                          </h4>
-                        </Link>
-                        <Link href="#">Read More</Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6">
-                  <div className="blog-grid">
-                    <div className="card">
-                      <Image
-                        layout="responsive"
-                        className="img-fluid card-img-top"
-                        src={blogFour}
-                        alt=""
-                      />
-                      <div className="card-body">
-                        <Link href="blog-details">
-                          <h4 className="card-title">
-                            Exclusive Interview With Xinxi Wang Of Litecoin
-                          </h4>
-                        </Link>
-                        <Link href="#">Read More</Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <BlogComponent
+                  imgSrc={blogOne}
+                  title="Why does Litecoin need MimbleWimble?"
+                  hrefTitle="blog-details"
+                  hrefText="#"
+                  text="Read More"
+                />
+                <BlogComponent
+                  imgSrc={blogTwo}
+                  title="How to securely store your HD wallet seeds?"
+                  hrefTitle="blog-details"
+                  hrefText="#"
+                  text="Read More"
+                />
+                <BlogComponent
+                  imgSrc={blogThree}
+                  title="Exclusive Interview With Xinxi Wang Of Litecoin"
+                  hrefTitle="blog-details"
+                  hrefText="#"
+                  text="Read More"
+                />
+                <BlogComponent
+                  imgSrc={blogFour}
+                  title="Exclusive Interview With Xinxi Wang Of Litecoin"
+                  hrefTitle="blog-details"
+                  hrefText="#"
+                  text="Read More"
+                />
               </div>
             </div>
             <div className="col-xl-3 col-lg-3">
@@ -216,104 +168,43 @@ const Blog: NextPage = () => {
                 <div className="widget-recent-post">
                   <h3 className="post-title">Recent Post</h3>
                   <ul className="list-unstyled">
-                    <li className="media d-flex">
-                      <Image
-                        layout="responsive"
-                        src={blogPostOne}
-                        className="me-3"
-                        alt="..."
-                      />
-                      <div className="media-body ms-1">
-                        <h5 className="mt-0 mb-1">List-based media object</h5>
-                        <div className="meta-info">
-                          <Link href="#">
-                            <i className="la la-user"></i> Admin
-                          </Link>
-                          <Link href="#">
-                            <i className="la la-calendar"></i> 31 July,
-                            <span id="year"></span>
-                          </Link>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="media d-flex my-4">
-                      <Image
-                        layout="responsive"
-                        src={blogPostThree}
-                        className="me-3"
-                        alt="..."
-                      />
-                      <div className="media-body ms-1">
-                        <h5 className="mt-0 mb-1">List-based media object</h5>
-                        <div className="meta-info">
-                          <Link href="#">
-                            <i className="la la-user"></i> Admin
-                          </Link>
-                          <Link href="#">
-                            <i className="la la-calendar"></i> 31 July,
-                            <span id="year"></span>
-                          </Link>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="media d-flex">
-                      <Image
-                        layout="responsive"
-                        src={blogPostThree}
-                        className="me-3"
-                        alt="..."
-                      />
-                      <div className="media-body ms-1">
-                        <h5 className="mt-0 mb-1">List-based media object</h5>
-                        <div className="meta-info">
-                          <Link href="#">
-                            <i className="la la-user"></i> Admin
-                          </Link>
-                          <Link href="#">
-                            <i className="la la-calendar"></i> 31 July,
-                            <span id="year"></span>
-                          </Link>
-                        </div>
-                      </div>
-                    </li>
+                    <BlogMediaComponent
+                      blogPostSrc={blogPostOne}
+                      title="List-based media object"
+                      linkHrefOne="#"
+                      linkHrefTwo="#"
+                      linkTextOne="Admin"
+                      linkTextTwo="31 July,"
+                    />
+
+                    <BlogMediaComponent
+                      blogPostSrc={blogPostThree}
+                      title="List-based media object"
+                      linkHrefOne="#"
+                      linkHrefTwo="#"
+                      linkTextOne="Admin"
+                      linkTextTwo="31 July,"
+                    />
+
+                    <BlogMediaComponent
+                      blogPostSrc={blogPostThree}
+                      title="List-based media object"
+                      linkHrefOne="#"
+                      linkHrefTwo="#"
+                      linkTextOne="Admin"
+                      linkTextTwo="31 July,"
+                    />
                   </ul>
                 </div>
                 <div className="widget-category">
                   <h3 className="widget-title">Categories</h3>
                   <ul className="list-group">
-                    <li
-                      className="
-                        list-group-item
-                        d-flex
-                        justify-content-between
-                        align-items-center
-                      "
-                    >
-                      Cras justo odio
-                      <span className="badge badge-primary badge-pill">14</span>
-                    </li>
-                    <li
-                      className="
-                        list-group-item
-                        d-flex
-                        justify-content-between
-                        align-items-center
-                      "
-                    >
-                      Dapibus ac facilisis in
-                      <span className="badge badge-primary badge-pill">2</span>
-                    </li>
-                    <li
-                      className="
-                        list-group-item
-                        d-flex
-                        justify-content-between
-                        align-items-center
-                      "
-                    >
-                      Morbi leo risus
-                      <span className="badge badge-primary badge-pill">1</span>
-                    </li>
+                    <BlogListComponent text="Cras justo odio" number={14} />
+                    <BlogListComponent
+                      text="Dapibus ac facilisis in"
+                      number={2}
+                    />
+                    <BlogListComponent text="Morbi leo risus" number={1} />
                   </ul>
                 </div>
                 <div className="widget-tag">
@@ -354,39 +245,30 @@ const Blog: NextPage = () => {
             <div className="col-xl-2">
               <div className="bottom-widget">
                 <h4 className="widget-title">Company</h4>
-                <ul>
-                  <li>
-                    <Link href="about">About</Link>
-                  </li>
-                  <li>
-                    <Link href="career">Career</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Affiliate</Link>
-                  </li>
-                  <li>
-                    <Link href="team">Our Team</Link>
-                  </li>
-                </ul>
+                <BlogList
+                  hrefOne="about"
+                  textOne="About"
+                  hrefTwo="career"
+                  textTwo="Career"
+                  textThree="Affiliate"
+                  hrefFour="team"
+                  textFour="Our Team"
+                />
               </div>
             </div>
             <div className="col-xl-2">
               <div className="bottom-widget">
                 <h4 className="widget-title">Support</h4>
-                <ul>
-                  <li>
-                    <Link href="contact">Contact us</Link>
-                  </li>
-                  <li>
-                    <Link href="faq">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link href="blog">Blog</Link>
-                  </li>
-                  <li>
-                    <Link href="helpdesk">Helpdesk</Link>
-                  </li>
-                </ul>
+                <BlogList
+                  hrefOne="contact"
+                  textOne="Contact us"
+                  hrefTwo="faq"
+                  textTwo="FAQ"
+                  hrefThree="blog"
+                  textThree="Blog"
+                  hrefFour="helpdesk"
+                  textFour="Helpdesk"
+                />
               </div>
             </div>
             <div className="col-xl-4">
@@ -394,36 +276,20 @@ const Blog: NextPage = () => {
                 <h4 className="widget-title">Exchange Pair</h4>
                 <div className="row">
                   <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">ETH to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">BTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">USDT to BTC</Link>
-                      </li>
-                    </ul>
+                    <BlogList
+                      textOne="ETH to BTC"
+                      textTwo="BTC to ETH"
+                      textThree="LTC to ETH"
+                      textFour="USDT to BTC"
+                    />
                   </div>
                   <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">BTC to USDT</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">XMR to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">ETC to DASH</Link>
-                      </li>
-                    </ul>
+                    <BlogList
+                      textOne="BTC to USDT"
+                      textTwo="LTC to BTC"
+                      textThree="XMR to BTC"
+                      textFour="ETC to DASH"
+                    />
                   </div>
                 </div>
               </div>

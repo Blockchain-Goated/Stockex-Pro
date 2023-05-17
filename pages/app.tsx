@@ -10,6 +10,9 @@ import android from "../public/images/android.svg";
 import apple from "public/images/apple.svg";
 import map from "../public/images/map.png";
 import Image from "next/legacy/image";
+import NavComponent from "../src/components/app/NavComponent";
+import WalletComponent from "../src/components/app/WalletComponent";
+import ListComponent from "../src/components/app/ListComponent";
 
 const Apps: NextPage = () => {
   const router = useRouter();
@@ -62,88 +65,36 @@ const Apps: NextPage = () => {
                     id="navbarNavDropdown"
                   >
                     <ul className="navbar-nav ms-auto">
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Home
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="/">
-                            Home 1
-                          </Link>
-                          <Link className="dropdown-item" href="index2">
-                            Home 2
-                          </Link>
-                          <Link className="dropdown-item" href="index3">
-                            Home 3
-                          </Link>
-                        </div>
-                      </li>
+                      <NavComponent dropTitle="Home" hrefTitle="/" />
+                      <NavComponent dropTitle="Price" hrefTitle="price" />
+                      <NavComponent dropTitle="App" hrefTitle="app" />
+                      <NavComponent
+                        dropTitle="Company"
+                        dropOne="About Us"
+                        hrefOne="about"
+                        dropTwo="Team"
+                        hrefTwo="team"
+                        dropThree="Blog"
+                        hrefThree="blog"
+                        dropFour="Career"
+                        hrefFour="career"
+                      />
+                      <NavComponent
+                        dropTitle="Support"
+                        dropOne="Contact Us"
+                        hrefOne="contact"
+                        dropTwo="Help Desk"
+                        hrefTwo="helpdesk"
+                        dropThree="Privacy"
+                        hrefThree="privacy-policy"
+                        dropFour="FAQ"
+                        hrefFour="faq"
+                      />
 
-                      <li className="nav-item">
-                        <Link className="nav-link" href="price">
-                          Price
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link className="nav-link text-primary" href="app">
-                          App
-                        </Link>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Company
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="about">
-                            About us
-                          </Link>
-                          <Link className="dropdown-item" href="team">
-                            Team
-                          </Link>
-                          <Link className="dropdown-item" href="blog">
-                            Blog
-                          </Link>
-                          <Link className="dropdown-item" href="career">
-                            Career
-                          </Link>
-                        </div>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Support
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="contact">
-                            Contact us
-                          </Link>
-                          <Link className="dropdown-item" href="helpdesk">
-                            Help Desk
-                          </Link>
-                          <Link className="dropdown-item" href="privacy-policy">
-                            Privacy
-                          </Link>
-                          <Link className="dropdown-item" href="faq">
-                            FAQ
-                          </Link>
-                        </div>
-                      </li>
-                      <li className="nav-item">
-                        <Link className="nav-link" href="dashboard">
-                          Dashboard
-                        </Link>
-                      </li>
+                      <NavComponent
+                        dropTitle="Dashboard"
+                        hrefTitle="dashboard"
+                      />
                     </ul>
                   </div>
 
@@ -222,46 +173,11 @@ const Apps: NextPage = () => {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-              <div className="wallet-feature-content">
-                <span>
-                  <i className="bi bi-cash"></i>
-                </span>
-                <h4>Built-in white-label instant exchange</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-              <div className="wallet-feature-content">
-                <span>
-                  <i className="bi bi-headset"></i>
-                </span>
-                <h4>Dedicated support line</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-              <div className="wallet-feature-content">
-                <span>
-                  <i className="bi bi-wallet2"></i>
-                </span>
-                <h4>Top-up the wallet with 140+ cryptos</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-              <div className="wallet-feature-content">
-                <span>
-                  <i className="bi bi-x-octagon"></i>
-                </span>
-                <h4>Vast cross-marketing opportunities</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-              <div className="wallet-feature-content">
-                <span>
-                  <i className="bi bi-clipboard-check"></i>
-                </span>
-                <h4>Revenue share from every transaction</h4>
-              </div>
-            </div>
+            <WalletComponent text="Built-in white-label instant exchange" />
+            <WalletComponent text="Dedicated support line" />
+            <WalletComponent text="Top-up the wallet with 140+ cryptos" />
+            <WalletComponent text="Vast cross-marketing opportunities" />
+            <WalletComponent text="Revenue share from every transaction" />
           </div>
         </div>
       </div>
@@ -315,39 +231,30 @@ const Apps: NextPage = () => {
             <div className="col-xl-2">
               <div className="bottom-widget">
                 <h4 className="widget-title">Company</h4>
-                <ul>
-                  <li>
-                    <Link href="about">About</Link>
-                  </li>
-                  <li>
-                    <Link href="career">Career</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Affiliate</Link>
-                  </li>
-                  <li>
-                    <Link href="team">Our Team</Link>
-                  </li>
-                </ul>
+                <ListComponent
+                  hrefOne="about"
+                  textOne="About"
+                  hrefTwo="career"
+                  textTwo="Career"
+                  textThree="Affiliate"
+                  hrefFour="team"
+                  textFour="Our Team"
+                />
               </div>
             </div>
             <div className="col-xl-2">
               <div className="bottom-widget">
                 <h4 className="widget-title">Support</h4>
-                <ul>
-                  <li>
-                    <Link href="contact">Contact us</Link>
-                  </li>
-                  <li>
-                    <Link href="faq">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link href="blog">Blog</Link>
-                  </li>
-                  <li>
-                    <Link href="helpdesk">Helpdesk</Link>
-                  </li>
-                </ul>
+                <ListComponent
+                  hrefOne="contact"
+                  textOne="Contact us"
+                  hrefTwo="faq"
+                  textTwo="FAQ"
+                  textThree="Blog"
+                  hrefThree="blog"
+                  hrefFour="helpdesk"
+                  textFour="Helpdesk"
+                />
               </div>
             </div>
             <div className="col-xl-4">
@@ -355,36 +262,20 @@ const Apps: NextPage = () => {
                 <h4 className="widget-title">Exchange Pair</h4>
                 <div className="row">
                   <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">ETH to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">BTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">USDT to BTC</Link>
-                      </li>
-                    </ul>
+                    <ListComponent
+                      textOne="ETH to BTC"
+                      textTwo="BTC to ETH"
+                      textThree="LTC to ETH"
+                      textFour="USDT to BTC"
+                    />
                   </div>
                   <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">BTC to USDT</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">XMR to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">ETC to DASH</Link>
-                      </li>
-                    </ul>
+                    <ListComponent
+                      textOne="BTC to USDT"
+                      textTwo="LTC to BTC"
+                      textThree="XMR to BTC"
+                      textFour="ETC to DASH"
+                    />
                   </div>
                 </div>
               </div>

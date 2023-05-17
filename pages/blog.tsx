@@ -16,7 +16,8 @@ import Image from "next/legacy/image";
 import BlogComponent from "../src/components/blog/BlogComponent";
 import BlogMediaComponent from "../src/components/blog/BlogMediaComponent";
 import BlogListComponent from "../src/components/blog/BlogListComponent";
-import BlogList from "../src/components/blog/BlogList";
+import BlogList from "../src/components/ListComponent";
+import ListComponent from "../src/components/ListComponent";
 
 const Blog: NextPage = () => {
   const router = useRouter();
@@ -242,58 +243,7 @@ const Blog: NextPage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Company</h4>
-                <BlogList
-                  hrefOne="about"
-                  textOne="About"
-                  hrefTwo="career"
-                  textTwo="Career"
-                  textThree="Affiliate"
-                  hrefFour="team"
-                  textFour="Our Team"
-                />
-              </div>
-            </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Support</h4>
-                <BlogList
-                  hrefOne="contact"
-                  textOne="Contact us"
-                  hrefTwo="faq"
-                  textTwo="FAQ"
-                  hrefThree="blog"
-                  textThree="Blog"
-                  hrefFour="helpdesk"
-                  textFour="Helpdesk"
-                />
-              </div>
-            </div>
-            <div className="col-xl-4">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Exchange Pair</h4>
-                <div className="row">
-                  <div className="col-xl-6">
-                    <BlogList
-                      textOne="ETH to BTC"
-                      textTwo="BTC to ETH"
-                      textThree="LTC to ETH"
-                      textFour="USDT to BTC"
-                    />
-                  </div>
-                  <div className="col-xl-6">
-                    <BlogList
-                      textOne="BTC to USDT"
-                      textTwo="LTC to BTC"
-                      textThree="XMR to BTC"
-                      textFour="ETC to DASH"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ListComponent />
           </div>
         </div>
       </div>

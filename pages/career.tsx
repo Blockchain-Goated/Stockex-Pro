@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import logow from "../public/images/logow.png";
 import logo from "../public/images/logo.png";
 import Image from "next/legacy/image";
+import CareerNavComponent from "../src/components/career/CareerNavComponent";
+import ListComponent from "../src/components/ListComponent";
 
 const Career: NextPage = () => {
   const router = useRouter();
@@ -19,6 +21,20 @@ const Career: NextPage = () => {
   if (status === "unauthenticated") {
     router.replace("/signin");
   }
+  const links1 = [
+    { href: "about", text: "About us" },
+    { href: "team", text: "Team" },
+    { href: "blog", text: "Blog" },
+    { href: "career", text: "Career" },
+  ];
+
+  const links2 = [
+    { href: "contact", text: "About Us" },
+    { href: "helpdesk", text: "Help Desk" },
+    { href: "privacy-policy", text: "Privacy Policy" },
+    { href: "faq", text: "FAQ" },
+  ];
+
   return (
     <LandingLayout>
       <div className="header landing @@headerClass">
@@ -49,27 +65,7 @@ const Career: NextPage = () => {
                     id="navbarNavDropdown"
                   >
                     <ul className="navbar-nav ms-auto">
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Home
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="/">
-                            Home 1
-                          </Link>
-                          <Link className="dropdown-item" href="index2">
-                            Home 2
-                          </Link>
-                          <Link className="dropdown-item" href="index3">
-                            Home 3
-                          </Link>
-                        </div>
-                      </li>
-
+                      <CareerNavComponent hrefOne="/" textOne="Home" />
                       <li className="nav-item">
                         <Link className="nav-link" href="price">
                           Price
@@ -80,55 +76,21 @@ const Career: NextPage = () => {
                           App
                         </Link>
                       </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle text-primary"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Company
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="about">
-                            About us
-                          </Link>
-                          <Link className="dropdown-item" href="team">
-                            Team
-                          </Link>
-                          <Link className="dropdown-item" href="blog">
-                            Blog
-                          </Link>
-                          <Link
-                            className="dropdown-item text-primary"
-                            href="career"
-                          >
-                            Career
-                          </Link>
-                        </div>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Support
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="contact">
-                            Contact us
-                          </Link>
-                          <Link className="dropdown-item" href="helpdesk">
-                            Help Desk
-                          </Link>
-                          <Link className="dropdown-item" href="privacy-policy">
-                            Privacy
-                          </Link>
-                          <Link className="dropdown-item" href="faq">
-                            FAQ
-                          </Link>
-                        </div>
-                      </li>
+
+                      <CareerNavComponent
+                        hrefOne="#"
+                        textOne="Company"
+                        dropNum={4}
+                        links={links1}
+                      />
+
+                      <CareerNavComponent
+                        hrefOne="#"
+                        textOne="Support"
+                        dropNum={4}
+                        links={links2}
+                      />
+
                       <li className="nav-item">
                         <Link className="nav-link" href="dashboard">
                           Dashboard
@@ -256,83 +218,7 @@ const Career: NextPage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Company</h4>
-                <ul>
-                  <li>
-                    <Link href="about">About</Link>
-                  </li>
-                  <li>
-                    <Link href="career">Career</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Affiliate</Link>
-                  </li>
-                  <li>
-                    <Link href="team">Our Team</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Support</h4>
-                <ul>
-                  <li>
-                    <Link href="contact">Contact us</Link>
-                  </li>
-                  <li>
-                    <Link href="faq">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link href="blog">Blog</Link>
-                  </li>
-                  <li>
-                    <Link href="helpdesk">Helpdesk</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-4">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Exchange Pair</h4>
-                <div className="row">
-                  <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">ETH to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">BTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">USDT to BTC</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">BTC to USDT</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">XMR to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">ETC to DASH</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ListComponent />
           </div>
         </div>
       </div>

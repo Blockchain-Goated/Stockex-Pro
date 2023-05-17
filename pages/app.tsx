@@ -12,7 +12,7 @@ import map from "../public/images/map.png";
 import Image from "next/legacy/image";
 import NavComponent from "../src/components/app/NavComponent";
 import WalletComponent from "../src/components/app/WalletComponent";
-import ListComponent from "../src/components/app/ListComponent";
+import ListComponent from "../src/components/ListComponent";
 
 const Apps: NextPage = () => {
   const router = useRouter();
@@ -228,58 +228,7 @@ const Apps: NextPage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Company</h4>
-                <ListComponent
-                  hrefOne="about"
-                  textOne="About"
-                  hrefTwo="career"
-                  textTwo="Career"
-                  textThree="Affiliate"
-                  hrefFour="team"
-                  textFour="Our Team"
-                />
-              </div>
-            </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Support</h4>
-                <ListComponent
-                  hrefOne="contact"
-                  textOne="Contact us"
-                  hrefTwo="faq"
-                  textTwo="FAQ"
-                  textThree="Blog"
-                  hrefThree="blog"
-                  hrefFour="helpdesk"
-                  textFour="Helpdesk"
-                />
-              </div>
-            </div>
-            <div className="col-xl-4">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Exchange Pair</h4>
-                <div className="row">
-                  <div className="col-xl-6">
-                    <ListComponent
-                      textOne="ETH to BTC"
-                      textTwo="BTC to ETH"
-                      textThree="LTC to ETH"
-                      textFour="USDT to BTC"
-                    />
-                  </div>
-                  <div className="col-xl-6">
-                    <ListComponent
-                      textOne="BTC to USDT"
-                      textTwo="LTC to BTC"
-                      textThree="XMR to BTC"
-                      textFour="ETC to DASH"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ListComponent />
           </div>
         </div>
       </div>

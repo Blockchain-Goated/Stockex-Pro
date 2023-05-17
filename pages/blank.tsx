@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import logoi from "../public/images/logoi.png";
 import two from "../public/images/about/2.jpg";
 import Image from "next/legacy/image";
+import { useRouter } from "next/router";
 
 const Blank: NextPage = () => {
   const router = useRouter();

@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { NextPage, GetServerSideProps } from "next";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import LandingLayout from "../src/layouts/landing/LandingLayout";
@@ -7,10 +7,10 @@ import { copyText } from "../src/utils/utils";
 import { useSession } from "next-auth/react";
 import Synthex from "../public/images/synthex.png";
 import Image from "next/legacy/image";
-import logow from "../public/images/logow.png";
-import logo from "../public/images/logo.png";
-import blockchain from "../public/images/blockchain.png";
-import art_photo_2 from "../public/images/art-photo-2.jpg";
+import { useRef, useState, useEffect } from "react";
+import Chart from "chart.js/auto";
+import { MyData, MyComponentProps } from "../src/types/priceDetailsTypes";
+import { useQuery } from "react-query";
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -19,7 +19,8 @@ const PriceDetailsChart = dynamic(
   }
 );
 
-const PriceDetails: NextPage = () => {
+const PriceDetails: NextPage<MyComponentProps> = () => {
+  const chartRef = useRef<HTMLCanvasElement>(null);
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -37,6 +38,117 @@ const PriceDetails: NextPage = () => {
   const buyToken_ = (e: any) => {
     e.preventDefault();
   };
+
+  const [ctx, setCtx] = useState<any>(null);
+
+  const queryParamsOne = new URLSearchParams({
+    type: "hist",
+    symbol: "AAPL",
+  });
+
+  const queryParamsTwo = new URLSearchParams({
+    type: "hist",
+    symbol: "AMZN",
+  });
+
+  const url1 = `http://localhost:3000/api/stocks?${queryParamsOne}`;
+  const url2 = `http://localhost:3000/api/stocks?${queryParamsTwo}`;
+
+  const fetchStocks = async (url: string) => {
+    const response = await fetch(url, { method: "GET" });
+    return response.json() as Promise<MyData[]>;
+  };
+
+  const { data: data1 } = useQuery(["stocks", url1], () => fetchStocks(url1), {
+    staleTime: 1000 * 60 * 60 * 24,
+  });
+  const { data: data2 } = useQuery(["stocks", url2], () => fetchStocks(url2), {
+    staleTime: 1000 * 60 * 60 * 24,
+  });
+
+  console.log(`Data is : ${data1}`);
+
+  useEffect(() => {
+    if (chartRef.current) {
+      setCtx(chartRef.current.getContext("2d"));
+
+      if (ctx) {
+        // Animation
+        const totalDuration = 10000;
+        const delayBetweenPoints = totalDuration / data1.length;
+        const previousY = (ctx: any) =>
+          ctx.index === 0
+            ? ctx.chart.scales.y.getPixelForValue(100)
+            : ctx.chart
+                .getDatasetMeta(ctx.datasetIndex)
+                .data[ctx.index - 1].getProps(["y"], true).y;
+        const animation = {
+          x: {
+            type: "number",
+            easing: "linear",
+            duration: delayBetweenPoints,
+            from: NaN,
+            delay(ctx: any) {
+              if (ctx.type !== "data" || ctx.xStarted) {
+                return 0;
+              }
+              ctx.xStarted = true;
+              return ctx.index * delayBetweenPoints;
+            },
+          },
+          y: {
+            type: "number",
+            easing: "linear",
+            duration: delayBetweenPoints,
+            from: previousY,
+            delay(ctx: any) {
+              if (ctx.type !== "data" || ctx.yStarted) {
+                return 0;
+              }
+              ctx.yStarted = true;
+              return ctx.index * delayBetweenPoints;
+            },
+          },
+        };
+
+        const config = {
+          type: "line",
+          data: {
+            datasets: [
+              {
+                borderColor: "red",
+                borderWidth: 1,
+                radius: 0,
+                data: data1,
+              },
+              {
+                borderColor: "blue",
+                borderWidth: 1,
+                radius: 0,
+                data: data2,
+              },
+            ],
+          },
+          options: {
+            animation,
+            interaction: {
+              intersect: false,
+            },
+            plugins: {
+              legend: false,
+            },
+            scales: {
+              x: {
+                type: "linear",
+              },
+            },
+          },
+        };
+
+        new Chart(ctx, config);
+      }
+    }
+  }, []);
 
   return (
     <LandingLayout>
@@ -144,7 +256,9 @@ const PriceDetails: NextPage = () => {
                         -0.2.30% <i className="icofont-arrow-down"></i>
                       </span>
                     </div>
-                    <div id="btcChart"></div>
+                    <div>
+                      <canvas ref={chartRef} style={{ height: 350 }} />
+                    </div>
                     <div className="chart-content text-center">
                       <div className="row">
                         <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
@@ -335,7 +449,7 @@ const PriceDetails: NextPage = () => {
                               className="form-control"
                               id="myInput"
                               value="100"
-                              readonly
+                              readOnly
                             />
                             <span
                               onClick={balanceOf_}

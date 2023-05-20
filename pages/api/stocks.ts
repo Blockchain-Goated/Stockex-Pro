@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
+
 const accessToken = process.env.accessToken;
 const apiKey = process.env.apiKey;
 
@@ -31,23 +32,19 @@ export default async function handler(
           function: "TIME_SERIES_DAILY_ADJUSTED",
           symbol: symbol,
           outputsize: "full",
-          apikey: process.env.alphaKey,
+          apikey: process.env.API_KEY,
         },
       });
 
       // Extract the last 1000 days of stock data
-      const alphaTimeSeriesData = Object.values(
+      const alphaTimeSeriesData: number[] = Object.entries(
         alphaData.data["Time Series (Daily)"]
       )
-        .map((data) => parseFloat(data as any["4. close"]))
+        .map(([_, data]: [string, any]) => parseFloat(data["4. close"]))
         .slice(0, 1000)
         .reverse();
 
-      // Generate a list of integers from 1 to 1000
-      const days = [];
-      for (let i = 0; i <= 999; i++) {
-        days.push(i);
-      }
+      const days: number[] = Array.from({ length: 1000 }, (_, index) => index);
 
       // Combine the days and stock data into the response format
       const responseData = days.map((day, index) => ({
@@ -55,7 +52,7 @@ export default async function handler(
         y: alphaTimeSeriesData[index],
       }));
 
-      reply.send(responseData);
+      reply.json(JSON.stringify(responseData));
     } catch (error) {
       console.log(error);
       reply.status(500).send("Error retrieving stock data");
@@ -141,7 +138,7 @@ export default async function handler(
 
       const dataC = { livePrice, endOfDayPrice };
 
-      reply.send(dataC);
+      reply.json(dataC);
 
       // Finnhub
     } catch (error) {
@@ -149,8 +146,6 @@ export default async function handler(
       reply.status(500).send("Error retrieving stock data");
     }
   }
-
-  prmRCTwhc5CCI5JuZEYa0imlZRMG6VFM;
 
   // Define the endpoint to place a buy order
   const endpoint =
@@ -194,7 +189,7 @@ export default async function handler(
       // Make the request to place the buy order
       const response = await axios(requestOptions);
       console.log(response.data);
-      reply.send(response.data);
+      reply.json(response.data);
     } catch (error) {
       console.error(error);
       reply.status(500).send(error as string);
@@ -239,7 +234,7 @@ export default async function handler(
       // Make the request to place the buy order
       const response = await axios(requestOptions);
       console.log(response.data);
-      reply.send(response.data);
+      reply.json(response.data);
     } catch (error) {
       console.error(error);
       reply.status(500).send(error as string);

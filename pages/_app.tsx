@@ -6,6 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [load, setLoad] = useState(true);
@@ -17,10 +20,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <Fragment>
       {load && <PreLoader />}
-      <SessionProvider session={session}>
-        <Component {...pageProps} />
-        <Analytics />
-      </SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+          <Analytics />
+        </SessionProvider>
+      </QueryClientProvider>
       <ToastContainer />
     </Fragment>
   );

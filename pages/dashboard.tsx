@@ -18,6 +18,9 @@ import DashOne from "../src/components/dashboard/DashOne";
 import DashTable from "../src/components/dashboard/DashTable";
 import DashList from "../src/components/dashboard/DashList";
 import DashList2 from "../src/components/dashboard/DashList2";
+import DashTwo from "../src/components/dashboard/DashTwo";
+import DashList3 from "../src/components/dashboard/DashList3";
+import DashList4 from "../src/components/dashboard/DashList4";
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -163,30 +166,23 @@ const Dashboard: NextPage = () => {
                       </p>
 
                       <ul>
-                        <li>
-                          <Link href="#">
-                            <span className="verified">
-                              <i className="icofont-check"></i>
-                            </span>
-                            Verify account
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            <span className="not-verified">
-                              <i className="icofont-close-line"></i>
-                            </span>
-                            Two-factor authentication (2FA)
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            <span className="not-verified">
-                              <i className="icofont-close-line"></i>
-                            </span>
-                            Deposit money
-                          </Link>
-                        </li>
+                        <DashList4
+                          classs="verified"
+                          classs2="icofont-check"
+                          text="Verify account"
+                        />
+
+                        <DashList4
+                          classs="not-verified"
+                          classs2="icofont-close-line"
+                          text="Two-factor authentication (2FA)"
+                        />
+
+                        <DashList4
+                          classs="not-verified"
+                          classs2="icofont-close-line"
+                          text="Deposit money"
+                        />
                       </ul>
                     </div>
                   </div>
@@ -260,41 +256,35 @@ const Dashboard: NextPage = () => {
                     </div>
                     <div className="card-body">
                       <ul className="balance-widget position-value">
-                        <li>
-                          <h5>Opening Cost</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>Original cost of all open positions.</span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Current Valuation</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>Paper valuation of all open positions.</span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Profit</h5>
-                          <div className="text-end">
-                            <h5>$0.0000 (0,00%)</h5>
-                            <span>Paper profit of all open positions..</span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Loss</h5>
-                          <div className="text-end">
-                            <h5>$0.0000 (0,00%)</h5>
-                            <span>Paper loss of all open positions.</span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Fees</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>Current Fee</span>
-                          </div>
-                        </li>
+                        <DashList3
+                          title="Opening Cost"
+                          price="$0.0000"
+                          spann="Original cost of all open positions."
+                        />
+
+                        <DashList3
+                          title="Current Valuation"
+                          price="$0.0000"
+                          spann="Paper valuation of all open positions."
+                        />
+
+                        <DashList3
+                          title="Profit"
+                          price="$0.0000 (0,00%)"
+                          spann="Paper profit of all open positions.."
+                        />
+
+                        <DashList3
+                          title="Loss"
+                          price="$0.0000 (0,00%)"
+                          spann="Paper loss of all open positions."
+                        />
+
+                        <DashList3
+                          title="Fees"
+                          price="$0.0000"
+                          spann="Current Fee"
+                        />
                       </ul>
                     </div>
                   </div>
@@ -354,46 +344,13 @@ const Dashboard: NextPage = () => {
                     <div className="card-body">
                       <div className="home-chart-height">
                         <div className="row">
-                          <div
-                            className="
-                              col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6
-                            "
-                          >
-                            <div className="chart-price-value">
-                              <span>24hr Volume</span>
-                              <h5>$236,368.00</h5>
-                            </div>
-                          </div>
-                          <div
-                            className="
-                              col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6
-                            "
-                          >
-                            <div className="chart-price-value">
-                              <span>Marketcap</span>
-                              <h5>$236.025B USD</h5>
-                            </div>
-                          </div>
-                          <div
-                            className="
-                              col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6
-                            "
-                          >
-                            <div className="chart-price-value">
-                              <span>24hr Volume</span>
-                              <h5>56.3 BTC</h5>
-                            </div>
-                          </div>
-                          <div
-                            className="
-                              col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6
-                            "
-                          >
-                            <div className="chart-price-value">
-                              <span>All Time High</span>
-                              <h5>$236,368.00</h5>
-                            </div>
-                          </div>
+                          <DashTwo volume="24hr Volume" price="$236,368.00" />
+
+                          <DashTwo volume="Marketcap" price="$236.025B USD" />
+
+                          <DashTwo volume="24hr Volume" price="56.3 BTC" />
+
+                          <DashTwo volume="All Time High" price="$236,368.00" />
                         </div>
                         <div id="chartx"></div>
                       </div>

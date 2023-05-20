@@ -14,6 +14,10 @@ import Synthex from "../public/images/synthex.png";
 import blockchain from "../public/images/blockchain.png";
 import art_photo_2 from "../public/images/art-photo-2.jpg";
 import SideBarComponent from "../src/components/SideBarComponent";
+import DashOne from "../src/components/dashboard/DashOne";
+import DashTable from "../src/components/dashboard/DashTable";
+import DashList from "../src/components/dashboard/DashList";
+import DashList2 from "../src/components/dashboard/DashList2";
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -404,49 +408,35 @@ const Dashboard: NextPage = () => {
                     </div>
                     <div className="card-body">
                       <ul className="balance-widget trade-balance">
-                        <li>
-                          <h5>Trade Balance</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>Total margin currency balance.</span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Equity</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>
-                              Trade balance combined with unrealized profit/loss
-                            </span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Used Margin</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>
-                              Total margin amount used in open positions.
-                            </span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Free Margin</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>
-                              Usable margin balance. Equal to equity minus.
-                            </span>
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Margin Level</h5>
-                          <div className="text-end">
-                            <h5>$0.0000</h5>
-                            <span>
-                              Percentage ratio of equity to used margin.
-                            </span>
-                          </div>
-                        </li>
+                        <DashList2
+                          heading="Trade Balance"
+                          price="$0.0000"
+                          text="Total margin currency balance."
+                        />
+
+                        <DashList2
+                          heading="Equity"
+                          price="$0.0000"
+                          text="Trade balance combined with unrealized profit/loss"
+                        />
+
+                        <DashList2
+                          heading="Used Margin"
+                          price="$0.0000"
+                          text="Total margin amount used in open positions."
+                        />
+
+                        <DashList2
+                          heading="Free Margin"
+                          price="$0.0000"
+                          text="Usable margin balance. Equal to equity minus."
+                        />
+
+                        <DashList2
+                          heading="Margin Level"
+                          price="$0.0000"
+                          text="Percentage ratio of equity to used margin."
+                        />
                       </ul>
                     </div>
                   </div>
@@ -467,46 +457,33 @@ const Dashboard: NextPage = () => {
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-6">
                           <ul className="balance-widget mt-4">
-                            <li>
-                              <div className="icon-title">
-                                <i className="cc BTC"></i>
-                                <span>Bitcoin</span>
-                              </div>
-                              <div className="text-end">
-                                <h5>0.000242 BTC</h5>
-                                <span>0.125 USD</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div className="icon-title">
-                                <i className="cc USDT"></i>
-                                <span>Tether</span>
-                              </div>
-                              <div className="text-end">
-                                <h5>0.000242 USDT</h5>
-                                <span>0.125 USD</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div className="icon-title">
-                                <i className="cc XTZ"></i>
-                                <span>Tezos</span>
-                              </div>
-                              <div className="text-end">
-                                <h5>0.000242 XTZ</h5>
-                                <span>0.125 USD</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div className="icon-title">
-                                <i className="cc XMR"></i>
-                                <span>Monero</span>
-                              </div>
-                              <div className="text-end">
-                                <h5>0.000242 XMR</h5>
-                                <span>0.125 USD</span>
-                              </div>
-                            </li>
+                            <DashList
+                              classs="cc BTC"
+                              coin="Bitcoin"
+                              price="0.000242 BTC"
+                              price2="0.125 USD"
+                            />
+
+                            <DashList
+                              classs="cc USDT"
+                              coin="Tether"
+                              price="0.000242 BTC"
+                              price2="0.125 USD"
+                            />
+
+                            <DashList
+                              classs="cc XTZ"
+                              coin="Tezos"
+                              price="0.000242 XTZ"
+                              price2="0.125 USD"
+                            />
+
+                            <DashList
+                              classs="cc XMR"
+                              coin="Monero"
+                              price="0.000242 XMR"
+                              price2="0.125 USD"
+                            />
                           </ul>
                         </div>
                       </div>
@@ -516,48 +493,26 @@ const Dashboard: NextPage = () => {
 
                 <div className="col-xxl-4 col-xl-12">
                   <div className="row">
-                    <div className="col-xxl-12 col-xl-4 col-lg-6">
-                      <div className="price-widget">
-                        <Link href="price-details">
-                          <div className="price-content">
-                            <div className="icon-title">
-                              <i className="cc BTC"></i>
-                              <span>Bitcoin</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                          </div>
-                          <div id="chart"></div>
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="col-xxl-12 col-xl-4 col-lg-6">
-                      <div className="price-widget">
-                        <Link href="price-details">
-                          <div className="price-content">
-                            <div className="icon-title">
-                              <i className="cc ETH"></i>
-                              <span>Ethereum</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                          </div>
-                          <div id="chart2"></div>
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="col-xxl-12 col-xl-4 col-lg-6">
-                      <div className="price-widget">
-                        <Link href="price-details">
-                          <div className="price-content">
-                            <div className="icon-title">
-                              <i className="cc USDT"></i>
-                              <span>Tether</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                          </div>
-                          <div id="chart3"></div>
-                        </Link>
-                      </div>
-                    </div>
+                    <DashOne
+                      classs="cc BTC"
+                      spann="Bitcoin"
+                      price="$ 11,785.10"
+                      idx="chart"
+                    />
+
+                    <DashOne
+                      classs="cc ETH"
+                      spann="Ethereum"
+                      price="$ 11,785.10"
+                      idx="chart2"
+                    />
+
+                    <DashOne
+                      classs="cc USDT"
+                      spann="Tether"
+                      price="$ 11,785.10"
+                      idx="chart3"
+                    />
                   </div>
                 </div>
 
@@ -581,91 +536,60 @@ const Dashboard: NextPage = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>523640</td>
-                              <td>January 15</td>
-                              <td>
-                                <span className="danger-arrow">
-                                  <i className="icofont-arrow-down"></i> Sell
-                                </span>
-                              </td>
-                              <td className="coin-name">
-                                <i className="cc BTC"></i> Bitcoin
-                              </td>
-                              <td className="text-danger">-0.000242 BTC</td>
-                              <td>0.02%</td>
-                              <td>
-                                <strong>0.25484 BTC</strong>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>523640</td>
-                              <td>January 15</td>
-                              <td>
-                                <span className="success-arrow">
-                                  <i className="icofont-arrow-up"></i>Buy
-                                </span>
-                              </td>
-                              <td className="coin-name">
-                                <i className="cc LTC"></i> Litecoin
-                              </td>
-                              <td className="text-success">-0.000242 BTC</td>
-                              <td>0.02%</td>
-                              <td>
-                                <strong> 0.25484 LTC</strong>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>523640</td>
-                              <td>January 15</td>
-                              <td>
-                                <span className="success-arrow">
-                                  <i className="icofont-arrow-up"></i>Buy
-                                </span>
-                              </td>
-                              <td className="coin-name">
-                                <i className="cc XRP"></i> Ripple
-                              </td>
-                              <td className="text-success">-0.000242 BTC</td>
-                              <td>0.02%</td>
-                              <td>
-                                <strong> 0.25484 LTC</strong>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>523640</td>
-                              <td>January 15</td>
-                              <td>
-                                <span className="success-arrow">
-                                  <i className="icofont-arrow-up"></i>Buy
-                                </span>
-                              </td>
-                              <td className="coin-name">
-                                <i className="cc DASH"></i> Dash
-                              </td>
-                              <td className="text-success">-0.000242 BTC</td>
-                              <td>0.02%</td>
-                              <td>
-                                <strong> 0.25484 LTC</strong>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>523640</td>
-                              <td>January 15</td>
-                              <td>
-                                <span className="success-arrow">
-                                  <i className="icofont-arrow-up"></i>Buy
-                                </span>
-                              </td>
-                              <td className="coin-name">
-                                <i className="cc DASH"></i> Dash
-                              </td>
-                              <td className="text-success">-0.000242 BTC</td>
-                              <td>0.02%</td>
-                              <td>
-                                <strong> 0.25484 LTC</strong>
-                              </td>
-                            </tr>
+                            <DashTable
+                              num={523640}
+                              date="January 15"
+                              clickValue="Sell"
+                              curr="Bitcoin"
+                              amt="-0.000242 BTC"
+                              amt2="0.25484 BTC"
+                              classs="cc BTC"
+                              perc="0.02%"
+                            />
+
+                            <DashTable
+                              num={523640}
+                              date="January 15"
+                              clickValue="Buy"
+                              curr="Litecoin"
+                              amt="-0.000242 BTC"
+                              amt2="0.25484 LTC"
+                              classs="cc LTC"
+                              perc="0.02%"
+                            />
+
+                            <DashTable
+                              num={523640}
+                              date="January 15"
+                              clickValue="Buy"
+                              curr="Ripple"
+                              amt="-0.000242 BTC"
+                              amt2="0.25484 LTC"
+                              classs="cc XRP"
+                              perc="0.02%"
+                            />
+
+                            <DashTable
+                              num={523640}
+                              date="January 15"
+                              clickValue="Buy"
+                              curr="Dash"
+                              amt="-0.000242 BTC"
+                              amt2="0.25484 LTC"
+                              classs="cc DASH"
+                              perc="0.02%"
+                            />
+
+                            <DashTable
+                              num={523640}
+                              date="January 15"
+                              clickValue="Buy"
+                              curr="Dash"
+                              amt="-0.000242 BTC"
+                              amt2="0.25484 LTC"
+                              classs="cc DASH"
+                              perc="0.02%"
+                            />
                           </tbody>
                         </table>
                       </div>

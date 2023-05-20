@@ -7,6 +7,8 @@ import Image from "next/legacy/image";
 import logow from "../public/images/logow.png";
 import logo from "../public/images/logo.png";
 import ListComponent from "../src/components/ListComponent";
+import FooterComponent from "../src/components/FooterComponent";
+import FaqMain from "../src/components/faq/FaqMain";
 
 const Faq: NextPage = () => {
   const router = useRouter();
@@ -164,32 +166,17 @@ const Faq: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-lg-9">
               <div className="terms_condition-content">
-                <div className="terms_condition-text">
-                  <h3>Frequently Asked Questions</h3>
-                  <p>
-                    Tendex is an instant cryptocurrency exchange that allows you
-                    to exchange crypto fast and buy it with a bank card. The
-                    service provides the best crypto-to-crypto rates and
-                    supports over 140 cryptocurrencies available for exchange
-                  </p>
-                </div>
+                <FaqMain
+                  title="Frequently Asked Questions"
+                  para="Tendex is an instant cryptocurrency exchange that allows you too exchange crypto fast and buy it with a bank card. The service provides the best crypto-to-crypto rates and supports over 140 cryptocurrencies available for exchange"
+                  link={false}
+                />
 
-                <div className="terms_condition-text">
-                  <h3>How does Tendex work?</h3>
-                  <p>
-                    Tendex’s trading algorithm is integrated into the largest
-                    cryptocurrency exchange platforms, including Binance,
-                    Poloniex, Bittrex, etc. In the span of milliseconds, Tendex
-                    makes bids and asks on the platforms, then selects and
-                    suggests the best available rate and displays the estimated
-                    rate on our site. The rates remain approximate until the
-                    transaction is actually made on the blockchain, which is why
-                    the exchange rate at the time of a transaction may differ
-                    slightly from the estimated rate that you see when you begin
-                    a transaction. To learn more about the process, see this
-                    <Link href="#">article</Link>
-                  </p>
-                </div>
+                <FaqMain
+                  title="How does Tendex work?"
+                  para="Tendex's trading algorithm is integrated into the largest cryptocurrency exchange platforms, including Binance, Poloniex, Bittrex, etc. In the span of milliseconds, Tendex makes bids and asks on the platforms, then selects and suggests the best available rate and displays the estimated rate on our site. The rates remain approximate until the transaction is actually made on the blockchain, which is why the exchange rate at the time of a transaction may differ slightly from the estimated rate that you see when you begin a transaction. To learn more about the process, see this"
+                  link={true}
+                />
 
                 <div className="terms_condition-text">
                   <h3>Why should I trust you?</h3>
@@ -358,9 +345,10 @@ const Faq: NextPage = () => {
             </div>
             <ListComponent />
           </div>
+        </div>
       </div>
 
-<FooterComponent/>
+      <FooterComponent />
     </LandingLayout>
   );
 };

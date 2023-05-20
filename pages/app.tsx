@@ -13,6 +13,7 @@ import Image from "next/legacy/image";
 import NavComponent from "../src/components/app/NavComponent";
 import WalletComponent from "../src/components/app/WalletComponent";
 import ListComponent from "../src/components/ListComponent";
+import FooterComponent from "../src/components/FooterComponent";
 
 const Apps: NextPage = () => {
   const router = useRouter();

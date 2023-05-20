@@ -622,7 +622,7 @@ const Index: NextPage = () => {
                       <textarea
                         className="form-control p-3"
                         name="message"
-                        rows="5"
+                        rows={5}
                         placeholder="Tell us what we can help you with!"
                       ></textarea>
                     </div>

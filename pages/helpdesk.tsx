@@ -7,6 +7,7 @@ import Image from "next/legacy/image";
 import logow from "../public/images/logow.png";
 import logo from "../public/images/logo.png";
 import ListComponent from "../src/components/ListComponent";
+import FooterComponent from "../src/components/FooterComponent";
 
 const Helpdesk: NextPage = () => {
   const router = useRouter();

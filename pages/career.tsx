@@ -9,6 +9,7 @@ import logo from "../public/images/logo.png";
 import Image from "next/legacy/image";
 import CareerNavComponent from "../src/components/career/CareerNavComponent";
 import ListComponent from "../src/components/ListComponent";
+import FooterComponent from "../src/components/FooterComponent";
 
 const Career: NextPage = () => {
   const router = useRouter();

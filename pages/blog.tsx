@@ -10,7 +10,6 @@ import blogTwo from "../public/images/blog/blogTwo.jpg";
 import blogThree from "../public/images/blog/blogThree.jpg";
 import blogFour from "../public/images/blog/blogFour.jpg";
 import blogPostOne from "../public/images/blog/blogPostOne.jpg";
-import blogPostThree from "../public/images/blog/blogPostThree.jpg";
 import Synthex from "../public/images/synthex.png";
 import Image from "next/legacy/image";
 import BlogComponent from "../src/components/blog/BlogComponent";
@@ -18,6 +17,7 @@ import BlogMediaComponent from "../src/components/blog/BlogMediaComponent";
 import BlogListComponent from "../src/components/blog/BlogListComponent";
 import BlogList from "../src/components/ListComponent";
 import ListComponent from "../src/components/ListComponent";
+import FooterComponent from "../src/components/FooterComponent";
 
 const Blog: NextPage = () => {
   const router = useRouter();
@@ -179,7 +179,7 @@ const Blog: NextPage = () => {
                     />
 
                     <BlogMediaComponent
-                      blogPostSrc={blogPostThree}
+                      blogPostSrc={blogPostOne}
                       title="List-based media object"
                       linkHrefOne="#"
                       linkHrefTwo="#"
@@ -188,7 +188,7 @@ const Blog: NextPage = () => {
                     />
 
                     <BlogMediaComponent
-                      blogPostSrc={blogPostThree}
+                      blogPostSrc={blogPostOne}
                       title="List-based media object"
                       linkHrefOne="#"
                       linkHrefTwo="#"

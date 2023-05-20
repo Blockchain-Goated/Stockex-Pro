@@ -7,6 +7,7 @@ import Link from "next/dist/client/link";
 import logow from "../public/images/logow.png";
 import Image from "next/legacy/image";
 import Synthex from "../public/images/synthex.png";
+import FooterComponent from "../src/components/FooterComponent";
 import ListComponent from "../src/components/ListComponent";
 
 const Contact: NextPage = () => {
@@ -179,7 +180,7 @@ const Contact: NextPage = () => {
                       <textarea
                         className="form-control p-3"
                         name="message"
-                        rows="5"
+                        rows={5}
                         placeholder="Tell us what we can help you with!"
                       ></textarea>
                     </div>

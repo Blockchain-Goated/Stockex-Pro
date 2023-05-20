@@ -1,16 +1,18 @@
 import React from "react";
 import Link from "next/dist/client/link";
 import Image from "next/legacy/image";
-import logoi from "../public/images/logoi.png";
+import { StaticImageData } from "next/image";
 
-type SideBarComponentProps = {};
+type SideBarComponentProps = {
+  logo: string | StaticImageData;
+};
 
-const SideBarComponent: React.FC<SideBarComponentProps> = () => {
+const SideBarComponent: React.FC<SideBarComponentProps> = ({ logo }) => {
   return (
     <div className="sidebar">
       <div className="brand-logo">
         <Link href="/">
-          <Image src={logoi} alt="" width={30} />
+          <Image src={logo} alt="" width={30} />
         </Link>
       </div>
       <div className="menu">

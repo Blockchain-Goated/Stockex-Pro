@@ -2,7 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
-
 const accessToken = process.env.accessToken;
 const apiKey = process.env.apiKey;
 
@@ -52,7 +51,7 @@ export default async function handler(
         y: alphaTimeSeriesData[index],
       }));
 
-      reply.json(JSON.stringify(responseData));
+      reply.json(responseData);
     } catch (error) {
       console.log(error);
       reply.status(500).send("Error retrieving stock data");

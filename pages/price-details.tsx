@@ -11,6 +11,8 @@ import { useRef, useState, useEffect } from "react";
 import Chart from "chart.js/auto";
 import { MyData, MyComponentProps } from "../src/types/priceDetailsTypes";
 import { useQuery } from "react-query";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -68,87 +70,37 @@ const PriceDetails: NextPage<MyComponentProps> = () => {
 
   console.log(`Data is : ${data1}`);
 
-  useEffect(() => {
-    if (chartRef.current) {
-      setCtx(chartRef.current.getContext("2d"));
-
-      if (ctx) {
-        // Animation
-        const totalDuration = 10000;
-        const delayBetweenPoints = totalDuration / data1.length;
-        const previousY = (ctx: any) =>
-          ctx.index === 0
-            ? ctx.chart.scales.y.getPixelForValue(100)
-            : ctx.chart
-                .getDatasetMeta(ctx.datasetIndex)
-                .data[ctx.index - 1].getProps(["y"], true).y;
-        const animation = {
-          x: {
-            type: "number",
-            easing: "linear",
-            duration: delayBetweenPoints,
-            from: NaN,
-            delay(ctx: any) {
-              if (ctx.type !== "data" || ctx.xStarted) {
-                return 0;
-              }
-              ctx.xStarted = true;
-              return ctx.index * delayBetweenPoints;
-            },
-          },
-          y: {
-            type: "number",
-            easing: "linear",
-            duration: delayBetweenPoints,
-            from: previousY,
-            delay(ctx: any) {
-              if (ctx.type !== "data" || ctx.yStarted) {
-                return 0;
-              }
-              ctx.yStarted = true;
-              return ctx.index * delayBetweenPoints;
-            },
-          },
-        };
-
-        const config = {
-          type: "line",
-          data: {
-            datasets: [
-              {
-                borderColor: "red",
-                borderWidth: 1,
-                radius: 0,
-                data: data1,
-              },
-              {
-                borderColor: "blue",
-                borderWidth: 1,
-                radius: 0,
-                data: data2,
-              },
-            ],
-          },
-          options: {
-            animation,
-            interaction: {
-              intersect: false,
-            },
-            plugins: {
-              legend: false,
-            },
-            scales: {
-              x: {
-                type: "linear",
-              },
-            },
-          },
-        };
-
-        new Chart(ctx, config);
-      }
-    }
-  }, []);
+  const options = {
+    title: {
+      text: "Stock Chart",
+    },
+    xAxis: {
+      type: "category",
+      title: {
+        text: "Date",
+      },
+    },
+    yAxis: {
+      title: {
+        text: "Price",
+      },
+    },
+    plotOptions: {
+      series: {
+        turboThreshold: 10000,
+      },
+    },
+    series: [
+      {
+        name: "Stock Price 1",
+        data: data1,
+      },
+      {
+        name: "Stock Price 2",
+        data: data2,
+      },
+    ],
+  };
 
   return (
     <LandingLayout>
@@ -257,7 +209,10 @@ const PriceDetails: NextPage<MyComponentProps> = () => {
                       </span>
                     </div>
                     <div>
-                      <canvas ref={chartRef} style={{ height: 350 }} />
+                      <HighchartsReact
+                        highcharts={Highcharts}
+                        options={options}
+                      />
                     </div>
                     <div className="chart-content text-center">
                       <div className="row">

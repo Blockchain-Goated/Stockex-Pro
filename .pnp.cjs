@@ -47,6 +47,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.38.0"],\
             ["eslint-config-next", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:13.3.0"],\
             ["finnhub", "npm:1.2.17"],\
+            ["highcharts", "npm:11.0.1"],\
+            ["highcharts-react-official", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:3.2.0"],\
             ["http-status-ts", "npm:2.0.0"],\
             ["iron-session", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:6.3.1"],\
             ["mongodb", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:5.4.0"],\
@@ -3749,6 +3751,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/has-unicode-npm-2.0.1-893adb4747-1eab07a743.zip/node_modules/has-unicode/",\
           "packageDependencies": [\
             ["has-unicode", "npm:2.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["highcharts", [\
+        ["npm:11.0.1", {\
+          "packageLocation": "./.yarn/cache/highcharts-npm-11.0.1-05a14e3887-773a7b8765.zip/node_modules/highcharts/",\
+          "packageDependencies": [\
+            ["highcharts", "npm:11.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["highcharts-react-official", [\
+        ["npm:3.2.0", {\
+          "packageLocation": "./.yarn/cache/highcharts-react-official-npm-3.2.0-3eaa5d1749-c6716f7d5c.zip/node_modules/highcharts-react-official/",\
+          "packageDependencies": [\
+            ["highcharts-react-official", "npm:3.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:3.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/highcharts-react-official-virtual-08ff6c896a/0/cache/highcharts-react-official-npm-3.2.0-3eaa5d1749-c6716f7d5c.zip/node_modules/highcharts-react-official/",\
+          "packageDependencies": [\
+            ["highcharts-react-official", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:3.2.0"],\
+            ["@types/highcharts", null],\
+            ["@types/react", "npm:18.2.6"],\
+            ["highcharts", "npm:11.0.1"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/highcharts",\
+            "@types/react",\
+            "highcharts",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7488,6 +7525,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.38.0"],\
             ["eslint-config-next", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:13.3.0"],\
             ["finnhub", "npm:1.2.17"],\
+            ["highcharts", "npm:11.0.1"],\
+            ["highcharts-react-official", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:3.2.0"],\
             ["http-status-ts", "npm:2.0.0"],\
             ["iron-session", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:6.3.1"],\
             ["mongodb", "virtual:9fbf8aeb7d64e4991cce94f70dceaff1c26ca27936aba6091d066e7d33b5a7cefce7f8cb46fbd0ce11f975cf6ce6de7f2cbb77e8cfec018b00c2b6859695638e#npm:5.4.0"],\

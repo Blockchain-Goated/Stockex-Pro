@@ -11,6 +11,13 @@ import logow from "../public/images/logow.png";
 import logo from "../public/images/logo.png";
 import blockchain from "../public/images/blockchain.png";
 import art_photo_2 from "../public/images/art-photo-2.jpg";
+import FooterComp from "../src/components/FooterComp";
+import ListComponent from "../src/components/ListComponent";
+import IndexOne from "../src/components/index/IndexOne";
+import IndexTwo from "../src/components/index/IndexTwo";
+import IndexThree from "../src/components/index/IndexThree";
+import IndexFour from "../src/components/index/IndexFour";
+import IndexFive from "../src/components/index/IndexFive";
 
 const Index: NextPage = () => {
   const { data: session, status } = useSession();
@@ -339,46 +346,15 @@ const Index: NextPage = () => {
       <div className="info bg-white">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-              <div className="info-content">
-                <span>
-                  <i className="bi bi-star"></i>
-                </span>
-                <h4>Best rates on the market</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-              <div className="info-content">
-                <span>
-                  <i className="bi bi-heart"></i>
-                </span>
-                <h4>Transparent 0.25% fee</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-              <div className="info-content">
-                <span>
-                  <i className="bi bi-clock"></i>
-                </span>
-                <h4>5-30 min transactions</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-              <div className="info-content">
-                <span>
-                  <i className="bi bi-cash"></i>
-                </span>
-                <h4>High exchange limits</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-              <div className="info-content">
-                <span>
-                  <i className="bi bi-headset"></i>
-                </span>
-                <h4>24/7 live chat support</h4>
-              </div>
-            </div>
+            <IndexOne classs="bi bi-star" headi="Best rates on the market" />
+
+            <IndexOne classs="bi bi-heart" headi="Transparent 0.25% fee" />
+
+            <IndexOne classs="bi bi-clock" headi="5-30 min transactions" />
+
+            <IndexOne classs="bi bi-cash" headi="High exchange limits" />
+
+            <IndexOne classs="bi bi-headset" headi="24/7 live chat support" />
           </div>
         </div>
       </div>
@@ -397,69 +373,49 @@ const Index: NextPage = () => {
               </div>
               <div className="product-feature-content">
                 <div className="row">
-                  <div className="col-6">
-                    <div className="product-feature-text">
-                      <h4>
-                        <span>
-                          <i className="bi bi-person"></i>
-                        </span>{" "}
-                        27 %
-                      </h4>
-                      <p>New users</p>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="product-feature-text">
-                      <h4>
-                        <span>
-                          <i className="bi bi-people"></i>
-                        </span>{" "}
-                        73 %
-                      </h4>
-                      <p>Regular users</p>
-                    </div>
-                  </div>
+                  <IndexTwo
+                    classs="bi bi-person"
+                    perc="27 %"
+                    para="New users"
+                  />
+
+                  <IndexTwo
+                    classs="bi bi-people"
+                    perc="73 %"
+                    para="Regular users"
+                  />
                 </div>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6">
               <div className="row">
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <div className="product-feature-box">
-                    <span className="bg-primary">
-                      <i className="bi bi-cash-stack"></i>
-                    </span>
-                    <h4>1900</h4>
-                    <p>Transactions made</p>
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <div className="product-feature-box">
-                    <span className="bg-secondary">
-                      <i className="bi bi-trophy"></i>
-                    </span>
-                    <h4>ETH-BTC</h4>
-                    <p>Today's champion pair</p>
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <div className="product-feature-box">
-                    <span className="bg-success">
-                      <i className="bi bi-people"></i>
-                    </span>
-                    <h4>27 150</h4>
-                    <p>Visits today</p>
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <div className="product-feature-box">
-                    <span className="bg-info">
-                      <i className="bi bi-clock"></i>
-                    </span>
-                    <h4>14.0 minutes</h4>
-                    <p>Average processing time</p>
-                  </div>
-                </div>
+                <IndexThree
+                  classs="bg-primary"
+                  classss="bi bi-cash-stack"
+                  headi="1900"
+                  para="Transactions made"
+                />
+
+                <IndexThree
+                  classs="bg-secondary"
+                  classss="bi bi-trophy"
+                  headi="ETH-BTC"
+                  para="Today's champion pair"
+                />
+
+                <IndexThree
+                  classs="bg-success"
+                  classss="bi bi-people"
+                  headi="27 150"
+                  para="Visits today"
+                />
+
+                <IndexThree
+                  classs="bg-info"
+                  classss="bi bi-clock"
+                  headi="14.0 minutes"
+                  para="Average processing time"
+                />
               </div>
             </div>
           </div>
@@ -476,45 +432,21 @@ const Index: NextPage = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-xl-6 col-lg-6 col-md-6">
-              <div className="new-product-content">
-                <Image
-                  className="Image-fluid"
-                  src={api}
-                  alt=""
-                  layout="responsive"
-                />
-                <h4>Integrate our API</h4>
-                <p>
-                  A white-label solution for your project, whether it is a
-                  wallet, a marketplace or a service provider. Set it up to
-                  accept any of 140+ cryptocurrencies listed on Tendex and get
-                  revenue for each transaction made.
-                </p>
-                <Link href="#" className="btn btn-dark px-4">
-                  Learn more
-                </Link>
-              </div>
-            </div>
-            <div className="col-xl-6 col-lg-6 col-md-6">
-              <div className="new-product-content">
-                <Image
-                  className="Image-fluid"
-                  src={Synthex}
-                  alt=""
-                  layout="responsive"
-                />
-                <h4>Join our Affiliate Program</h4>
-                <p>
-                  Place an affiliate link or customizable widget on your
-                  website, blog or social media profile. Get 50% of our revenue
-                  from every transaction made via either of the tools used.
-                </p>
-                <Link href="#" className="btn btn-outline-dark px-4">
-                  Become an affiliate
-                </Link>
-              </div>
-            </div>
+            <IndexFour
+              img_src={api}
+              headi="Integrate our API"
+              para="A white-label solution for your project, whether it is a wallet, a marketplace or a service provider. Set it up to accept any of 140+ cryptocurrencies listed on Tendex and get revenue for each transaction made."
+              buttontext="Learn more"
+              classs="btn btn-dark px-4"
+            />
+
+            <IndexFour
+              img_src={Synthex}
+              headi="Join our Affiliate Program"
+              para="Place an affiliate link or customizable widget on your website, blog or social media profile. Get 50% of our revenue from every transaction made via either of the tools used."
+              buttontext="Become an affiliate"
+              classs="btn btn-outline-dark px-4"
+            />
           </div>
         </div>
       </div>
@@ -522,42 +454,23 @@ const Index: NextPage = () => {
       <div className="trust section-padding">
         <div className="container">
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-4">
-              <div className="trust-content">
-                <span>
-                  <i className="bi bi-flower1"></i>
-                </span>
-                <h4>EASY</h4>
-                <p>
-                  Create an account, choose your crypto, input your receiving
-                  address, and send your funds
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4">
-              <div className="trust-content">
-                <span>
-                  <i className="bi bi-shield-lock"></i>
-                </span>
-                <h4>SAFE</h4>
-                <p>
-                  As a non-custodial exchange, we don’t hold your deposits, so
-                  your funds are never vulnerable to hacks.
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4">
-              <div className="trust-content">
-                <span>
-                  <i className="bi bi-brightness-high"></i>
-                </span>
-                <h4>COMPETITIVE</h4>
-                <p>
-                  Our exchange rates are updated in real time. What you see is
-                  what you get--with no additional fees.
-                </p>
-              </div>
-            </div>
+            <IndexFive
+              classs="bi bi-flower1"
+              headi="EASY"
+              para="Create an account, choose your crypto, input your receiving address, and send your funds"
+            />
+
+            <IndexFive
+              classs="bi bi-shield-lock"
+              headi="SAFE"
+              para="As a non-custodial exchange, we don't hold your deposits, so your funds are never vulnerable to hacks."
+            />
+
+            <IndexFive
+              classs="bi bi-brightness-high"
+              headi="COMPETITIVE"
+              para="Our exchange rates are updated in real time. What you see is what you get--with no additional fees."
+            />
           </div>
         </div>
       </div>
@@ -658,127 +571,12 @@ const Index: NextPage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Company</h4>
-                <ul>
-                  <li>
-                    <Link href="#">About</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Career</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Affiliate</Link>
-                  </li>
-                  <li>
-                    <Link href="blog">Our Team</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Support</h4>
-                <ul>
-                  <li>
-                    <Link href="contact">Contact us</Link>
-                  </li>
-                  <li>
-                    <Link href="#">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Blog</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Helpdesk</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-4">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Exchange Pairs</h4>
-                <div className="row">
-                  <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">ETH to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">BTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">USDT to BTC</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">BTC to USDT</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">XMR to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">ETC to DASH</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ListComponent />
           </div>
         </div>
       </div>
 
-      <div className="footer">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div className="copyright">
-                <p>
-                  © Copyright <span id="year"></span>{" "}
-                  <Link href="#">Mustansir</Link> I All Rights Reserved
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div className="footer-social">
-                <ul>
-                  <li>
-                    <Link href="#">
-                      <i className="bi bi-facebook"></i>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#">
-                      <i className="bi bi-twitter"></i>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#">
-                      <i className="bi bi-linkedin"></i>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#">
-                      <i className="bi bi-youtube"></i>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FooterComp />
     </LandingLayout>
   );
 };

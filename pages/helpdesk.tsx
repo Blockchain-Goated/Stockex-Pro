@@ -8,6 +8,8 @@ import logow from "../public/images/logow.png";
 import logo from "../public/images/logo.png";
 import ListComponent from "../src/components/ListComponent";
 import FooterComponent from "../src/components/FooterComponent";
+import HelpCat from "../src/components/helpdesk/HelpCat";
+import HelpAuto from "../src/components/helpdesk/HelpAuto";
 
 const Helpdesk: NextPage = () => {
   const router = useRouter();
@@ -188,56 +190,17 @@ const Helpdesk: NextPage = () => {
       <div className="help-category section-padding">
         <div className="container">
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div className="help-cat">
-                <span className="bi bi-camera-video"></span>
-                <h4>Video Guide</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div className="help-cat">
-                <span className="bi bi-clipboard-check"></span>
-                <h4>FAQ</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div className="help-cat">
-                <span className="bi bi-braces"></span>
-                <h4>API for developers</h4>
-              </div>
-            </div>
+            <HelpCat headi="Video Guide" classs="bi bi-camera-video" />
+            <HelpCat headi="FAQ" classs="bi bi-clipboard-check" />
+            <HelpCat headi="API for developers" classs="bi bi-braces" />
           </div>
           <div className="row justify-content-center">
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Troubleshooting</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Partnership</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Getting started</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Wallets</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Healthy Tips</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Crypto-definitions</h5>
-              </Link>
-            </div>
+            <HelpAuto headi="Troubleshooting" />
+            <HelpAuto headi="Partnership" />
+            <HelpAuto headi="Getting started" />
+            <HelpAuto headi="Wallets" />
+            <HelpAuto headi="Healthy Tips" />
+            <HelpAuto headi="Crypto-definitions" />
           </div>
         </div>
       </div>

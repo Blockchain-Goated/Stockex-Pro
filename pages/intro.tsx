@@ -5,8 +5,24 @@ import Image from "next/legacy/image";
 import logow from "../public/images/logow.png";
 import logo from "../public/images/logo.png";
 import FooterComponent from "../src/components/FooterComponent";
+import HelpCat from "../src/components/helpdesk/HelpCat";
+import HelpAuto from "../src/components/helpdesk/HelpAuto";
+import CareerNavComponent from "../src/components/career/CareerNavComponent";
 
 const Intro: NextPage = () => {
+  const links1 = [
+    { href: "about", text: "About us" },
+    { href: "team", text: "Team" },
+    { href: "blog", text: "Blog" },
+    { href: "career", text: "Career" },
+  ];
+
+  const links2 = [
+    { href: "contact", text: "About Us" },
+    { href: "helpdesk", text: "Help Desk" },
+    { href: "privacy-policy", text: "Privacy Policy" },
+    { href: "faq", text: "FAQ" },
+  ];
   return (
     <LandingLayout>
       <div className="header landing @@headerClass">
@@ -47,27 +63,7 @@ const Intro: NextPage = () => {
                     id="navbarNavDropdown"
                   >
                     <ul className="navbar-nav ms-auto">
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Home
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="index">
-                            Home 1
-                          </Link>
-                          <Link className="dropdown-item" href="index2">
-                            Home 2
-                          </Link>
-                          <Link className="dropdown-item" href="index3">
-                            Home 3
-                          </Link>
-                        </div>
-                      </li>
-
+                      <CareerNavComponent hrefOne="/" textOne="Home" />
                       <li className="nav-item">
                         <Link className="nav-link" href="price">
                           Price
@@ -78,55 +74,21 @@ const Intro: NextPage = () => {
                           App
                         </Link>
                       </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Company
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="about">
-                            About us
-                          </Link>
-                          <Link className="dropdown-item" href="team">
-                            Team
-                          </Link>
-                          <Link className="dropdown-item" href="blog">
-                            Blog
-                          </Link>
-                          <Link className="dropdown-item" href="career">
-                            Career
-                          </Link>
-                        </div>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle text-primary"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Support
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="contact">
-                            Contact us
-                          </Link>
-                          <Link
-                            className="dropdown-item text-primary"
-                            href="helpdesk"
-                          >
-                            Help Desk
-                          </Link>
-                          <Link className="dropdown-item" href="privacy-policy">
-                            Privacy
-                          </Link>
-                          <Link className="dropdown-item" href="faq">
-                            FAQ
-                          </Link>
-                        </div>
-                      </li>
+
+                      <CareerNavComponent
+                        hrefOne="#"
+                        textOne="Company"
+                        dropNum={4}
+                        links={links1}
+                      />
+
+                      <CareerNavComponent
+                        hrefOne="#"
+                        textOne="Support"
+                        dropNum={4}
+                        links={links2}
+                      />
+
                       <li className="nav-item">
                         <Link className="nav-link" href="dashboard">
                           Dashboard
@@ -175,56 +137,17 @@ const Intro: NextPage = () => {
       <div className="help-category section-padding">
         <div className="container">
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div className="help-cat">
-                <span className="bi bi-camera-video"></span>
-                <h4>Video Guide</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div className="help-cat">
-                <span className="bi bi-clipboard-check"></span>
-                <h4>FAQ</h4>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div className="help-cat">
-                <span className="bi bi-braces"></span>
-                <h4>API for developers</h4>
-              </div>
-            </div>
+            <HelpCat headi="Video Guide" classs="bi bi-camera-video" />
+            <HelpCat headi="FAQ" classs="bi bi-clipboard-check" />
+            <HelpCat headi="API for developers" classs="bi bi-braces" />
           </div>
           <div className="row justify-content-center">
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Troubleshooting</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Partnership</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Getting started</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Wallets</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Healthy Tips</h5>
-              </Link>
-            </div>
-            <div className="col-auto">
-              <Link href="#" className="sub-cat">
-                <h5>Crypto-definitions</h5>
-              </Link>
-            </div>
+            <HelpAuto headi="Troubleshooting" />
+            <HelpAuto headi="Partnership" />
+            <HelpAuto headi="Getting started" />
+            <HelpAuto headi="Wallets" />
+            <HelpAuto headi="Healthy Tips" />
+            <HelpAuto headi="Crypto-definitions" />
           </div>
         </div>
       </div>

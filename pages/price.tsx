@@ -9,6 +9,7 @@ import Image from "next/legacy/image";
 import logow from "../public/images/logow.png";
 import Synthex from "../public/images/synthex.png";
 import FooterComponent from "../src/components/FooterComponent";
+import PriceOne from "../src/components/Price/PriceOne";
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -123,132 +124,77 @@ const Price: NextPage = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-btc">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc BTC"></i>
-                      <span>Bitcoin</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-eth">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc ETH"></i>
-                      <span>Ethereum</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart2"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-usdt">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc USDT"></i>
-                      <span>Tether</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart3"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-xrp">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc XRP"></i>
-                      <span>Ripple</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart4"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-ltc">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc LTC"></i>
-                      <span>Litecoin</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart5"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-ada">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc ADA"></i>
-                      <span>Cardano</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart6"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-eos">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc EOS"></i>
-                      <span>EOS</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart7"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-xmr">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc XMR"></i>
-                      <span>Monero</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart8"></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-              <div className="price-widget bg-xtz">
-                <Link href="price-details">
-                  <div className="price-content">
-                    <div className="icon-title">
-                      <i className="cc XTZ"></i>
-                      <span>Tezos</span>
-                    </div>
-                    <h5>$ 11,785.10</h5>
-                  </div>
-                  <div id="chart9"></div>
-                </Link>
-              </div>
-            </div>
+            <PriceOne
+              classs="price-widget bg-btc"
+              classss="cc BTC"
+              coin="Bitcoin"
+              price="$ 11,785.10"
+              chart_class="chart"
+            />
+
+            <PriceOne
+              classs="price-widget bg-eth"
+              classss="cc ETH"
+              coin="Ethereum"
+              price="$ 11,785.10"
+              chart_class="chart2"
+            />
+
+            <PriceOne
+              classs="price-widget bg-usdt"
+              classss="cc USDT"
+              coin="Tether"
+              price="$ 11,785.10"
+              chart_class="chart3"
+            />
+
+            <PriceOne
+              classs="price-widget bg-xrp"
+              classss="cc XRP"
+              coin="Ripple"
+              price="$ 11,785.10"
+              chart_class="chart4"
+            />
+
+            <PriceOne
+              classs="price-widget bg-ltc"
+              classss="cc LTC"
+              coin="Litecoin"
+              price="$ 11,785.10"
+              chart_class="chart5"
+            />
+
+            <PriceOne
+              classs="price-widget bg-ada"
+              classss="cc ADA"
+              coin="Cardano"
+              price="$ 11,785.10"
+              chart_class="chart6"
+            />
+
+            <PriceOne
+              classs="price-widget bg-eos"
+              classss="cc EOS"
+              coin="EOS"
+              price="$ 11,785.10"
+              chart_class="chart7"
+            />
+
+            <PriceOne
+              classs="price-widget bg-xmr"
+              classss="cc XMR"
+              coin="Monero"
+              price="$ 11,785.10"
+              chart_class="chart8"
+            />
+
+            <PriceOne
+              classs="price-widget bg-xtz"
+              classss="cc XTZ"
+              coin="Tezos"
+              price="$ 11,785.10"
+              chart_class="chart9"
+            />
           </div>
         </div>
       </div>

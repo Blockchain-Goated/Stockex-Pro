@@ -14,6 +14,9 @@ import { useQuery } from "react-query";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import FooterComp from "../src/components/FooterComp";
+import FooterComponent from "../src/components/FooterComponent";
+import PriceDetailsOne from "../src/components/price-details/PriceDetailsOne";
+import PriceDetailsTwo from "../src/components/price-details/PriceDetailsTwo";
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -217,54 +220,37 @@ const PriceDetails: NextPage<MyComponentProps> = () => {
                     </div>
                     <div className="chart-content text-center">
                       <div className="row">
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">24hr Volume</p>
-                            <h5>$1236548.325</h5>
-                          </div>
-                        </div>
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">Market Cap</p>
-                            <h5>19B USD</h5>
-                          </div>
-                        </div>
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">Circulating Supply</p>
-                            <h5>29.4M BTC</h5>
-                          </div>
-                        </div>
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">All Time High</p>
-                            <h5>19.783.06 USD</h5>
-                          </div>
-                        </div>
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">Typical hold time</p>
-                            <h5>88 days</h5>
-                          </div>
-                        </div>
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">Trading activity</p>
-                            <h5>70% buy</h5>
-                          </div>
-                        </div>
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">Popularity</p>
-                            <h5>#1 most held</h5>
-                          </div>
-                        </div>
-                        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                          <div className="chart-stat">
-                            <p className="mb-1">Popularity</p>
-                            <h5>#1 most held</h5>
-                          </div>
-                        </div>
+                        <PriceDetailsOne
+                          para="24hr Volume"
+                          headi="$1236548.325"
+                        />
+
+                        <PriceDetailsOne para="Market Cap" headi="19B USD" />
+
+                        <PriceDetailsOne
+                          para="Circulating Supply"
+                          headi="29.4M BTC"
+                        />
+
+                        <PriceDetailsOne
+                          para="All Time High"
+                          headi="19.783.06 USD"
+                        />
+
+                        <PriceDetailsOne
+                          para="Typical hold time"
+                          headi="88 days"
+                        />
+
+                        <PriceDetailsOne
+                          para="Trading activity"
+                          headi="70% buy"
+                        />
+
+                        <PriceDetailsOne
+                          para="Popularity"
+                          headi="#1 most held"
+                        />
                       </div>
                     </div>
                   </div>
@@ -277,110 +263,37 @@ const PriceDetails: NextPage<MyComponentProps> = () => {
                   </div>
                   <div className="card-body">
                     <ul className="balance-widget">
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc BTC"></i>
-                          <span>
-                            Bitcoin <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>64% </span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc LTC"></i>
-                          <span>
-                            Litecoin <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>0.125 %</span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc XRP"></i>
-                          <span>
-                            Ripple <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>0.125 %</span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc DASH"></i>
-                          <span>
-                            Dash <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>0.125 %</span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc XRP"></i>
-                          <span>
-                            Ripple <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>0.125 %</span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc DASH"></i>
-                          <span>
-                            Dash <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>0.125 %</span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc DASH"></i>
-                          <span>
-                            Dash <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>0.125 %</span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="icon-title">
-                          <i className="cc DASH"></i>
-                          <span>
-                            Dash <br />
-                            <small>Moves together</small>
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <h5>0.000242 USD</h5>
-                          <span>0.125 %</span>
-                        </div>
-                      </li>
+                      <PriceDetailsTwo
+                        classs="cc BTC"
+                        coin="Bitcoin"
+                        small="Moves together"
+                        price="0.000242 USD"
+                        perc="64%"
+                      />
+
+                      <PriceDetailsTwo
+                        classs="cc LTC"
+                        coin="Litecoin"
+                        small="Moves together"
+                        price="0.000242 USD"
+                        perc="0.125 %"
+                      />
+
+                      <PriceDetailsTwo
+                        classs="cc XRP"
+                        coin="Ripple"
+                        small="Moves together"
+                        price="0.000242 USD"
+                        perc="0.125 %"
+                      />
+
+                      <PriceDetailsTwo
+                        classs="cc DASH"
+                        coin="Dash"
+                        small="Moves together"
+                        price="0.000242 USD"
+                        perc="0.125 %"
+                      />
                     </ul>
                   </div>
                 </div>
@@ -568,83 +481,7 @@ const PriceDetails: NextPage<MyComponentProps> = () => {
                 </p>
               </div>
             </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Company</h4>
-                <ul>
-                  <li>
-                    <Link href="#">About</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Career</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Affiliate</Link>
-                  </li>
-                  <li>
-                    <Link href="blog">Our Team</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-2">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Support</h4>
-                <ul>
-                  <li>
-                    <Link href="contact">Contact us</Link>
-                  </li>
-                  <li>
-                    <Link href="#">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Blog</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Helpdesk</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-4">
-              <div className="bottom-widget">
-                <h4 className="widget-title">Exchange Pairs</h4>
-                <div className="row">
-                  <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">ETH to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">BTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to ETH</Link>
-                      </li>
-                      <li>
-                        <Link href="#">USDT to BTC</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-xl-6">
-                    <ul>
-                      <li>
-                        <Link href="#">BTC to USDT</Link>
-                      </li>
-                      <li>
-                        <Link href="#">LTC to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">XMR to BTC</Link>
-                      </li>
-                      <li>
-                        <Link href="#">ETC to DASH</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* <FooterComponent /> */}
           </div>
         </div>
       </div>

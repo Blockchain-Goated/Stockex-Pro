@@ -9,6 +9,8 @@ import logoi from "../public/images/logoi.png";
 import android from "../public/images/android.svg";
 import apple from "../public/images/apple.svg";
 import SideBarComponent from "../src/components/SideBarComponent";
+import ProfileOne from "../src/components/profile/ProfileOne";
+import ProfileTwo from "../src/components/profile/ProfileTwo";
 
 const Profile: NextPage = () => {
   const router = useRouter();
@@ -69,50 +71,33 @@ const Profile: NextPage = () => {
                       >
                         <h4>Announcements</h4>
                         <div className="lists">
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon success">
-                                <i className="bi bi-check"></i>
-                              </span>
-                              <div>
-                                <p>Account created successfully</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon fail">
-                                <i className="bi bi-x"></i>
-                              </span>
-                              <div>
-                                <p>2FA verification failed</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon success">
-                                <i className="bi bi-check"></i>
-                              </span>
-                              <div>
-                                <p>Device confirmation completed</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon pending">
-                                <i className="bi bi-exclamation-triangle"></i>
-                              </span>
-                              <div>
-                                <p>Phone verification pending</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
+                          <ProfileOne
+                            classs="me-3 icon success"
+                            classss="bi bi-check"
+                            para="Account created successfully"
+                            date="2020-11-04 12:00:23"
+                          />
+
+                          <ProfileOne
+                            classs="me-3 icon fail"
+                            classss="bi bi-x"
+                            para="2FA verification failed"
+                            date="2020-11-04 12:00:23"
+                          />
+
+                          <ProfileOne
+                            classs="me-3 icon success"
+                            classss="bi bi-check"
+                            para="Device confirmation completed"
+                            date="2020-11-04 12:00:23"
+                          />
+
+                          <ProfileOne
+                            classs="me-3 icon pending"
+                            classss="bi bi-exclamation-triangle"
+                            para="Phone verification pending"
+                            date="2020-11-04 12:00:23"
+                          />
 
                           <Link href="settings-activity">
                             More <i className="icofont-simple-right"></i>
@@ -258,36 +243,21 @@ const Profile: NextPage = () => {
                   </div>
                   <div className="card-body">
                     <form className="row">
-                      <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                        <div className="user-info">
-                          <span>USER ID</span>
-                          <h4>818778</h4>
-                        </div>
-                      </div>
-                      <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                        <div className="user-info">
-                          <span>EMAIL ADDRESS</span>
-                          <h4>email@example.com</h4>
-                        </div>
-                      </div>
-                      <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                        <div className="user-info">
-                          <span>COUNTRY OF RESIDENCE</span>
-                          <h4>Bangladesh</h4>
-                        </div>
-                      </div>
-                      <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                        <div className="user-info">
-                          <span>JOINED SINCE</span>
-                          <h4>20/10/2020</h4>
-                        </div>
-                      </div>
-                      <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                        <div className="user-info">
-                          <span>TYPE</span>
-                          <h4>Personal</h4>
-                        </div>
-                      </div>
+                      <ProfileTwo headi="USER ID" num="818778" />
+
+                      <ProfileTwo
+                        headi="EMAIL ADDRESS"
+                        num="email@example.com"
+                      />
+
+                      <ProfileTwo
+                        headi="COUNTRY OF RESIDENCE"
+                        num="Bangladesh"
+                      />
+
+                      <ProfileTwo headi="JOINED SINCE" num="20/10/2020" />
+
+                      <ProfileTwo headi="TYPE" num="Personal" />
                     </form>
                   </div>
                 </div>

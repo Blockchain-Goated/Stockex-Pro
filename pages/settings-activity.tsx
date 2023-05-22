@@ -9,6 +9,8 @@ import logoi from "../public/images/logoi.png";
 import android from "../public/images/android.svg";
 import apple from "../public/images/apple.svg";
 import SideBarComponent from "../src/components/SideBarComponent";
+import SettingsActivityOne from "../src/components/settings_activity/SettingsActivityOne";
+import SettingsActivityTr from "../src/components/settings_activity/SettingsActivityTr";
 
 const SettingsActivity: NextPage = () => {
   const router = useRouter();
@@ -69,50 +71,33 @@ const SettingsActivity: NextPage = () => {
                       >
                         <h4>Announcements</h4>
                         <div className="lists">
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon success">
-                                <i className="bi bi-check"></i>
-                              </span>
-                              <div>
-                                <p>Account created successfully</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon fail">
-                                <i className="bi bi-x"></i>
-                              </span>
-                              <div>
-                                <p>2FA verification failed</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon success">
-                                <i className="bi bi-check"></i>
-                              </span>
-                              <div>
-                                <p>Device confirmation completed</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
-                          <Link href="#" className="">
-                            <div className="d-flex align-items-center">
-                              <span className="me-3 icon pending">
-                                <i className="bi bi-exclamation-triangle"></i>
-                              </span>
-                              <div>
-                                <p>Phone verification pending</p>
-                                <span>2020-11-04 12:00:23</span>
-                              </div>
-                            </div>
-                          </Link>
+                          <SettingsActivityOne
+                            classs="me-3 icon success"
+                            classss="bi bi-check"
+                            para="Account created successfully"
+                            spann="2020-11-04 12:00:23"
+                          />
+
+                          <SettingsActivityOne
+                            classs="me-3 icon fail"
+                            classss="bi bi-x"
+                            para="2FA verification failed"
+                            spann="2020-11-04 12:00:23"
+                          />
+
+                          <SettingsActivityOne
+                            classs="me-3 icon success"
+                            classss="bi bi-check"
+                            para="Device confirmation completed"
+                            spann="2020-11-04 12:00:23"
+                          />
+
+                          <SettingsActivityOne
+                            classs="me-3 icon pending"
+                            classss="bi bi-exclamation-triangle"
+                            para="Phone verification pending"
+                            spann="2020-11-04 12:00:23"
+                          />
 
                           <Link href="settings-activity">
                             More <i className="icofont-simple-right"></i>
@@ -262,48 +247,26 @@ const SettingsActivity: NextPage = () => {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>1 day ago</td>
-                                    <td>Chrome (Windows)</td>
-                                    <td>250.364.239.254</td>
-                                    <td>Bangladesh, Dhaka</td>
-                                    <td>
-                                      <span>
-                                        <i className="icofont-check-alt"></i>
-                                      </span>
-                                      <span>
-                                        <i className="icofont-close-line"></i>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>1 day ago</td>
-                                    <td>Chrome (Windows)</td>
-                                    <td>250.364.239.254</td>
-                                    <td>Bangladesh, Dhaka</td>
-                                    <td>
-                                      <span>
-                                        <i className="icofont-check-alt"></i>
-                                      </span>
-                                      <span>
-                                        <i className="icofont-close-line"></i>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>1 day ago</td>
-                                    <td>Chrome (Windows)</td>
-                                    <td>250.364.239.254</td>
-                                    <td>Bangladesh, Dhaka</td>
-                                    <td>
-                                      <span>
-                                        <i className="icofont-check-alt"></i>
-                                      </span>
-                                      <span>
-                                        <i className="icofont-close-line"></i>
-                                      </span>
-                                    </td>
-                                  </tr>
+                                  <SettingsActivityTr
+                                    td1="1 day ago"
+                                    td2="Chrome (Windows)"
+                                    td3="250.364.239.254"
+                                    td4="Bangladesh, Dhaka"
+                                  />
+
+                                  <SettingsActivityTr
+                                    td1="1 day ago"
+                                    td2="Chrome (Windows)"
+                                    td3="250.364.239.254"
+                                    td4="Bangladesh, Dhaka"
+                                  />
+
+                                  <SettingsActivityTr
+                                    td1="1 day ago"
+                                    td2="Chrome (Windows)"
+                                    td3="250.364.239.254"
+                                    td4="Bangladesh, Dhaka"
+                                  />
                                 </tbody>
                               </table>
                             </div>
@@ -331,50 +294,26 @@ const SettingsActivity: NextPage = () => {
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <td>1 day ago</td>
-                                  <td>Chrome (Windows)</td>
-                                  <td>250.364.239.254</td>
-                                  <td>Bangladesh, Dhaka</td>
-                                  <td>
-                                    <span>
-                                      <i className="icofont-check-alt"></i>
-                                    </span>
-                                    <span>
-                                      <i className="icofont-close-line"></i>
-                                    </span>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>8 days ago</td>
-                                  <td>Chrome (Windows)</td>
-                                  <td>250.364.239.254</td>
-                                  <td>Bangladesh, Dhaka</td>
+                                <SettingsActivityTr
+                                  td1="1 day ago"
+                                  td2="Chrome (Windows)"
+                                  td3="250.364.239.254"
+                                  td4="Bangladesh, Dhaka"
+                                />
 
-                                  <td>
-                                    <span>
-                                      <i className="icofont-check-alt"></i>
-                                    </span>
-                                    <span>
-                                      <i className="icofont-close-line"></i>
-                                    </span>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>15 days ago</td>
-                                  <td>Chrome (Windows)</td>
-                                  <td>250.364.239.254</td>
-                                  <td>Bangladesh, Dhaka</td>
+                                <SettingsActivityTr
+                                  td1="8 day ago"
+                                  td2="Chrome (Windows)"
+                                  td3="250.364.239.254"
+                                  td4="Bangladesh, Dhaka"
+                                />
 
-                                  <td>
-                                    <span>
-                                      <i className="icofont-check-alt"></i>
-                                    </span>
-                                    <span>
-                                      <i className="icofont-close-line"></i>
-                                    </span>
-                                  </td>
-                                </tr>
+                                <SettingsActivityTr
+                                  td1="15 day ago"
+                                  td2="Chrome (Windows)"
+                                  td3="250.364.239.254"
+                                  td4="Bangladesh, Dhaka"
+                                />
                               </tbody>
                             </table>
                           </div>

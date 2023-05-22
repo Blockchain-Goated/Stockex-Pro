@@ -7,6 +7,7 @@ import Image from "next/legacy/image";
 import logow from "../public/images/logow.png";
 import FooterComponent from "../src/components/FooterComponent";
 import logo from "../public/images/logo.png";
+import CareerNavComponent from "../src/components/career/CareerNavComponent";
 
 const PrivacyPolicy: NextPage = () => {
   const router = useRouter();
@@ -19,6 +20,21 @@ const PrivacyPolicy: NextPage = () => {
   if (status === "unauthenticated") {
     router.replace("/signin");
   }
+
+  const links1 = [
+    { href: "about", text: "About us" },
+    { href: "team", text: "Team" },
+    { href: "blog", text: "Blog" },
+    { href: "career", text: "Career" },
+  ];
+
+  const links2 = [
+    { href: "contact", text: "About Us" },
+    { href: "helpdesk", text: "Help Desk" },
+    { href: "privacy-policy", text: "Privacy Policy" },
+    { href: "faq", text: "FAQ" },
+  ];
+
   return (
     <LandingLayout>
       <div className="header landing @@headerClass">
@@ -59,27 +75,7 @@ const PrivacyPolicy: NextPage = () => {
                     id="navbarNavDropdown"
                   >
                     <ul className="navbar-nav ms-auto">
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Home
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="index">
-                            Home 1
-                          </Link>
-                          <Link className="dropdown-item" href="index2">
-                            Home 2
-                          </Link>
-                          <Link className="dropdown-item" href="index3">
-                            Home 3
-                          </Link>
-                        </div>
-                      </li>
-
+                      <CareerNavComponent hrefOne="/" textOne="Home" />
                       <li className="nav-item">
                         <Link className="nav-link" href="price">
                           Price
@@ -90,55 +86,21 @@ const PrivacyPolicy: NextPage = () => {
                           App
                         </Link>
                       </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Company
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="about">
-                            About us
-                          </Link>
-                          <Link className="dropdown-item" href="team">
-                            Team
-                          </Link>
-                          <Link className="dropdown-item" href="blog">
-                            Blog
-                          </Link>
-                          <Link className="dropdown-item" href="career">
-                            Career
-                          </Link>
-                        </div>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle text-primary"
-                          href="#"
-                          data-toggle="dropdown"
-                        >
-                          Support
-                        </Link>
-                        <div className="dropdown-menu">
-                          <Link className="dropdown-item" href="contact">
-                            Contact us
-                          </Link>
-                          <Link className="dropdown-item" href="helpdesk">
-                            Help Desk
-                          </Link>
-                          <Link
-                            className="dropdown-item text-primary"
-                            href="privacy-policy"
-                          >
-                            Privacy
-                          </Link>
-                          <Link className="dropdown-item" href="faq">
-                            FAQ
-                          </Link>
-                        </div>
-                      </li>
+
+                      <CareerNavComponent
+                        hrefOne="#"
+                        textOne="Company"
+                        dropNum={4}
+                        links={links1}
+                      />
+
+                      <CareerNavComponent
+                        hrefOne="#"
+                        textOne="Support"
+                        dropNum={4}
+                        links={links2}
+                      />
+
                       <li className="nav-item">
                         <Link className="nav-link" href="dashboard">
                           Dashboard

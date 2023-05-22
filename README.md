@@ -1,5 +1,3 @@
-<!--
-
 # Stockex-Pro
 
 [![enter image description here](https://i.stack.imgur.com/629tR.png)](https://i.stack.imgur.com/629tR.png)

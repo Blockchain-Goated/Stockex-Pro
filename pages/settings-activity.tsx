@@ -11,6 +11,9 @@ import apple from "../public/images/apple.svg";
 import SideBarComponent from "../src/components/SideBarComponent";
 import SettingsActivityOne from "../src/components/settings_activity/SettingsActivityOne";
 import SettingsActivityTr from "../src/components/settings_activity/SettingsActivityTr";
+import { allArrays } from "./data/SettingsActivityData";
+import SettingsActivityTr2 from "../src/components/settings_activity/SettingsActivityTr2";
+import { Key } from "react";
 
 const SettingsActivity: NextPage = () => {
   const router = useRouter();
@@ -23,6 +26,7 @@ const SettingsActivity: NextPage = () => {
   if (status === "unauthenticated") {
     router.replace("/signin");
   }
+
   return (
     <SettingsLayouts name="Activity">
       <div id="main-wrapper">
@@ -337,213 +341,22 @@ const SettingsActivity: NextPage = () => {
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>api</td>
-                                  <td>157.119.239.254</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">about 1 hour ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>api</td>
-                                  <td>157.119.239.254</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">about 2 hours ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>second factor failure</td>
-                                  <td>api</td>
-                                  <td>157.119.239.254</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">about 2 hours ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>device confirmation completed</td>
-                                  <td>web</td>
-                                  <td>157.119.239.254</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">1 day ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signin</td>
-                                  <td>web</td>
-                                  <td>157.119.239.254</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">1 day ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>web</td>
-                                  <td>157.119.239.254</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">1 day ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signout</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signin</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signout</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signout</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>device confirmation completed</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signin</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">8 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signout</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signin</td>
-                                  <td>web</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signout</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>web</td>
-                                  <td>23.106.249.39</td>
-                                  <td>Singapore</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>verified second factor</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>phone verified</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>phone added</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>signin</td>
-                                  <td>api</td>
-                                  <td>157.119.239.214</td>
-                                  <td>Bangladesh</td>
-                                  <td>
-                                    <Link href="#">15 days ago</Link>
-                                  </td>
-                                </tr>
+                                {allArrays.map((array: { tds: any; }, index: Key | null | undefined) => {
+                                  const { tds } = array;
+                                  const tdNum = tds.length - 1; // Calculate tdNum dynamically based on the item length
+
+                                  return (
+                                    <SettingsActivityTr2
+                                      key={index}
+                                      tds={tds
+                                        .slice(0, tdNum)
+                                        .map((text: any) => ({ text }))}
+                                      tdNum={tdNum}
+                                      link="#"
+                                      linkText={tds[tdNum]}
+                                    />
+                                  );
+                                })}
                               </tbody>
                             </table>
                           </div>

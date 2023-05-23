@@ -10,6 +10,7 @@ import logow from "../public/images/logow.png";
 import Synthex from "../public/images/synthex.png";
 import FooterComponent from "../src/components/FooterComponent";
 import PriceOne from "../src/components/Price/PriceOne";
+import priceData from "./data/PriceDataOne";
 
 const PriceChart = dynamic(() => import("../src/components/PriceChart"), {
   ssr: false,
@@ -124,77 +125,9 @@ const Price: NextPage = () => {
             </div>
           </div>
           <div className="row">
-            <PriceOne
-              classs="price-widget bg-btc"
-              classss="cc BTC"
-              coin="Bitcoin"
-              price="$ 11,785.10"
-              chart_class="chart"
-            />
-
-            <PriceOne
-              classs="price-widget bg-eth"
-              classss="cc ETH"
-              coin="Ethereum"
-              price="$ 11,785.10"
-              chart_class="chart2"
-            />
-
-            <PriceOne
-              classs="price-widget bg-usdt"
-              classss="cc USDT"
-              coin="Tether"
-              price="$ 11,785.10"
-              chart_class="chart3"
-            />
-
-            <PriceOne
-              classs="price-widget bg-xrp"
-              classss="cc XRP"
-              coin="Ripple"
-              price="$ 11,785.10"
-              chart_class="chart4"
-            />
-
-            <PriceOne
-              classs="price-widget bg-ltc"
-              classss="cc LTC"
-              coin="Litecoin"
-              price="$ 11,785.10"
-              chart_class="chart5"
-            />
-
-            <PriceOne
-              classs="price-widget bg-ada"
-              classss="cc ADA"
-              coin="Cardano"
-              price="$ 11,785.10"
-              chart_class="chart6"
-            />
-
-            <PriceOne
-              classs="price-widget bg-eos"
-              classss="cc EOS"
-              coin="EOS"
-              price="$ 11,785.10"
-              chart_class="chart7"
-            />
-
-            <PriceOne
-              classs="price-widget bg-xmr"
-              classss="cc XMR"
-              coin="Monero"
-              price="$ 11,785.10"
-              chart_class="chart8"
-            />
-
-            <PriceOne
-              classs="price-widget bg-xtz"
-              classss="cc XTZ"
-              coin="Tezos"
-              price="$ 11,785.10"
-              chart_class="chart9"
-            />
+            {priceData.map((data, index) => (
+              <PriceOne key={index} {...data} />
+            ))}
           </div>
         </div>
       </div>

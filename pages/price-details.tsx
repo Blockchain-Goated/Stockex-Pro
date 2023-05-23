@@ -17,6 +17,8 @@ import FooterComp from "../src/components/FooterComp";
 import FooterComponent from "../src/components/FooterComponent";
 import PriceDetailsOne from "../src/components/price-details/PriceDetailsOne";
 import PriceDetailsTwo from "../src/components/price-details/PriceDetailsTwo";
+import priceDetailsData from "./data/PriceDetails";
+import priceDetailsTwoData from "./data/PriceDetailsTwo";
 
 const PriceDetailsChart = dynamic(
   () => import("../src/components/PriceDetailsChart"),
@@ -220,37 +222,9 @@ const PriceDetails: NextPage<MyComponentProps> = () => {
                     </div>
                     <div className="chart-content text-center">
                       <div className="row">
-                        <PriceDetailsOne
-                          para="24hr Volume"
-                          headi="$1236548.325"
-                        />
-
-                        <PriceDetailsOne para="Market Cap" headi="19B USD" />
-
-                        <PriceDetailsOne
-                          para="Circulating Supply"
-                          headi="29.4M BTC"
-                        />
-
-                        <PriceDetailsOne
-                          para="All Time High"
-                          headi="19.783.06 USD"
-                        />
-
-                        <PriceDetailsOne
-                          para="Typical hold time"
-                          headi="88 days"
-                        />
-
-                        <PriceDetailsOne
-                          para="Trading activity"
-                          headi="70% buy"
-                        />
-
-                        <PriceDetailsOne
-                          para="Popularity"
-                          headi="#1 most held"
-                        />
+                        {priceDetailsData.map((data, index) => (
+                          <PriceDetailsOne key={index} {...data} />
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -263,37 +237,9 @@ const PriceDetails: NextPage<MyComponentProps> = () => {
                   </div>
                   <div className="card-body">
                     <ul className="balance-widget">
-                      <PriceDetailsTwo
-                        classs="cc BTC"
-                        coin="Bitcoin"
-                        small="Moves together"
-                        price="0.000242 USD"
-                        perc="64%"
-                      />
-
-                      <PriceDetailsTwo
-                        classs="cc LTC"
-                        coin="Litecoin"
-                        small="Moves together"
-                        price="0.000242 USD"
-                        perc="0.125 %"
-                      />
-
-                      <PriceDetailsTwo
-                        classs="cc XRP"
-                        coin="Ripple"
-                        small="Moves together"
-                        price="0.000242 USD"
-                        perc="0.125 %"
-                      />
-
-                      <PriceDetailsTwo
-                        classs="cc DASH"
-                        coin="Dash"
-                        small="Moves together"
-                        price="0.000242 USD"
-                        perc="0.125 %"
-                      />
+                      {priceDetailsTwoData.map((item, index) => (
+                        <PriceDetailsTwo key={index} {...item} />
+                      ))}
                     </ul>
                   </div>
                 </div>

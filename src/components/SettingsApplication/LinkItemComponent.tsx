@@ -2,24 +2,18 @@ import React from "react";
 import Link from "next/link";
 import { LinkItem } from "../../types/SettingsAppTypes";
 
-interface LinkItemProps {
-  data: LinkItem;
-}
-
-const LinkItemComponent: React.FC<LinkItemProps> = ({ data }) => {
-  return (
-    <Link href={data.href} className={data.className}>
-      <div className="d-flex align-items-center">
-        <span className="me-3 icon success">
-          <i className={data.icon}></i>
-        </span>
-        <div>
-          <p>{data.title}</p>
-          <span>{data.date}</span>
-        </div>
+const LinkItemComponent: React.FC<LinkItem> = ({ icon, text, timestamp }) => (
+  <Link href="#">
+    <div className="d-flex align-items-center">
+      <span className={`me-3 icon ${icon}`}>
+        <i className={`bi bi-${icon}`}></i>
+      </span>
+      <div>
+        <p>{text}</p>
+        <span>{timestamp}</span>
       </div>
-    </Link>
-  );
-};
+    </div>
+  </Link>
+);
 
 export default LinkItemComponent;

@@ -1,7 +1,20 @@
 export interface LinkItem {
-  className: string;
   icon: string;
-  title: string;
-  date: string;
-  href: string;
+  text: string;
+  timestamp: string;
+}
+
+export interface SelectItem {
+  label: string;
+  options: string[];
+}
+
+export interface TimeZoneSelectProps {
+  timeZones: string[];
+}
+
+export interface Switch {
+  id: string;
+  label: string;
+  checked: boolean;
 }

@@ -1342,6 +1342,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bson@npm:^5.3.0":
+  version: 5.4.0
+  resolution: "bson@npm:5.4.0"
+  checksum: 1c07e3d09f139d414bd226bf7f4e9aaa7a726e0c9718c55b53bb23ffa2805cac8b66e4fa46b424c73a35c6e292ed5f7432df5c76ea5d08052642b2ac9e0399e3
+  languageName: node
+  linkType: hard
+
 "buffer@npm:^6":
   version: 6.0.3
   resolution: "buffer@npm:6.0.3"
@@ -4171,11 +4178,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:5.3.0":
-  version: 5.3.0
-  resolution: "mongodb@npm:5.3.0"
+"mongodb@npm:5.6.0":
+  version: 5.6.0
+  resolution: "mongodb@npm:5.6.0"
   dependencies:
-    bson: ^5.2.0
+    bson: ^5.3.0
     mongodb-connection-string-url: ^2.6.0
     saslprep: ^1.0.3
     socks: ^2.7.1
@@ -4193,7 +4200,7 @@ __metadata:
       optional: true
     snappy:
       optional: true
-  checksum: da86069555f3f700a0ef338a4676de2254ef64f7700427c0e23ccd5bd9ca9cd5f08651f2eb5083edfdc1e7eed1b40c60041b16e6d4851f353a26d9469d274299
+  checksum: 5b1594b24795b2a7824095a917ede2fc37aaef31e60320c833ee9b11cc2f3de9dd87d5afacea2e41eb5eb579ac9780f5bc4b0bb11d3b1be78e8bf0014528192a
   languageName: node
   linkType: hard
 
@@ -4223,18 +4230,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^7.0.3":
-  version: 7.1.0
-  resolution: "mongoose@npm:7.1.0"
+"mongoose@npm:^7.3.3":
+  version: 7.3.4
+  resolution: "mongoose@npm:7.3.4"
   dependencies:
-    bson: ^5.2.0
+    bson: ^5.3.0
     kareem: 2.5.1
-    mongodb: 5.3.0
+    mongodb: 5.6.0
     mpath: 0.9.0
     mquery: 5.0.0
     ms: 2.1.3
     sift: 16.0.1
-  checksum: e24aa2d7616cb1f2e53ce21dcbafa7b667173a17bd159be01164a6d63fc81b4bb3a086107a913e2ca1480a593f6ee3d9905ed5b05431fc65dbb4e73c028090b2
+  checksum: 1ffdb8449c7e151c1057679070b00072fb6f676ffcde5e33ff4e180c672a1ba4e7447c02bc0985e32ae25f795744a67974ded06df5a6124bd2dd0c2785974f5c
   languageName: node
   linkType: hard
 
@@ -6189,7 +6196,7 @@ __metadata:
     http-status-ts: ^2.0.0
     iron-session: ^6.3.1
     mongodb: ^5.3.0
-    mongoose: ^7.0.3
+    mongoose: ^7.3.3
     next: 13.3.0
     next-auth: ^4.22.1
     node-sass: ^7.0.3
@@ -6389,11 +6396,11 @@ __metadata:
 
 "typescript@patch:typescript@5.0.4#~builtin<compat/typescript>":
   version: 5.0.4
-  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"
+  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bb309d320c59a26565fb3793dba550576ab861018ff3fd1b7fccabbe46ae4a35546bc45f342c0a0b6f265c801ccdf64ffd68f548f117ceb7f0eac4b805cd52a9
+  checksum: d26b6ba97b6d163c55dbdffd9bbb4c211667ebebc743accfeb2c8c0154aace7afd097b51165a72a5bad2cf65a4612259344ff60f8e642362aa1695c760d303ac
   languageName: node
   linkType: hard
 
